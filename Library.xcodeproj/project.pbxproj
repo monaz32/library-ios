@@ -7,21 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B96DF03C2053445900AE101C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96DF03B2053445900AE101C /* AppDelegate.swift */; };
-		B96DF03E2053445900AE101C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96DF03D2053445900AE101C /* ViewController.swift */; };
-		B96DF0412053445900AE101C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B96DF03F2053445900AE101C /* Main.storyboard */; };
-		B96DF0432053445900AE101C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B96DF0422053445900AE101C /* Assets.xcassets */; };
-		B96DF0462053445900AE101C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B96DF0442053445900AE101C /* LaunchScreen.storyboard */; };
+		B96DF05C2053450A00AE101C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B96DF0542053450A00AE101C /* Assets.xcassets */; };
+		B96DF05D2053450A00AE101C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B96DF0552053450A00AE101C /* LaunchScreen.storyboard */; };
+		B96DF05F2053450A00AE101C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96DF0592053450A00AE101C /* AppDelegate.swift */; };
+		B96DF0602053450A00AE101C /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B96DF05A2053450A00AE101C /* Info.plist */; };
+		B96DF0652053472C00AE101C /* Welcome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B96DF0642053472C00AE101C /* Welcome.storyboard */; };
+		B96DF0672053474C00AE101C /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96DF0662053474C00AE101C /* WelcomeViewController.swift */; };
+		F7DBCDC6C87D01F159FD7867 /* Pods_Library.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31370B6FAD839C84A60B3393 /* Pods_Library.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2FA34C15192CCDBCA353712B /* Pods-Library.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Library.release.xcconfig"; path = "Pods/Target Support Files/Pods-Library/Pods-Library.release.xcconfig"; sourceTree = "<group>"; };
+		31370B6FAD839C84A60B3393 /* Pods_Library.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Library.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5DC282F3F5AA095231D8721A /* Pods-Library.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Library.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Library/Pods-Library.debug.xcconfig"; sourceTree = "<group>"; };
 		B96DF0382053445900AE101C /* Library.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Library.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		B96DF03B2053445900AE101C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B96DF03D2053445900AE101C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		B96DF0402053445900AE101C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		B96DF0422053445900AE101C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		B96DF0452053445900AE101C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		B96DF0472053445900AE101C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B96DF0542053450A00AE101C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B96DF0562053450A00AE101C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B96DF0592053450A00AE101C /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B96DF05A2053450A00AE101C /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B96DF0642053472C00AE101C /* Welcome.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Welcome.storyboard; sourceTree = "<group>"; };
+		B96DF0662053474C00AE101C /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +34,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7DBCDC6C87D01F159FD7867 /* Pods_Library.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2AF2EF141792FD1265D817DD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5DC282F3F5AA095231D8721A /* Pods-Library.debug.xcconfig */,
+				2FA34C15192CCDBCA353712B /* Pods-Library.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		B96DF02F2053445800AE101C = {
 			isa = PBXGroup;
 			children = (
 				B96DF03A2053445900AE101C /* Library */,
 				B96DF0392053445900AE101C /* Products */,
+				2AF2EF141792FD1265D817DD /* Pods */,
+				E1A00ADC3F8C0F10AEF55CBE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +71,94 @@
 		B96DF03A2053445900AE101C /* Library */ = {
 			isa = PBXGroup;
 			children = (
-				B96DF03B2053445900AE101C /* AppDelegate.swift */,
-				B96DF03D2053445900AE101C /* ViewController.swift */,
-				B96DF03F2053445900AE101C /* Main.storyboard */,
-				B96DF0422053445900AE101C /* Assets.xcassets */,
-				B96DF0442053445900AE101C /* LaunchScreen.storyboard */,
-				B96DF0472053445900AE101C /* Info.plist */,
+				B96DF0532053450A00AE101C /* Supporting Files */,
+				B96DF04F2053450900AE101C /* Models */,
+				B96DF0522053450900AE101C /* Services */,
+				B96DF04E2053450900AE101C /* Resources */,
+				B96DF0512053450900AE101C /* Extensions */,
+				B96DF05B2053450A00AE101C /* Helpers */,
+				B96DF0502053450900AE101C /* Views */,
+				B96DF04D2053450900AE101C /* Controllers */,
 			);
 			path = Library;
+			sourceTree = "<group>";
+		};
+		B96DF04D2053450900AE101C /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B96DF0632053472C00AE101C /* Welcome */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		B96DF04E2053450900AE101C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		B96DF04F2053450900AE101C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		B96DF0502053450900AE101C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B96DF0512053450900AE101C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		B96DF0522053450900AE101C /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		B96DF0532053450A00AE101C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B96DF0542053450A00AE101C /* Assets.xcassets */,
+				B96DF0552053450A00AE101C /* LaunchScreen.storyboard */,
+				B96DF0592053450A00AE101C /* AppDelegate.swift */,
+				B96DF05A2053450A00AE101C /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B96DF05B2053450A00AE101C /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		B96DF0632053472C00AE101C /* Welcome */ = {
+			isa = PBXGroup;
+			children = (
+				B96DF0642053472C00AE101C /* Welcome.storyboard */,
+				B96DF0662053474C00AE101C /* WelcomeViewController.swift */,
+			);
+			path = Welcome;
+			sourceTree = "<group>";
+		};
+		E1A00ADC3F8C0F10AEF55CBE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				31370B6FAD839C84A60B3393 /* Pods_Library.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +168,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B96DF04A2053445900AE101C /* Build configuration list for PBXNativeTarget "Library" */;
 			buildPhases = (
+				213BA2B77DC517207BF74456 /* [CP] Check Pods Manifest.lock */,
 				B96DF0342053445900AE101C /* Sources */,
 				B96DF0352053445900AE101C /* Frameworks */,
 				B96DF0362053445900AE101C /* Resources */,
+				CFF0987CE1E585D282B456F3 /* [CP] Embed Pods Frameworks */,
+				BEF21865D2C33E526E2073E8 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -123,39 +223,83 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B96DF0462053445900AE101C /* LaunchScreen.storyboard in Resources */,
-				B96DF0432053445900AE101C /* Assets.xcassets in Resources */,
-				B96DF0412053445900AE101C /* Main.storyboard in Resources */,
+				B96DF0602053450A00AE101C /* Info.plist in Resources */,
+				B96DF0652053472C00AE101C /* Welcome.storyboard in Resources */,
+				B96DF05C2053450A00AE101C /* Assets.xcassets in Resources */,
+				B96DF05D2053450A00AE101C /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		213BA2B77DC517207BF74456 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Library-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BEF21865D2C33E526E2073E8 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Library/Pods-Library-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CFF0987CE1E585D282B456F3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Library/Pods-Library-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		B96DF0342053445900AE101C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B96DF03E2053445900AE101C /* ViewController.swift in Sources */,
-				B96DF03C2053445900AE101C /* AppDelegate.swift in Sources */,
+				B96DF05F2053450A00AE101C /* AppDelegate.swift in Sources */,
+				B96DF0672053474C00AE101C /* WelcomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		B96DF03F2053445900AE101C /* Main.storyboard */ = {
+		B96DF0552053450A00AE101C /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				B96DF0402053445900AE101C /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		B96DF0442053445900AE101C /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B96DF0452053445900AE101C /* Base */,
+				B96DF0562053450A00AE101C /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -272,11 +416,12 @@
 		};
 		B96DF04B2053445900AE101C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5DC282F3F5AA095231D8721A /* Pods-Library.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 28636835Z7;
-				INFOPLIST_FILE = Library/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Library/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = pacolee.Library;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -287,11 +432,12 @@
 		};
 		B96DF04C2053445900AE101C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2FA34C15192CCDBCA353712B /* Pods-Library.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 28636835Z7;
-				INFOPLIST_FILE = Library/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Library/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = pacolee.Library;
 				PRODUCT_NAME = "$(TARGET_NAME)";
