@@ -14,7 +14,6 @@ class Rental: Mappable {
     var status: Bool?
     var bookID: Int?
     var accountID: Int?
-    var fines: Decimal?
     var fromDate: String?
     var toDate: String?
     var fromTime: String?
