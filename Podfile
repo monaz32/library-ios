@@ -7,6 +7,7 @@ target 'Library' do
 
   # Pods for Library
   pod 'Alamofire', '~> 4.7'
+  pod 'ObjectMapper', '~> 3.1'
 
 
 end

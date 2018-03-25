@@ -13,6 +13,7 @@
 		B96DF0602053450A00AE101C /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B96DF05A2053450A00AE101C /* Info.plist */; };
 		B96DF0652053472C00AE101C /* Welcome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B96DF0642053472C00AE101C /* Welcome.storyboard */; };
 		B96DF0672053474C00AE101C /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96DF0662053474C00AE101C /* WelcomeViewController.swift */; };
+		B9E73FEB206849E000BB5FF7 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E73FEA206849E000BB5FF7 /* Book.swift */; };
 		F7DBCDC6C87D01F159FD7867 /* Pods_Library.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31370B6FAD839C84A60B3393 /* Pods_Library.framework */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +28,7 @@
 		B96DF05A2053450A00AE101C /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B96DF0642053472C00AE101C /* Welcome.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Welcome.storyboard; sourceTree = "<group>"; };
 		B96DF0662053474C00AE101C /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		B9E73FEA206849E000BB5FF7 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 		B96DF04F2053450900AE101C /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				B9E73FEA206849E000BB5FF7 /* Book.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -272,9 +275,14 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Library/Pods-Library-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -290,6 +298,7 @@
 			files = (
 				B96DF05F2053450A00AE101C /* AppDelegate.swift in Sources */,
 				B96DF0672053474C00AE101C /* WelcomeViewController.swift in Sources */,
+				B9E73FEB206849E000BB5FF7 /* Book.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
