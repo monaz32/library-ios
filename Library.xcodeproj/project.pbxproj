@@ -15,6 +15,7 @@
 		04AD17E72068562900108858 /* Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AD17E62068562900108858 /* Member.swift */; };
 		04AD17E92068570C00108858 /* Rental.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AD17E82068570C00108858 /* Rental.swift */; };
 		04AD17EB206857D900108858 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AD17EA206857D900108858 /* Review.swift */; };
+		04AD17ED2068596500108858 /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AD17EC2068596500108858 /* Schedule.swift */; };
 		B96DF05C2053450A00AE101C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B96DF0542053450A00AE101C /* Assets.xcassets */; };
 		B96DF05D2053450A00AE101C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B96DF0552053450A00AE101C /* LaunchScreen.storyboard */; };
 		B96DF05F2053450A00AE101C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96DF0592053450A00AE101C /* AppDelegate.swift */; };
@@ -34,6 +35,7 @@
 		04AD17E62068562900108858 /* Member.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Member.swift; sourceTree = "<group>"; };
 		04AD17E82068570C00108858 /* Rental.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rental.swift; sourceTree = "<group>"; };
 		04AD17EA206857D900108858 /* Review.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
+		04AD17EC2068596500108858 /* Schedule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
 		2FA34C15192CCDBCA353712B /* Pods-Library.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Library.release.xcconfig"; path = "Pods/Target Support Files/Pods-Library/Pods-Library.release.xcconfig"; sourceTree = "<group>"; };
 		31370B6FAD839C84A60B3393 /* Pods_Library.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Library.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DC282F3F5AA095231D8721A /* Pods-Library.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Library.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Library/Pods-Library.debug.xcconfig"; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 				04AD17E62068562900108858 /* Member.swift */,
 				04AD17E82068570C00108858 /* Rental.swift */,
 				04AD17EA206857D900108858 /* Review.swift */,
+				04AD17EC2068596500108858 /* Schedule.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -326,6 +329,7 @@
 				04AD17E12068540B00108858 /* EmployeeWorkedFor.swift in Sources */,
 				04AD17E32068546C00108858 /* LibraryBook.swift in Sources */,
 				04AD17E92068570C00108858 /* Rental.swift in Sources */,
+				04AD17ED2068596500108858 /* Schedule.swift in Sources */,
 				04AD17EB206857D900108858 /* Review.swift in Sources */,
 				B96DF05F2053450A00AE101C /* AppDelegate.swift in Sources */,
 				B96DF0672053474C00AE101C /* WelcomeViewController.swift in Sources */,
