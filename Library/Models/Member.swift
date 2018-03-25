@@ -1,5 +1,5 @@
 //
-//  LibraryBranch.swift
+//  Members.swift
 //  Library
 //
 //  Created by Mona Zhao on 2018-03-25.
@@ -9,11 +9,12 @@
 import Foundation
 import ObjectMapper
 
-class LibraryBranch: Mappable {
-    var branchNum: Int?
+class Member: Mappable {
+    var ID: Int?
+    var email: String?
     var name: String?
-    var address: String?
     var phoneNumber: String?
+    var fines: Decimal?
     
     required init?(map: Map) {
         
@@ -21,9 +22,10 @@ class LibraryBranch: Mappable {
     
     // Mappable
     func mapping(map: Map) {
-        branchNum   <- map["branchNum"]
+        ID          <- map["accountID"]
+        email       <- map["email"]
         name        <- map["name"]
-        address     <- map["address"]
         phoneNumber <- map["phoneNum"]
+        fines       <- map["fines"]
     }
 }
