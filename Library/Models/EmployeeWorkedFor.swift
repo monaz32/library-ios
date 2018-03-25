@@ -1,5 +1,5 @@
 //
-//  Employee.swift
+//  EmployeeWorkedFor.swift
 //  Library
 //
 //  Created by Mona Zhao on 2018-03-25.
@@ -9,14 +9,13 @@
 import Foundation
 import ObjectMapper
 
-class Employee: Mappable {
+class EmployeeWorkedFor: Mappable {
     var ID: Int?
-    var email: String?
-    var SIN: String?
-    var name: String?
-    var address: String?
-    var phoneNumber: String?
     var branchNum: Int?
+    var fromDate: String?
+    var toDate: String?
+    var fromTime: String?
+    var toTime: String?
     
     required init?(map: Map) {
         
@@ -25,11 +24,10 @@ class Employee: Mappable {
     // Mappable
     func mapping(map: Map) {
         ID          <- map["eID"]
-        email       <- map["eEmail"]
         branchNum   <- map["branchNum"]
-        SIN         <- map["SIN"]
-        name        <- map["eName"]
-        address     <- map["eAddress"]
-        phoneNumber <- map["ePhoneNumber"]
+        fromDate    <- map["fromDate"]
+        toDate      <- map["toDate"]
+        fromTime    <- map["fromTime"]
+        toTime      <- map["toTime"]
     }
 }
