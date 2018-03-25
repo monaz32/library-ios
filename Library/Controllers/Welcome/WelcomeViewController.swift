@@ -9,8 +9,22 @@
 import UIKit
 
 class WelcomeViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    @IBAction func employeeAction(_ sender: Any) {
+        login(userType: .employee)
+    }
+    
+    @IBAction func memberAction(_ sender: Any) {
+        login(userType: .member)
+    }
+    
+    private func login(userType: UserType) {
+        let vc = UIStoryboard.init(name: "Welcome", bundle: nil).instantiateViewController(withIdentifier: LoginViewController.identifier) as! LoginViewController
+        vc.setup(with: userType)
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
