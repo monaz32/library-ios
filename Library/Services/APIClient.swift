@@ -18,17 +18,19 @@ enum Router: URLRequestConvertible {
 
     var method: HTTPMethod {
         switch self {
-        case .addBook:
+        case .addBook, .getBooks:
             return .post
-        case .getBooks, .getBook:
+        case .getBook:
             return .get
         }
     }
     
     var path: String {
         switch self {
-        case .addBook, .getBooks, .getBook:
+        case .addBook, .getBook:
             return "/book"
+        case .getBooks:
+            return "/book/filter"
         }
     }
     
