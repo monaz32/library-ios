@@ -18,10 +18,34 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
+                    <connections>
+                        <segue destination="RId-wf-bff" kind="relationship" relationship="viewControllers" id="pbj-wM-gpm"/>
+                        <segue destination="n1d-3e-V6o" kind="relationship" relationship="viewControllers" id="505-ix-u10"/>
+                    </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q6v-bX-XYA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-318" y="144"/>
+        </scene>
+        <!--EmployeeViewController-->
+        <scene sceneID="PiM-Qb-md2">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Account" referencedIdentifier="EmployeeViewController" id="RId-wf-bff" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="My Account" id="C6e-UZ-hPg"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jj8-uR-Cha" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="377" y="110"/>
+        </scene>
+        <!--EventsViewController-->
+        <scene sceneID="NkD-qj-dOY">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Events" referencedIdentifier="EventsViewController" id="n1d-3e-V6o" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Events" id="fF8-he-Y5E"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1aL-3b-ia8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="400" y="193"/>
         </scene>
     </scenes>
 </document>
