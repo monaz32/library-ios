@@ -9,8 +9,14 @@
 import UIKit
 
 class CreateEventViewController: UIViewController {
+    
+    static let identifier = "CreateEventViewController"
 
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    @IBAction func createAction(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
     }
 }

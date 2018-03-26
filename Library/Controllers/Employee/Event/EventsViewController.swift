@@ -17,6 +17,7 @@ class EventsViewController: UIViewController {
     }
     
     @IBAction func createEventAction(_ sender: Any) {
-        
+        let vc = UIStoryboard.init(name: "Events", bundle: nil).instantiateViewController(withIdentifier: CreateEventViewController.identifier) as!  CreateEventViewController
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
