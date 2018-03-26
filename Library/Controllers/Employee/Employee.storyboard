@@ -37,10 +37,10 @@
             </objects>
             <point key="canvasLocation" x="377" y="110"/>
         </scene>
-        <!--EventsViewController-->
+        <!--Events-->
         <scene sceneID="NkD-qj-dOY">
             <objects>
-                <viewControllerPlaceholder storyboardName="Events" referencedIdentifier="EventsViewController" id="n1d-3e-V6o" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="Events" id="n1d-3e-V6o" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Events" id="fF8-he-Y5E"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1aL-3b-ia8" userLabel="First Responder" sceneMemberID="firstResponder"/>

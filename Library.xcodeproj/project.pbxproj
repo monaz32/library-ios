@@ -17,6 +17,8 @@
 		04AD17EB206857D900108858 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AD17EA206857D900108858 /* Review.swift */; };
 		04AD17ED2068596500108858 /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AD17EC2068596500108858 /* Schedule.swift */; };
 		04AD17EF20685A6400108858 /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AD17EE20685A6400108858 /* Room.swift */; };
+		B94FBF63206998FD0039FC73 /* EmployeeBooks.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B94FBF62206998FC0039FC73 /* EmployeeBooks.storyboard */; };
+		B94FBF65206999130039FC73 /* EmployeeBooksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94FBF64206999130039FC73 /* EmployeeBooksViewController.swift */; };
 		B96DF05C2053450A00AE101C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B96DF0542053450A00AE101C /* Assets.xcassets */; };
 		B96DF05D2053450A00AE101C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B96DF0552053450A00AE101C /* LaunchScreen.storyboard */; };
 		B96DF05F2053450A00AE101C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96DF0592053450A00AE101C /* AppDelegate.swift */; };
@@ -55,6 +57,8 @@
 		2FA34C15192CCDBCA353712B /* Pods-Library.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Library.release.xcconfig"; path = "Pods/Target Support Files/Pods-Library/Pods-Library.release.xcconfig"; sourceTree = "<group>"; };
 		31370B6FAD839C84A60B3393 /* Pods_Library.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Library.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DC282F3F5AA095231D8721A /* Pods-Library.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Library.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Library/Pods-Library.debug.xcconfig"; sourceTree = "<group>"; };
+		B94FBF62206998FC0039FC73 /* EmployeeBooks.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EmployeeBooks.storyboard; sourceTree = "<group>"; };
+		B94FBF64206999130039FC73 /* EmployeeBooksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeBooksViewController.swift; sourceTree = "<group>"; };
 		B96DF0382053445900AE101C /* Library.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Library.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B96DF0542053450A00AE101C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B96DF0562053450A00AE101C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -98,6 +102,15 @@
 				2FA34C15192CCDBCA353712B /* Pods-Library.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		B94FBF61206998E20039FC73 /* Book */ = {
+			isa = PBXGroup;
+			children = (
+				B94FBF62206998FC0039FC73 /* EmployeeBooks.storyboard */,
+				B94FBF64206999130039FC73 /* EmployeeBooksViewController.swift */,
+			);
+			path = Book;
 			sourceTree = "<group>";
 		};
 		B96DF02F2053445800AE101C = {
@@ -227,6 +240,7 @@
 				B9E73FED2068515E00BB5FF7 /* Employee.storyboard */,
 				B9E73FF7206869E300BB5FF7 /* EmployeeTabBarController.swift */,
 				B9E740052068743600BB5FF7 /* Event */,
+				B94FBF61206998E20039FC73 /* Book */,
 			);
 			path = Employee;
 			sourceTree = "<group>";
@@ -345,6 +359,7 @@
 				B96DF0652053472C00AE101C /* Welcome.storyboard in Resources */,
 				B96DF05C2053450A00AE101C /* Assets.xcassets in Resources */,
 				B96DF05D2053450A00AE101C /* LaunchScreen.storyboard in Resources */,
+				B94FBF63206998FD0039FC73 /* EmployeeBooks.storyboard in Resources */,
 				B9E73FFE206870BF00BB5FF7 /* Account.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -415,6 +430,7 @@
 				B9E74002206871B100BB5FF7 /* MemberViewController.swift in Sources */,
 				B9E73FF2206852BA00BB5FF7 /* LoginViewController.swift in Sources */,
 				B9E73FF4206852CF00BB5FF7 /* RegisterViewController.swift in Sources */,
+				B94FBF65206999130039FC73 /* EmployeeBooksViewController.swift in Sources */,
 				B9E73FF8206869E300BB5FF7 /* EmployeeTabBarController.swift in Sources */,
 				B9E7400F2068A08B00BB5FF7 /* BookService.swift in Sources */,
 				04AD17E72068562900108858 /* Member.swift in Sources */,
