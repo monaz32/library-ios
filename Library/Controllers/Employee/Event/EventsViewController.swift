@@ -10,7 +10,13 @@ import UIKit
 
 class EventsViewController: UIViewController {
 
+    @IBOutlet var eventsTableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    @IBAction func createEventAction(_ sender: Any) {
+        
     }
 }

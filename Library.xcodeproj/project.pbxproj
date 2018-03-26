@@ -35,6 +35,9 @@
 		B9E74004206871D500BB5FF7 /* EmployeeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E74003206871D500BB5FF7 /* EmployeeViewController.swift */; };
 		B9E740072068749100BB5FF7 /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E740062068749100BB5FF7 /* EventsViewController.swift */; };
 		B9E740092068749F00BB5FF7 /* Events.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9E740082068749F00BB5FF7 /* Events.storyboard */; };
+		B9E7400B2068787900BB5FF7 /* CreateEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E7400A2068787900BB5FF7 /* CreateEventViewController.swift */; };
+		B9E7400D20689B4800BB5FF7 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E7400C20689B4800BB5FF7 /* APIClient.swift */; };
+		B9E7400F2068A08B00BB5FF7 /* BookService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E7400E2068A08B00BB5FF7 /* BookService.swift */; };
 		F7DBCDC6C87D01F159FD7867 /* Pods_Library.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31370B6FAD839C84A60B3393 /* Pods_Library.framework */; };
 /* End PBXBuildFile section */
 
@@ -71,6 +74,9 @@
 		B9E74003206871D500BB5FF7 /* EmployeeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeViewController.swift; sourceTree = "<group>"; };
 		B9E740062068749100BB5FF7 /* EventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
 		B9E740082068749F00BB5FF7 /* Events.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Events.storyboard; sourceTree = "<group>"; };
+		B9E7400A2068787900BB5FF7 /* CreateEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEventViewController.swift; sourceTree = "<group>"; };
+		B9E7400C20689B4800BB5FF7 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		B9E7400E2068A08B00BB5FF7 /* BookService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,6 +215,8 @@
 		B9E73FE5206846D000BB5FF7 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				B9E7400C20689B4800BB5FF7 /* APIClient.swift */,
+				B9E7400E2068A08B00BB5FF7 /* BookService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -255,6 +263,7 @@
 			children = (
 				B9E740082068749F00BB5FF7 /* Events.storyboard */,
 				B9E740062068749100BB5FF7 /* EventsViewController.swift */,
+				B9E7400A2068787900BB5FF7 /* CreateEventViewController.swift */,
 			);
 			path = Event;
 			sourceTree = "<group>";
@@ -407,7 +416,9 @@
 				B9E73FF2206852BA00BB5FF7 /* LoginViewController.swift in Sources */,
 				B9E73FF4206852CF00BB5FF7 /* RegisterViewController.swift in Sources */,
 				B9E73FF8206869E300BB5FF7 /* EmployeeTabBarController.swift in Sources */,
+				B9E7400F2068A08B00BB5FF7 /* BookService.swift in Sources */,
 				04AD17E72068562900108858 /* Member.swift in Sources */,
+				B9E7400D20689B4800BB5FF7 /* APIClient.swift in Sources */,
 				B9E740072068749100BB5FF7 /* EventsViewController.swift in Sources */,
 				04AD17DD20684BCB00108858 /* Event.swift in Sources */,
 				B9E74004206871D500BB5FF7 /* EmployeeViewController.swift in Sources */,
@@ -420,6 +431,7 @@
 				04AD17EB206857D900108858 /* Review.swift in Sources */,
 				B96DF05F2053450A00AE101C /* AppDelegate.swift in Sources */,
 				B96DF0672053474C00AE101C /* WelcomeViewController.swift in Sources */,
+				B9E7400B2068787900BB5FF7 /* CreateEventViewController.swift in Sources */,
 				04AD17DF2068504200108858 /* Employee.swift in Sources */,
 				B9E73FEB206849E000BB5FF7 /* Book.swift in Sources */,
 				B9E73FF6206869D200BB5FF7 /* MemberTabBarController.swift in Sources */,
