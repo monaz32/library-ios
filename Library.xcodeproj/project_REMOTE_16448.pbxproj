@@ -24,12 +24,6 @@
 		B96DF0652053472C00AE101C /* Welcome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B96DF0642053472C00AE101C /* Welcome.storyboard */; };
 		B96DF0672053474C00AE101C /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96DF0662053474C00AE101C /* WelcomeViewController.swift */; };
 		B9E73FEB206849E000BB5FF7 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E73FEA206849E000BB5FF7 /* Book.swift */; };
-		B9E73FEE2068515E00BB5FF7 /* Employee.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9E73FED2068515E00BB5FF7 /* Employee.storyboard */; };
-		B9E73FF02068516500BB5FF7 /* Member.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9E73FEF2068516500BB5FF7 /* Member.storyboard */; };
-		B9E73FF2206852BA00BB5FF7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E73FF1206852BA00BB5FF7 /* LoginViewController.swift */; };
-		B9E73FF4206852CF00BB5FF7 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E73FF3206852CF00BB5FF7 /* RegisterViewController.swift */; };
-		B9E73FF6206869D200BB5FF7 /* MemberTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E73FF5206869D200BB5FF7 /* MemberTabBarController.swift */; };
-		B9E73FF8206869E300BB5FF7 /* EmployeeTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E73FF7206869E300BB5FF7 /* EmployeeTabBarController.swift */; };
 		F7DBCDC6C87D01F159FD7867 /* Pods_Library.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31370B6FAD839C84A60B3393 /* Pods_Library.framework */; };
 /* End PBXBuildFile section */
 
@@ -55,12 +49,6 @@
 		B96DF0642053472C00AE101C /* Welcome.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Welcome.storyboard; sourceTree = "<group>"; };
 		B96DF0662053474C00AE101C /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		B9E73FEA206849E000BB5FF7 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
-		B9E73FED2068515E00BB5FF7 /* Employee.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Employee.storyboard; sourceTree = "<group>"; };
-		B9E73FEF2068516500BB5FF7 /* Member.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Member.storyboard; sourceTree = "<group>"; };
-		B9E73FF1206852BA00BB5FF7 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		B9E73FF3206852CF00BB5FF7 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
-		B9E73FF5206869D200BB5FF7 /* MemberTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberTabBarController.swift; sourceTree = "<group>"; };
-		B9E73FF7206869E300BB5FF7 /* EmployeeTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeTabBarController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,12 +94,12 @@
 			isa = PBXGroup;
 			children = (
 				B96DF0532053450A00AE101C /* Supporting Files */,
-				B9E73FE1206845B100BB5FF7 /* Extensions */,
-				B9E73FE2206845B100BB5FF7 /* Helpers */,
-				B9E73FE3206845B100BB5FF7 /* Models */,
-				B9E73FE4206845B100BB5FF7 /* Resources */,
-				B9E73FE0206845B100BB5FF7 /* Views */,
-				B9E73FE5206846D000BB5FF7 /* Services */,
+				B96DF04F2053450900AE101C /* Models */,
+				B96DF0522053450900AE101C /* Services */,
+				B96DF04E2053450900AE101C /* Resources */,
+				B96DF0512053450900AE101C /* Extensions */,
+				B96DF05B2053450A00AE101C /* Helpers */,
+				B96DF0502053450900AE101C /* Views */,
 				B96DF04D2053450900AE101C /* Controllers */,
 			);
 			path = Library;
@@ -121,10 +109,54 @@
 			isa = PBXGroup;
 			children = (
 				B96DF0632053472C00AE101C /* Welcome */,
-				B9E73FE9206847B300BB5FF7 /* Member */,
-				B9E73FE8206847B300BB5FF7 /* Employee */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		B96DF04E2053450900AE101C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		B96DF04F2053450900AE101C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B9E73FEA206849E000BB5FF7 /* Book.swift */,
+				04AD17DC20684BCB00108858 /* Event.swift */,
+				04AD17DE2068504200108858 /* Employee.swift */,
+				04AD17E02068540B00108858 /* EmployeeWorkedFor.swift */,
+				04AD17E22068546C00108858 /* LibraryBook.swift */,
+				04AD17E42068555000108858 /* LibraryBranch.swift */,
+				04AD17E62068562900108858 /* Member.swift */,
+				04AD17E82068570C00108858 /* Rental.swift */,
+				04AD17EA206857D900108858 /* Review.swift */,
+				04AD17EC2068596500108858 /* Schedule.swift */,
+				04AD17EE20685A6400108858 /* Room.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		B96DF0502053450900AE101C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B96DF0512053450900AE101C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		B96DF0522053450900AE101C /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		B96DF0532053450A00AE101C /* Supporting Files */ = {
@@ -138,87 +170,20 @@
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		B96DF0632053472C00AE101C /* Welcome */ = {
-			isa = PBXGroup;
-			children = (
-				B96DF0642053472C00AE101C /* Welcome.storyboard */,
-				B96DF0662053474C00AE101C /* WelcomeViewController.swift */,
-				B9E73FF1206852BA00BB5FF7 /* LoginViewController.swift */,
-				B9E73FF3206852CF00BB5FF7 /* RegisterViewController.swift */,
-			);
-			path = Welcome;
-			sourceTree = "<group>";
-		};
-		B9E73FE0206845B100BB5FF7 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		B9E73FE1206845B100BB5FF7 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
-		B9E73FE2206845B100BB5FF7 /* Helpers */ = {
+		B96DF05B2053450A00AE101C /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = Helpers;
 			sourceTree = "<group>";
 		};
-		B9E73FE3206845B100BB5FF7 /* Models */ = {
+		B96DF0632053472C00AE101C /* Welcome */ = {
 			isa = PBXGroup;
 			children = (
-				B9E73FEA206849E000BB5FF7 /* Book.swift */,
-                B9E73FEA206849E000BB5FF7 /* Book.swift */,
-                    04AD17DC20684BCB00108858 /* Event.swift */,
-                    04AD17DE2068504200108858 /* Employee.swift */,
-                    04AD17E02068540B00108858 /* EmployeeWorkedFor.swift */,
-                    04AD17E22068546C00108858 /* LibraryBook.swift */,
-                    04AD17E42068555000108858 /* LibraryBranch.swift */,
-                    04AD17E62068562900108858 /* Member.swift */,
-                    04AD17E82068570C00108858 /* Rental.swift */,
-                    04AD17EA206857D900108858 /* Review.swift */,
-                    04AD17EC2068596500108858 /* Schedule.swift */,
-                    04AD17EE20685A6400108858 /* Room.swift */,
+				B96DF0642053472C00AE101C /* Welcome.storyboard */,
+				B96DF0662053474C00AE101C /* WelcomeViewController.swift */,
 			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		B9E73FE4206845B100BB5FF7 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
-		B9E73FE5206846D000BB5FF7 /* Services */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Services;
-			sourceTree = "<group>";
-		};
-		B9E73FE8206847B300BB5FF7 /* Employee */ = {
-			isa = PBXGroup;
-			children = (
-				B9E73FED2068515E00BB5FF7 /* Employee.storyboard */,
-				B9E73FF7206869E300BB5FF7 /* EmployeeTabBarController.swift */,
-			);
-			path = Employee;
-			sourceTree = "<group>";
-		};
-		B9E73FE9206847B300BB5FF7 /* Member */ = {
-			isa = PBXGroup;
-			children = (
-				B9E73FEF2068516500BB5FF7 /* Member.storyboard */,
-				B9E73FF5206869D200BB5FF7 /* MemberTabBarController.swift */,
-			);
-			path = Member;
+			path = Welcome;
 			sourceTree = "<group>";
 		};
 		E1A00ADC3F8C0F10AEF55CBE /* Frameworks */ = {
@@ -291,9 +256,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B9E73FEE2068515E00BB5FF7 /* Employee.storyboard in Resources */,
 				B96DF0602053450A00AE101C /* Info.plist in Resources */,
-				B9E73FF02068516500BB5FF7 /* Member.storyboard in Resources */,
 				B96DF0652053472C00AE101C /* Welcome.storyboard in Resources */,
 				B96DF05C2053450A00AE101C /* Assets.xcassets in Resources */,
 				B96DF05D2053450A00AE101C /* LaunchScreen.storyboard in Resources */,
@@ -363,9 +326,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B9E73FF2206852BA00BB5FF7 /* LoginViewController.swift in Sources */,
-				B9E73FF4206852CF00BB5FF7 /* RegisterViewController.swift in Sources */,
-				B9E73FF8206869E300BB5FF7 /* EmployeeTabBarController.swift in Sources */,
 				04AD17E72068562900108858 /* Member.swift in Sources */,
 				04AD17DD20684BCB00108858 /* Event.swift in Sources */,
 				04AD17E52068555000108858 /* LibraryBranch.swift in Sources */,
@@ -379,7 +339,6 @@
 				B96DF0672053474C00AE101C /* WelcomeViewController.swift in Sources */,
 				04AD17DF2068504200108858 /* Employee.swift in Sources */,
 				B9E73FEB206849E000BB5FF7 /* Book.swift in Sources */,
-				B9E73FF6206869D200BB5FF7 /* MemberTabBarController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

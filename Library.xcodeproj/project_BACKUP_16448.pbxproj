@@ -141,10 +141,24 @@
 		B96DF0632053472C00AE101C /* Welcome */ = {
 			isa = PBXGroup;
 			children = (
+<<<<<<< HEAD
 				B96DF0642053472C00AE101C /* Welcome.storyboard */,
 				B96DF0662053474C00AE101C /* WelcomeViewController.swift */,
 				B9E73FF1206852BA00BB5FF7 /* LoginViewController.swift */,
 				B9E73FF3206852CF00BB5FF7 /* RegisterViewController.swift */,
+=======
+				B9E73FEA206849E000BB5FF7 /* Book.swift */,
+				04AD17DC20684BCB00108858 /* Event.swift */,
+				04AD17DE2068504200108858 /* Employee.swift */,
+				04AD17E02068540B00108858 /* EmployeeWorkedFor.swift */,
+				04AD17E22068546C00108858 /* LibraryBook.swift */,
+				04AD17E42068555000108858 /* LibraryBranch.swift */,
+				04AD17E62068562900108858 /* Member.swift */,
+				04AD17E82068570C00108858 /* Rental.swift */,
+				04AD17EA206857D900108858 /* Review.swift */,
+				04AD17EC2068596500108858 /* Schedule.swift */,
+				04AD17EE20685A6400108858 /* Room.swift */,
+>>>>>>> master
 			);
 			path = Welcome;
 			sourceTree = "<group>";
@@ -174,17 +188,6 @@
 			isa = PBXGroup;
 			children = (
 				B9E73FEA206849E000BB5FF7 /* Book.swift */,
-                B9E73FEA206849E000BB5FF7 /* Book.swift */,
-                    04AD17DC20684BCB00108858 /* Event.swift */,
-                    04AD17DE2068504200108858 /* Employee.swift */,
-                    04AD17E02068540B00108858 /* EmployeeWorkedFor.swift */,
-                    04AD17E22068546C00108858 /* LibraryBook.swift */,
-                    04AD17E42068555000108858 /* LibraryBranch.swift */,
-                    04AD17E62068562900108858 /* Member.swift */,
-                    04AD17E82068570C00108858 /* Rental.swift */,
-                    04AD17EA206857D900108858 /* Review.swift */,
-                    04AD17EC2068596500108858 /* Schedule.swift */,
-                    04AD17EE20685A6400108858 /* Room.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -363,9 +366,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+<<<<<<< HEAD
 				B9E73FF2206852BA00BB5FF7 /* LoginViewController.swift in Sources */,
 				B9E73FF4206852CF00BB5FF7 /* RegisterViewController.swift in Sources */,
 				B9E73FF8206869E300BB5FF7 /* EmployeeTabBarController.swift in Sources */,
+=======
 				04AD17E72068562900108858 /* Member.swift in Sources */,
 				04AD17DD20684BCB00108858 /* Event.swift in Sources */,
 				04AD17E52068555000108858 /* LibraryBranch.swift in Sources */,
@@ -375,6 +380,7 @@
 				04AD17EF20685A6400108858 /* Room.swift in Sources */,
 				04AD17ED2068596500108858 /* Schedule.swift in Sources */,
 				04AD17EB206857D900108858 /* Review.swift in Sources */,
+>>>>>>> master
 				B96DF05F2053450A00AE101C /* AppDelegate.swift in Sources */,
 				B96DF0672053474C00AE101C /* WelcomeViewController.swift in Sources */,
 				04AD17DF2068504200108858 /* Employee.swift in Sources */,
