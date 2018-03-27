@@ -37,8 +37,8 @@
 		B9E73FF6206869D200BB5FF7 /* MemberTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E73FF5206869D200BB5FF7 /* MemberTabBarController.swift */; };
 		B9E73FF8206869E300BB5FF7 /* EmployeeTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E73FF7206869E300BB5FF7 /* EmployeeTabBarController.swift */; };
 		B9E73FFE206870BF00BB5FF7 /* Account.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9E73FFD206870BF00BB5FF7 /* Account.storyboard */; };
-		B9E74002206871B100BB5FF7 /* MemberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E74001206871B100BB5FF7 /* MemberViewController.swift */; };
-		B9E74004206871D500BB5FF7 /* EmployeeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E74003206871D500BB5FF7 /* EmployeeViewController.swift */; };
+		B9E74002206871B100BB5FF7 /* MemberAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E74001206871B100BB5FF7 /* MemberAccountViewController.swift */; };
+		B9E74004206871D500BB5FF7 /* EmployeeAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E74003206871D500BB5FF7 /* EmployeeAccountViewController.swift */; };
 		B9E740072068749100BB5FF7 /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E740062068749100BB5FF7 /* EventsViewController.swift */; };
 		B9E740092068749F00BB5FF7 /* Events.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9E740082068749F00BB5FF7 /* Events.storyboard */; };
 		B9E7400B2068787900BB5FF7 /* CreateEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E7400A2068787900BB5FF7 /* CreateEventViewController.swift */; };
@@ -82,8 +82,8 @@
 		B9E73FF5206869D200BB5FF7 /* MemberTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberTabBarController.swift; sourceTree = "<group>"; };
 		B9E73FF7206869E300BB5FF7 /* EmployeeTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeTabBarController.swift; sourceTree = "<group>"; };
 		B9E73FFD206870BF00BB5FF7 /* Account.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Account.storyboard; sourceTree = "<group>"; };
-		B9E74001206871B100BB5FF7 /* MemberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberViewController.swift; sourceTree = "<group>"; };
-		B9E74003206871D500BB5FF7 /* EmployeeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeViewController.swift; sourceTree = "<group>"; };
+		B9E74001206871B100BB5FF7 /* MemberAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberAccountViewController.swift; sourceTree = "<group>"; };
+		B9E74003206871D500BB5FF7 /* EmployeeAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeAccountViewController.swift; sourceTree = "<group>"; };
 		B9E740062068749100BB5FF7 /* EventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
 		B9E740082068749F00BB5FF7 /* Events.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Events.storyboard; sourceTree = "<group>"; };
 		B9E7400A2068787900BB5FF7 /* CreateEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEventViewController.swift; sourceTree = "<group>"; };
@@ -286,8 +286,8 @@
 			isa = PBXGroup;
 			children = (
 				B9E73FFD206870BF00BB5FF7 /* Account.storyboard */,
-				B9E74001206871B100BB5FF7 /* MemberViewController.swift */,
-				B9E74003206871D500BB5FF7 /* EmployeeViewController.swift */,
+				B9E74001206871B100BB5FF7 /* MemberAccountViewController.swift */,
+				B9E74003206871D500BB5FF7 /* EmployeeAccountViewController.swift */,
 			);
 			path = Account;
 			sourceTree = "<group>";
@@ -432,7 +432,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B9E74002206871B100BB5FF7 /* MemberViewController.swift in Sources */,
+				B9E74002206871B100BB5FF7 /* MemberAccountViewController.swift in Sources */,
 				B9E73FF2206852BA00BB5FF7 /* LoginViewController.swift in Sources */,
 				B9E73FF4206852CF00BB5FF7 /* RegisterViewController.swift in Sources */,
 				B94FBF65206999130039FC73 /* EmployeeBooksViewController.swift in Sources */,
@@ -444,7 +444,7 @@
 				B9E7400D20689B4800BB5FF7 /* APIClient.swift in Sources */,
 				B9E740072068749100BB5FF7 /* EventsViewController.swift in Sources */,
 				04AD17DD20684BCB00108858 /* Event.swift in Sources */,
-				B9E74004206871D500BB5FF7 /* EmployeeViewController.swift in Sources */,
+				B9E74004206871D500BB5FF7 /* EmployeeAccountViewController.swift in Sources */,
 				04AD17E52068555000108858 /* LibraryBranch.swift in Sources */,
 				04AD17E12068540B00108858 /* EmployeeWorkedFor.swift in Sources */,
 				04AD17E32068546C00108858 /* LibraryBook.swift in Sources */,

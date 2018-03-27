@@ -9,7 +9,7 @@
 import UIKit
 
 class EmployeeViewController: UIViewController {
-    static let identifier = "EmployeeViewController"
+    static let identifier = "EmployeeAccountViewController"
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -29,10 +29,10 @@
             </objects>
             <point key="canvasLocation" x="-318" y="144"/>
         </scene>
-        <!--EmployeeViewController-->
+        <!--EmployeeAccountViewController-->
         <scene sceneID="PiM-Qb-md2">
             <objects>
-                <viewControllerPlaceholder storyboardName="Account" referencedIdentifier="EmployeeViewController" id="RId-wf-bff" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="Account" referencedIdentifier="EmployeeAccountViewController" id="RId-wf-bff" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="My Account" id="C6e-UZ-hPg"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jj8-uR-Cha" userLabel="First Responder" sceneMemberID="firstResponder"/>
