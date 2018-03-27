@@ -27,6 +27,8 @@
 		B94FBF73206AED2A0039FC73 /* MemberBooksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94FBF72206AED2A0039FC73 /* MemberBooksViewController.swift */; };
 		B94FBF75206AFFD30039FC73 /* MemberBookDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94FBF74206AFFD30039FC73 /* MemberBookDetailsViewController.swift */; };
 		B94FBF77206B058B0039FC73 /* MemberBookReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94FBF76206B058B0039FC73 /* MemberBookReviewViewController.swift */; };
+		B96888D6206B0B5B00DC03C5 /* MemberRoom.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B96888D4206B0B5B00DC03C5 /* MemberRoom.storyboard */; };
+		B96888D7206B0B5B00DC03C5 /* MemberRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96888D5206B0B5B00DC03C5 /* MemberRoomViewController.swift */; };
 		B96DF05C2053450A00AE101C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B96DF0542053450A00AE101C /* Assets.xcassets */; };
 		B96DF05D2053450A00AE101C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B96DF0552053450A00AE101C /* LaunchScreen.storyboard */; };
 		B96DF05F2053450A00AE101C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96DF0592053450A00AE101C /* AppDelegate.swift */; };
@@ -75,6 +77,8 @@
 		B94FBF72206AED2A0039FC73 /* MemberBooksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberBooksViewController.swift; sourceTree = "<group>"; };
 		B94FBF74206AFFD30039FC73 /* MemberBookDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberBookDetailsViewController.swift; sourceTree = "<group>"; };
 		B94FBF76206B058B0039FC73 /* MemberBookReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberBookReviewViewController.swift; sourceTree = "<group>"; };
+		B96888D4206B0B5B00DC03C5 /* MemberRoom.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MemberRoom.storyboard; sourceTree = "<group>"; };
+		B96888D5206B0B5B00DC03C5 /* MemberRoomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemberRoomViewController.swift; sourceTree = "<group>"; };
 		B96DF0382053445900AE101C /* Library.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Library.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B96DF0542053450A00AE101C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B96DF0562053450A00AE101C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -149,6 +153,15 @@
 				B94FBF76206B058B0039FC73 /* MemberBookReviewViewController.swift */,
 			);
 			path = Book;
+			sourceTree = "<group>";
+		};
+		B96888D3206B0B5B00DC03C5 /* Room */ = {
+			isa = PBXGroup;
+			children = (
+				B96888D4206B0B5B00DC03C5 /* MemberRoom.storyboard */,
+				B96888D5206B0B5B00DC03C5 /* MemberRoomViewController.swift */,
+			);
+			path = Room;
 			sourceTree = "<group>";
 		};
 		B96DF02F2053445800AE101C = {
@@ -290,6 +303,7 @@
 				B9E73FEF2068516500BB5FF7 /* Member.storyboard */,
 				B9E73FF5206869D200BB5FF7 /* MemberTabBarController.swift */,
 				B94FBF6F206AEC6C0039FC73 /* Book */,
+				B96888D3206B0B5B00DC03C5 /* Room */,
 			);
 			path = Member;
 			sourceTree = "<group>";
@@ -400,6 +414,7 @@
 				B96DF0652053472C00AE101C /* Welcome.storyboard in Resources */,
 				B96DF05C2053450A00AE101C /* Assets.xcassets in Resources */,
 				B96DF05D2053450A00AE101C /* LaunchScreen.storyboard in Resources */,
+				B96888D6206B0B5B00DC03C5 /* MemberRoom.storyboard in Resources */,
 				B94FBF63206998FD0039FC73 /* EmployeeBooks.storyboard in Resources */,
 				B9E73FFE206870BF00BB5FF7 /* Account.storyboard in Resources */,
 			);
@@ -461,6 +476,7 @@
 				B94FBF692069B6B20039FC73 /* EmployeeBookFilterViewController.swift in Sources */,
 				B94FBF672069B6970039FC73 /* EmployeeAddBookViewController.swift in Sources */,
 				B9E7400F2068A08B00BB5FF7 /* BookService.swift in Sources */,
+				B96888D7206B0B5B00DC03C5 /* MemberRoomViewController.swift in Sources */,
 				04AD17E72068562900108858 /* Member.swift in Sources */,
 				B9E7400D20689B4800BB5FF7 /* APIClient.swift in Sources */,
 				B9E740072068749100BB5FF7 /* EventsViewController.swift in Sources */,
