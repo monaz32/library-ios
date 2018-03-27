@@ -9,14 +9,9 @@
 import UIKit
 
 class MemberViewController: UIViewController {
-    static let identifier = "MemberViewController"
+    static let identifier = "MemberAccountViewController"
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setup()
-    }
-    
-    func setup() {
-        title = "My Account"
     }
 }
