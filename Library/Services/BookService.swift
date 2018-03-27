@@ -42,8 +42,9 @@ class BookService {
         APIClient.sharedClient.request(Router.getBook(isbn: isbn)) { (response) in
             switch response {
             case .success(let result):
-                if let json = result as? [String: Any], let book = Book(JSON: json) {
-                    completion(Result.success(book))
+                if let json = result as? [[String: Any]] {
+                    let books = Mapper<Book>().mapArray(JSONArray: json)
+                    completion(Result.success(books[0]))
                 }
             case .failure(let error):
                 completion(Result.failure(error))
