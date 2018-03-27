@@ -23,6 +23,8 @@
 		B94FBF692069B6B20039FC73 /* EmployeeBookFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94FBF682069B6B20039FC73 /* EmployeeBookFilterViewController.swift */; };
 		B94FBF6C206AD39B0039FC73 /* EmployeeMembers.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B94FBF6B206AD39B0039FC73 /* EmployeeMembers.storyboard */; };
 		B94FBF6E206AD4450039FC73 /* EmployeeMembersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94FBF6D206AD4450039FC73 /* EmployeeMembersViewController.swift */; };
+		B94FBF71206AEC830039FC73 /* MemberBooks.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B94FBF70206AEC830039FC73 /* MemberBooks.storyboard */; };
+		B94FBF73206AED2A0039FC73 /* MemberBooksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94FBF72206AED2A0039FC73 /* MemberBooksViewController.swift */; };
 		B96DF05C2053450A00AE101C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B96DF0542053450A00AE101C /* Assets.xcassets */; };
 		B96DF05D2053450A00AE101C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B96DF0552053450A00AE101C /* LaunchScreen.storyboard */; };
 		B96DF05F2053450A00AE101C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96DF0592053450A00AE101C /* AppDelegate.swift */; };
@@ -67,6 +69,8 @@
 		B94FBF682069B6B20039FC73 /* EmployeeBookFilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeBookFilterViewController.swift; sourceTree = "<group>"; };
 		B94FBF6B206AD39B0039FC73 /* EmployeeMembers.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EmployeeMembers.storyboard; sourceTree = "<group>"; };
 		B94FBF6D206AD4450039FC73 /* EmployeeMembersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeMembersViewController.swift; sourceTree = "<group>"; };
+		B94FBF70206AEC830039FC73 /* MemberBooks.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MemberBooks.storyboard; sourceTree = "<group>"; };
+		B94FBF72206AED2A0039FC73 /* MemberBooksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberBooksViewController.swift; sourceTree = "<group>"; };
 		B96DF0382053445900AE101C /* Library.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Library.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B96DF0542053450A00AE101C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B96DF0562053450A00AE101C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -130,6 +134,15 @@
 				B94FBF6D206AD4450039FC73 /* EmployeeMembersViewController.swift */,
 			);
 			path = Members;
+			sourceTree = "<group>";
+		};
+		B94FBF6F206AEC6C0039FC73 /* Book */ = {
+			isa = PBXGroup;
+			children = (
+				B94FBF70206AEC830039FC73 /* MemberBooks.storyboard */,
+				B94FBF72206AED2A0039FC73 /* MemberBooksViewController.swift */,
+			);
+			path = Book;
 			sourceTree = "<group>";
 		};
 		B96DF02F2053445800AE101C = {
@@ -270,6 +283,7 @@
 			children = (
 				B9E73FEF2068516500BB5FF7 /* Member.storyboard */,
 				B9E73FF5206869D200BB5FF7 /* MemberTabBarController.swift */,
+				B94FBF6F206AEC6C0039FC73 /* Book */,
 			);
 			path = Member;
 			sourceTree = "<group>";
@@ -371,6 +385,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B94FBF71206AEC830039FC73 /* MemberBooks.storyboard in Resources */,
 				B9E73FEE2068515E00BB5FF7 /* Employee.storyboard in Resources */,
 				B9E740092068749F00BB5FF7 /* Events.storyboard in Resources */,
 				B94FBF6C206AD39B0039FC73 /* EmployeeMembers.storyboard in Resources */,
@@ -459,6 +474,7 @@
 				04AD17DF2068504200108858 /* Employee.swift in Sources */,
 				B9E73FEB206849E000BB5FF7 /* Book.swift in Sources */,
 				B9E73FF6206869D200BB5FF7 /* MemberTabBarController.swift in Sources */,
+				B94FBF73206AED2A0039FC73 /* MemberBooksViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
