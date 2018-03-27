@@ -20,6 +20,8 @@
                     </tabBar>
                     <connections>
                         <segue destination="65S-bv-B23" kind="relationship" relationship="viewControllers" id="xT6-AZ-Jah"/>
+                        <segue destination="LJW-jg-QFd" kind="relationship" relationship="viewControllers" id="6f4-vU-pLZ"/>
+                        <segue destination="PU8-NS-PJ4" kind="relationship" relationship="viewControllers" id="1y5-vP-29i"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ohM-YB-jwU" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -35,6 +37,26 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oTS-0o-qsa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-101" y="-452"/>
+        </scene>
+        <!--MemberBooks-->
+        <scene sceneID="hkZ-l2-iH4">
+            <objects>
+                <viewControllerPlaceholder storyboardName="MemberBooks" id="LJW-jg-QFd" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="UT5-FB-q93"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Icw-pg-6Qh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-97" y="-226"/>
+        </scene>
+        <!--MemberRoom-->
+        <scene sceneID="fzx-Iv-qa7">
+            <objects>
+                <viewControllerPlaceholder storyboardName="MemberRoom" id="PU8-NS-PJ4" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="btY-zS-rtK"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kdy-jA-yi9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-103" y="-86"/>
         </scene>
     </scenes>
 </document>
