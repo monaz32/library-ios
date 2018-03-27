@@ -19,6 +19,8 @@
 		04AD17EF20685A6400108858 /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AD17EE20685A6400108858 /* Room.swift */; };
 		B94FBF63206998FD0039FC73 /* EmployeeBooks.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B94FBF62206998FC0039FC73 /* EmployeeBooks.storyboard */; };
 		B94FBF65206999130039FC73 /* EmployeeBooksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94FBF64206999130039FC73 /* EmployeeBooksViewController.swift */; };
+		B94FBF672069B6970039FC73 /* EmployeeAddBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94FBF662069B6970039FC73 /* EmployeeAddBookViewController.swift */; };
+		B94FBF692069B6B20039FC73 /* EmployeeBookFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94FBF682069B6B20039FC73 /* EmployeeBookFilterViewController.swift */; };
 		B96DF05C2053450A00AE101C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B96DF0542053450A00AE101C /* Assets.xcassets */; };
 		B96DF05D2053450A00AE101C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B96DF0552053450A00AE101C /* LaunchScreen.storyboard */; };
 		B96DF05F2053450A00AE101C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96DF0592053450A00AE101C /* AppDelegate.swift */; };
@@ -59,6 +61,8 @@
 		5DC282F3F5AA095231D8721A /* Pods-Library.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Library.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Library/Pods-Library.debug.xcconfig"; sourceTree = "<group>"; };
 		B94FBF62206998FC0039FC73 /* EmployeeBooks.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EmployeeBooks.storyboard; sourceTree = "<group>"; };
 		B94FBF64206999130039FC73 /* EmployeeBooksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeBooksViewController.swift; sourceTree = "<group>"; };
+		B94FBF662069B6970039FC73 /* EmployeeAddBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeAddBookViewController.swift; sourceTree = "<group>"; };
+		B94FBF682069B6B20039FC73 /* EmployeeBookFilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeBookFilterViewController.swift; sourceTree = "<group>"; };
 		B96DF0382053445900AE101C /* Library.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Library.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B96DF0542053450A00AE101C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B96DF0562053450A00AE101C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -109,6 +113,8 @@
 			children = (
 				B94FBF62206998FC0039FC73 /* EmployeeBooks.storyboard */,
 				B94FBF64206999130039FC73 /* EmployeeBooksViewController.swift */,
+				B94FBF662069B6970039FC73 /* EmployeeAddBookViewController.swift */,
+				B94FBF682069B6B20039FC73 /* EmployeeBookFilterViewController.swift */,
 			);
 			path = Book;
 			sourceTree = "<group>";
@@ -432,6 +438,8 @@
 				B9E73FF4206852CF00BB5FF7 /* RegisterViewController.swift in Sources */,
 				B94FBF65206999130039FC73 /* EmployeeBooksViewController.swift in Sources */,
 				B9E73FF8206869E300BB5FF7 /* EmployeeTabBarController.swift in Sources */,
+				B94FBF692069B6B20039FC73 /* EmployeeBookFilterViewController.swift in Sources */,
+				B94FBF672069B6970039FC73 /* EmployeeAddBookViewController.swift in Sources */,
 				B9E7400F2068A08B00BB5FF7 /* BookService.swift in Sources */,
 				04AD17E72068562900108858 /* Member.swift in Sources */,
 				B9E7400D20689B4800BB5FF7 /* APIClient.swift in Sources */,
