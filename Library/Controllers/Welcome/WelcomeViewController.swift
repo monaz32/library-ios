@@ -13,10 +13,6 @@ class WelcomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        BookService.sharedService.getBook(isbn: "1000") { (result) in
-            print(result.value?.author)
-        }
     }
     
     @IBAction func employeeAction(_ sender: Any) {

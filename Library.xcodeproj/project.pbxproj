@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04341A28206B02B400A41A5A /* GenreCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04341A27206B02B400A41A5A /* GenreCount.swift */; };
+		04341A2A206B067800A41A5A /* BookAPICallExamples.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04341A29206B067800A41A5A /* BookAPICallExamples.swift */; };
 		04AD17DD20684BCB00108858 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AD17DC20684BCB00108858 /* Event.swift */; };
 		04AD17DF2068504200108858 /* Employee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AD17DE2068504200108858 /* Employee.swift */; };
 		04AD17E12068540B00108858 /* EmployeeWorkedFor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AD17E02068540B00108858 /* EmployeeWorkedFor.swift */; };
@@ -44,6 +46,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		04341A27206B02B400A41A5A /* GenreCount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreCount.swift; sourceTree = "<group>"; };
+		04341A29206B067800A41A5A /* BookAPICallExamples.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BookAPICallExamples.swift; path = Library/Models/BookAPICallExamples.swift; sourceTree = SOURCE_ROOT; };
 		04AD17DC20684BCB00108858 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		04AD17DE2068504200108858 /* Employee.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Employee.swift; sourceTree = "<group>"; };
 		04AD17E02068540B00108858 /* EmployeeWorkedFor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmployeeWorkedFor.swift; sourceTree = "<group>"; };
@@ -196,6 +200,7 @@
 		B9E73FE2206845B100BB5FF7 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				04341A29206B067800A41A5A /* BookAPICallExamples.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -204,6 +209,7 @@
 			isa = PBXGroup;
 			children = (
 				B9E73FEA206849E000BB5FF7 /* Book.swift */,
+				04341A27206B02B400A41A5A /* GenreCount.swift */,
 				04AD17DC20684BCB00108858 /* Event.swift */,
 				04AD17DE2068504200108858 /* Employee.swift */,
 				04AD17E02068540B00108858 /* EmployeeWorkedFor.swift */,
@@ -428,6 +434,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B9E74002206871B100BB5FF7 /* MemberViewController.swift in Sources */,
+				04341A2A206B067800A41A5A /* BookAPICallExamples.swift in Sources */,
 				B9E73FF2206852BA00BB5FF7 /* LoginViewController.swift in Sources */,
 				B9E73FF4206852CF00BB5FF7 /* RegisterViewController.swift in Sources */,
 				B94FBF65206999130039FC73 /* EmployeeBooksViewController.swift in Sources */,
@@ -440,6 +447,7 @@
 				B9E74004206871D500BB5FF7 /* EmployeeViewController.swift in Sources */,
 				04AD17E52068555000108858 /* LibraryBranch.swift in Sources */,
 				04AD17E12068540B00108858 /* EmployeeWorkedFor.swift in Sources */,
+				04341A28206B02B400A41A5A /* GenreCount.swift in Sources */,
 				04AD17E32068546C00108858 /* LibraryBook.swift in Sources */,
 				04AD17E92068570C00108858 /* Rental.swift in Sources */,
 				04AD17EF20685A6400108858 /* Room.swift in Sources */,

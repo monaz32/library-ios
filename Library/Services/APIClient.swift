@@ -15,22 +15,31 @@ enum Router: URLRequestConvertible {
     case getBooks(title: String, author: String, publisher: String, genre:String)
     case addBook(isbn: String, title: String, author: String, publisher: String, genre: String)
     case getBook(isbn: String)
+    case updateBook(isbn: String, title: String, author: String, publisher: String, genre: String)
+    case deleteBook(isbn: String)
+    case getBookGenreCount
 
     var method: HTTPMethod {
         switch self {
         case .addBook, .getBooks:
             return .post
-        case .getBook:
+        case .getBook, .getBookGenreCount:
             return .get
+        case .updateBook:
+            return .put
+        case .deleteBook:
+            return .delete
         }
     }
     
     var path: String {
         switch self {
-        case .addBook, .getBook:
+        case .addBook, .getBook, .updateBook, .deleteBook:
             return "/book"
         case .getBooks:
             return "/book/filter"
+        case .getBookGenreCount:
+            return "/book/genrecount"
         }
     }
     
@@ -49,6 +58,12 @@ enum Router: URLRequestConvertible {
             urlRequest = try JSONEncoding.default.encode(urlRequest, with: ["isbn": isbn, "title": title, "author": author, "publisher": publisher, "genre": genre])
         case .getBook(let isbn):
             urlRequest.url = URL(string: "\(Router.baseURLString)\(path)/\(isbn)")
+        case .updateBook(let isbn, let title, let author, let publisher, let genre):
+            urlRequest = try JSONEncoding.default.encode(urlRequest, with: ["isbn": isbn, "title": title, "author": author, "publisher": publisher, "genre": genre])
+        case .deleteBook(let isbn):
+            urlRequest.url = URL(string: "\(Router.baseURLString)\(path)/\(isbn)")
+        case .getBookGenreCount:
+            urlRequest.url = URL(string: "\(Router.baseURLString)\(path)")
         }
         
         return urlRequest
