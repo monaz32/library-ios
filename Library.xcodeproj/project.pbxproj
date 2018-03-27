@@ -21,6 +21,8 @@
 		B94FBF65206999130039FC73 /* EmployeeBooksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94FBF64206999130039FC73 /* EmployeeBooksViewController.swift */; };
 		B94FBF672069B6970039FC73 /* EmployeeAddBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94FBF662069B6970039FC73 /* EmployeeAddBookViewController.swift */; };
 		B94FBF692069B6B20039FC73 /* EmployeeBookFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94FBF682069B6B20039FC73 /* EmployeeBookFilterViewController.swift */; };
+		B94FBF6C206AD39B0039FC73 /* EmployeeMembers.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B94FBF6B206AD39B0039FC73 /* EmployeeMembers.storyboard */; };
+		B94FBF6E206AD4450039FC73 /* EmployeeMembersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94FBF6D206AD4450039FC73 /* EmployeeMembersViewController.swift */; };
 		B96DF05C2053450A00AE101C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B96DF0542053450A00AE101C /* Assets.xcassets */; };
 		B96DF05D2053450A00AE101C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B96DF0552053450A00AE101C /* LaunchScreen.storyboard */; };
 		B96DF05F2053450A00AE101C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96DF0592053450A00AE101C /* AppDelegate.swift */; };
@@ -63,6 +65,8 @@
 		B94FBF64206999130039FC73 /* EmployeeBooksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeBooksViewController.swift; sourceTree = "<group>"; };
 		B94FBF662069B6970039FC73 /* EmployeeAddBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeAddBookViewController.swift; sourceTree = "<group>"; };
 		B94FBF682069B6B20039FC73 /* EmployeeBookFilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeBookFilterViewController.swift; sourceTree = "<group>"; };
+		B94FBF6B206AD39B0039FC73 /* EmployeeMembers.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EmployeeMembers.storyboard; sourceTree = "<group>"; };
+		B94FBF6D206AD4450039FC73 /* EmployeeMembersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeMembersViewController.swift; sourceTree = "<group>"; };
 		B96DF0382053445900AE101C /* Library.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Library.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B96DF0542053450A00AE101C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B96DF0562053450A00AE101C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -117,6 +121,15 @@
 				B94FBF682069B6B20039FC73 /* EmployeeBookFilterViewController.swift */,
 			);
 			path = Book;
+			sourceTree = "<group>";
+		};
+		B94FBF6A206AD3840039FC73 /* Members */ = {
+			isa = PBXGroup;
+			children = (
+				B94FBF6B206AD39B0039FC73 /* EmployeeMembers.storyboard */,
+				B94FBF6D206AD4450039FC73 /* EmployeeMembersViewController.swift */,
+			);
+			path = Members;
 			sourceTree = "<group>";
 		};
 		B96DF02F2053445800AE101C = {
@@ -247,6 +260,7 @@
 				B9E73FF7206869E300BB5FF7 /* EmployeeTabBarController.swift */,
 				B9E740052068743600BB5FF7 /* Event */,
 				B94FBF61206998E20039FC73 /* Book */,
+				B94FBF6A206AD3840039FC73 /* Members */,
 			);
 			path = Employee;
 			sourceTree = "<group>";
@@ -308,7 +322,6 @@
 				B96DF0352053445900AE101C /* Frameworks */,
 				B96DF0362053445900AE101C /* Resources */,
 				CFF0987CE1E585D282B456F3 /* [CP] Embed Pods Frameworks */,
-				BEF21865D2C33E526E2073E8 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -360,6 +373,7 @@
 			files = (
 				B9E73FEE2068515E00BB5FF7 /* Employee.storyboard in Resources */,
 				B9E740092068749F00BB5FF7 /* Events.storyboard in Resources */,
+				B94FBF6C206AD39B0039FC73 /* EmployeeMembers.storyboard in Resources */,
 				B96DF0602053450A00AE101C /* Info.plist in Resources */,
 				B9E73FF02068516500BB5FF7 /* Member.storyboard in Resources */,
 				B96DF0652053472C00AE101C /* Welcome.storyboard in Resources */,
@@ -389,21 +403,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		BEF21865D2C33E526E2073E8 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Library/Pods-Library-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		CFF0987CE1E585D282B456F3 /* [CP] Embed Pods Frameworks */ = {
@@ -450,6 +449,7 @@
 				04AD17E12068540B00108858 /* EmployeeWorkedFor.swift in Sources */,
 				04AD17E32068546C00108858 /* LibraryBook.swift in Sources */,
 				04AD17E92068570C00108858 /* Rental.swift in Sources */,
+				B94FBF6E206AD4450039FC73 /* EmployeeMembersViewController.swift in Sources */,
 				04AD17EF20685A6400108858 /* Room.swift in Sources */,
 				04AD17ED2068596500108858 /* Schedule.swift in Sources */,
 				04AD17EB206857D900108858 /* Review.swift in Sources */,
