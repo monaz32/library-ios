@@ -11,7 +11,7 @@ import ObjectMapper
 
 class ReviewDisplayed: Mappable {
     var title: String?
-    var rating: String?
+    var rating: Int?
     var review: String?
     var name: String?
     

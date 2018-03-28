@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="LibraryBookTableViewCell" customModule="Library" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="120"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Book ID:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YbJ-vu-6Ud">
+                    <rect key="frame" x="32" y="16" width="311" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Branch Number:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TgF-wO-C7t">
+                    <rect key="frame" x="32" y="53" width="311" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hsm-Yr-IwO">
+                    <rect key="frame" x="32" y="90" width="311" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <accessibility key="accessibilityConfiguration" identifier="LibraryBookTableViewCell"/>
+            <constraints>
+                <constraint firstItem="YbJ-vu-6Ud" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="16" id="69H-b8-6eb"/>
+                <constraint firstItem="Hsm-Yr-IwO" firstAttribute="top" secondItem="TgF-wO-C7t" secondAttribute="bottom" constant="16" id="ISg-HM-xFR"/>
+                <constraint firstItem="TgF-wO-C7t" firstAttribute="top" secondItem="YbJ-vu-6Ud" secondAttribute="bottom" constant="16" id="K7q-UL-d2H"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="TgF-wO-C7t" secondAttribute="trailing" constant="32" id="LhV-v3-OoM"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Hsm-Yr-IwO" secondAttribute="trailing" constant="32" id="aNw-cZ-ibF"/>
+                <constraint firstItem="TgF-wO-C7t" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="32" id="dwl-6p-FWJ"/>
+                <constraint firstItem="YbJ-vu-6Ud" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="32" id="e5F-sd-6bW"/>
+                <constraint firstItem="Hsm-Yr-IwO" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="32" id="jBX-pr-3OK"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="YbJ-vu-6Ud" secondAttribute="trailing" constant="32" id="rAG-9T-nS5"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="Hsm-Yr-IwO" secondAttribute="bottom" constant="9" id="rT8-EC-DX2"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="bookIDLabel" destination="YbJ-vu-6Ud" id="ENX-Tj-bCl"/>
+                <outlet property="branchNumLabel" destination="TgF-wO-C7t" id="NYL-is-KqQ"/>
+                <outlet property="statusLabel" destination="Hsm-Yr-IwO" id="Lnd-NT-yGK"/>
+            </connections>
+            <point key="canvasLocation" x="33.5" y="86"/>
+        </view>
+    </objects>
+</document>

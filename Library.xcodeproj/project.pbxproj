@@ -45,8 +45,12 @@
 		B96888D9206B0C2F00DC03C5 /* MemberService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96888D8206B0C2F00DC03C5 /* MemberService.swift */; };
 		B96888DB206B361C00DC03C5 /* MemberBookFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96888DA206B361C00DC03C5 /* MemberBookFilterViewController.swift */; };
 		B96888DD206B371300DC03C5 /* BookFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96888DC206B371300DC03C5 /* BookFilter.swift */; };
-		B96888DF206C075100DC03C5 /* MemberBooksTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96888DE206C075100DC03C5 /* MemberBooksTableViewCell.swift */; };
-		B96888E2206C079100DC03C5 /* MemberBooksTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B96888E1206C079100DC03C5 /* MemberBooksTableViewCell.xib */; };
+		B96888E8206C237A00DC03C5 /* MemberBooksTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B96888E6206C237A00DC03C5 /* MemberBooksTableViewCell.xib */; };
+		B96888E9206C237A00DC03C5 /* MemberBooksTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96888E7206C237A00DC03C5 /* MemberBooksTableViewCell.swift */; };
+		B96888EB206C238A00DC03C5 /* LibraryBookTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B96888EA206C238A00DC03C5 /* LibraryBookTableViewCell.xib */; };
+		B96888ED206C239500DC03C5 /* LibraryBookTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96888EC206C239500DC03C5 /* LibraryBookTableViewCell.swift */; };
+		B96888EF206C239F00DC03C5 /* ReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96888EE206C239F00DC03C5 /* ReviewTableViewCell.swift */; };
+		B96888F1206C23AF00DC03C5 /* ReviewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B96888F0206C23AF00DC03C5 /* ReviewTableViewCell.xib */; };
 		B96DF05C2053450A00AE101C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B96DF0542053450A00AE101C /* Assets.xcassets */; };
 		B96DF05D2053450A00AE101C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B96DF0552053450A00AE101C /* LaunchScreen.storyboard */; };
 		B96DF05F2053450A00AE101C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96DF0592053450A00AE101C /* AppDelegate.swift */; };
@@ -112,8 +116,12 @@
 		B96888D8206B0C2F00DC03C5 /* MemberService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberService.swift; sourceTree = "<group>"; };
 		B96888DA206B361C00DC03C5 /* MemberBookFilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberBookFilterViewController.swift; sourceTree = "<group>"; };
 		B96888DC206B371300DC03C5 /* BookFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookFilter.swift; sourceTree = "<group>"; };
-		B96888DE206C075100DC03C5 /* MemberBooksTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberBooksTableViewCell.swift; sourceTree = "<group>"; };
-		B96888E1206C079100DC03C5 /* MemberBooksTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MemberBooksTableViewCell.xib; sourceTree = "<group>"; };
+		B96888E6206C237A00DC03C5 /* MemberBooksTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MemberBooksTableViewCell.xib; sourceTree = "<group>"; };
+		B96888E7206C237A00DC03C5 /* MemberBooksTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemberBooksTableViewCell.swift; sourceTree = "<group>"; };
+		B96888EA206C238A00DC03C5 /* LibraryBookTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LibraryBookTableViewCell.xib; sourceTree = "<group>"; };
+		B96888EC206C239500DC03C5 /* LibraryBookTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryBookTableViewCell.swift; sourceTree = "<group>"; };
+		B96888EE206C239F00DC03C5 /* ReviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewTableViewCell.swift; sourceTree = "<group>"; };
+		B96888F0206C23AF00DC03C5 /* ReviewTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReviewTableViewCell.xib; sourceTree = "<group>"; };
 		B96DF0382053445900AE101C /* Library.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Library.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B96DF0542053450A00AE101C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B96DF0562053450A00AE101C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -200,13 +208,31 @@
 			path = Room;
 			sourceTree = "<group>";
 		};
-		B96888E0206C076E00DC03C5 /* MemberBooks */ = {
+		B96888E3206C237A00DC03C5 /* ReviewTableViewCell */ = {
 			isa = PBXGroup;
 			children = (
-				B96888DE206C075100DC03C5 /* MemberBooksTableViewCell.swift */,
-				B96888E1206C079100DC03C5 /* MemberBooksTableViewCell.xib */,
+				B96888F0206C23AF00DC03C5 /* ReviewTableViewCell.xib */,
+				B96888EE206C239F00DC03C5 /* ReviewTableViewCell.swift */,
 			);
-			path = MemberBooks;
+			path = ReviewTableViewCell;
+			sourceTree = "<group>";
+		};
+		B96888E4206C237A00DC03C5 /* LibraryBookTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				B96888EA206C238A00DC03C5 /* LibraryBookTableViewCell.xib */,
+				B96888EC206C239500DC03C5 /* LibraryBookTableViewCell.swift */,
+			);
+			path = LibraryBookTableViewCell;
+			sourceTree = "<group>";
+		};
+		B96888E5206C237A00DC03C5 /* MemberBooksTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				B96888E6206C237A00DC03C5 /* MemberBooksTableViewCell.xib */,
+				B96888E7206C237A00DC03C5 /* MemberBooksTableViewCell.swift */,
+			);
+			path = MemberBooksTableViewCell;
 			sourceTree = "<group>";
 		};
 		B96DF02F2053445800AE101C = {
@@ -278,7 +304,9 @@
 		B9E73FE0206845B100BB5FF7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				B96888E0206C076E00DC03C5 /* MemberBooks */,
+				B96888E4206C237A00DC03C5 /* LibraryBookTableViewCell */,
+				B96888E5206C237A00DC03C5 /* MemberBooksTableViewCell */,
+				B96888E3206C237A00DC03C5 /* ReviewTableViewCell */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -466,17 +494,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B96888EB206C238A00DC03C5 /* LibraryBookTableViewCell.xib in Resources */,
 				B94FBF71206AEC830039FC73 /* MemberBooks.storyboard in Resources */,
 				B9E73FEE2068515E00BB5FF7 /* Employee.storyboard in Resources */,
+				B96888F1206C23AF00DC03C5 /* ReviewTableViewCell.xib in Resources */,
 				B9E740092068749F00BB5FF7 /* Events.storyboard in Resources */,
 				B94FBF6C206AD39B0039FC73 /* EmployeeMembers.storyboard in Resources */,
-				B96888E2206C079100DC03C5 /* MemberBooksTableViewCell.xib in Resources */,
 				B9E73FF02068516500BB5FF7 /* Member.storyboard in Resources */,
 				B96DF0652053472C00AE101C /* Welcome.storyboard in Resources */,
 				B96DF05C2053450A00AE101C /* Assets.xcassets in Resources */,
 				B96DF05D2053450A00AE101C /* LaunchScreen.storyboard in Resources */,
 				B96888D6206B0B5B00DC03C5 /* MemberRoom.storyboard in Resources */,
 				B94FBF63206998FD0039FC73 /* EmployeeBooks.storyboard in Resources */,
+				B96888E8206C237A00DC03C5 /* MemberBooksTableViewCell.xib in Resources */,
 				B9E73FFE206870BF00BB5FF7 /* Account.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -531,6 +561,7 @@
 			files = (
 				04341A40206BA35500A41A5A /* ReviewDisplayed.swift in Sources */,
 				04341A3A206B9E5600A41A5A /* RatingService.swift in Sources */,
+				B96888E9206C237A00DC03C5 /* MemberBooksTableViewCell.swift in Sources */,
 				04341A2A206B067800A41A5A /* BookAPICallExamples.swift in Sources */,
 				B9E74002206871B100BB5FF7 /* MemberAccountViewController.swift in Sources */,
 				B9E73FF2206852BA00BB5FF7 /* LoginViewController.swift in Sources */,
@@ -563,9 +594,9 @@
 				04AD17ED2068596500108858 /* Schedule.swift in Sources */,
 				B96888D9206B0C2F00DC03C5 /* MemberService.swift in Sources */,
 				04AD17EB206857D900108858 /* Review.swift in Sources */,
-				B96888DF206C075100DC03C5 /* MemberBooksTableViewCell.swift in Sources */,
 				B96DF05F2053450A00AE101C /* AppDelegate.swift in Sources */,
 				B96888DB206B361C00DC03C5 /* MemberBookFilterViewController.swift in Sources */,
+				B96888ED206C239500DC03C5 /* LibraryBookTableViewCell.swift in Sources */,
 				B96DF0672053474C00AE101C /* WelcomeViewController.swift in Sources */,
 				B9E7400B2068787900BB5FF7 /* CreateEventViewController.swift in Sources */,
 				04AD17DF2068504200108858 /* Employee.swift in Sources */,
@@ -575,6 +606,7 @@
 				B9E73FF6206869D200BB5FF7 /* MemberTabBarController.swift in Sources */,
 				04341A2E206B198700A41A5A /* EmployeeAPICallExamples.swift in Sources */,
 				04341A38206B8FBF00A41A5A /* LibraryBookService.swift in Sources */,
+				B96888EF206C239F00DC03C5 /* ReviewTableViewCell.swift in Sources */,
 				04341A34206B7C7700A41A5A /* EventWithLocation.swift in Sources */,
 				B94FBF73206AED2A0039FC73 /* MemberBooksViewController.swift in Sources */,
 			);

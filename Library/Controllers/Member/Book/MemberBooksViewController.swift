@@ -37,9 +37,15 @@ class MemberBooksViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         BookService.sharedService.getBooks(title: bookFilter.title, author: bookFilter.author, publisher: bookFilter.publisher, genre: bookFilter.genre) { (result) in
-            if let books = result.value {
+            if result.isSuccess, let books = result.value{
                 self.books = books
                 self.tableView.reloadData()
+            } else {
+                let alertController = UIAlertController(title: "Error 422", message: "Unprocessable Entity", preferredStyle: .alert)
+                let action = UIAlertAction(title: "OK", style: .default) { (action:UIAlertAction) in
+                }
+                alertController.addAction(action)
+                self.present(alertController, animated: true, completion: nil)
             }
         }
     }

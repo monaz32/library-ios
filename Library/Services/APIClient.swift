@@ -58,7 +58,7 @@ enum Router: URLRequestConvertible {
     
     // Library Book
     case addLibraryBook(isbn: String, branchNum: Int)
-    case getLibraryBooks(branchNum: Int, status: Bool)
+    case getLibraryBooks(isbn: String)
     case getLibraryBook(id: Int)
     case deleteLibraryBook(id: Int)
     
@@ -240,9 +240,8 @@ enum Router: URLRequestConvertible {
         // Library Book
         case .addLibraryBook(let isbn, let branchNum):
             urlRequest = try JSONEncoding.default.encode(urlRequest, with: ["isbn": isbn, "branchNum": branchNum])
-        case .getLibraryBooks(let branchNum, let status):
-            status ? print("true\n") : print("false")
-            urlRequest = try JSONEncoding.default.encode(urlRequest, with: ["branchNum": branchNum, "status": status ? 1 : 0])
+        case .getLibraryBooks(let isbn):
+            urlRequest = try JSONEncoding.default.encode(urlRequest, with: ["isbn": isbn])
         case .getLibraryBook(let id), .deleteLibraryBook(let id):
             urlRequest.url = URL(string: "\(Router.baseURLString)\(path)/\(id)")
             

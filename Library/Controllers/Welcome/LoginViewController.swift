@@ -64,7 +64,11 @@ class LoginViewController: UIViewController {
                 let appDelegate = UIApplication.shared.delegate as! AppDelegate
                 appDelegate.window?.rootViewController = vc
             } else {
-                print("Login Failed")
+                let alertController = UIAlertController(title: "Login Failed", message: "Check email or password", preferredStyle: .alert)
+                let action = UIAlertAction(title: "OK", style: .default) { (action:UIAlertAction) in
+                }
+                alertController.addAction(action)
+                self.present(alertController, animated: true, completion: nil)
             }
         }
     }

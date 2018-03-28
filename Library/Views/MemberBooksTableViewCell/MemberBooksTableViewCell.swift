@@ -11,6 +11,8 @@ import UIKit
 class MemberBooksTableViewCell: UITableViewCell {
     static let identifier = "MemberBooksTableViewCell"
 
+    var book: Book!
+    
     @IBOutlet var titleAuthorLabel: UILabel!
     
     override func awakeFromNib() {
@@ -18,6 +20,7 @@ class MemberBooksTableViewCell: UITableViewCell {
     }
     
     func config(book: Book) {
+        self.book = book
         if let title = book.title, let author = book.author {
             titleAuthorLabel.text = "\(title) by \(author)"
         }
