@@ -31,6 +31,7 @@
 		B94FBF77206B058B0039FC73 /* MemberBookReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94FBF76206B058B0039FC73 /* MemberBookReviewViewController.swift */; };
 		B96888D6206B0B5B00DC03C5 /* MemberRoom.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B96888D4206B0B5B00DC03C5 /* MemberRoom.storyboard */; };
 		B96888D7206B0B5B00DC03C5 /* MemberRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96888D5206B0B5B00DC03C5 /* MemberRoomViewController.swift */; };
+		B96888D9206B0C2F00DC03C5 /* MemberService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96888D8206B0C2F00DC03C5 /* MemberService.swift */; };
 		B96DF05C2053450A00AE101C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B96DF0542053450A00AE101C /* Assets.xcassets */; };
 		B96DF05D2053450A00AE101C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B96DF0552053450A00AE101C /* LaunchScreen.storyboard */; };
 		B96DF05F2053450A00AE101C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96DF0592053450A00AE101C /* AppDelegate.swift */; };
@@ -82,6 +83,7 @@
 		B94FBF76206B058B0039FC73 /* MemberBookReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberBookReviewViewController.swift; sourceTree = "<group>"; };
 		B96888D4206B0B5B00DC03C5 /* MemberRoom.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MemberRoom.storyboard; sourceTree = "<group>"; };
 		B96888D5206B0B5B00DC03C5 /* MemberRoomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemberRoomViewController.swift; sourceTree = "<group>"; };
+		B96888D8206B0C2F00DC03C5 /* MemberService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberService.swift; sourceTree = "<group>"; };
 		B96DF0382053445900AE101C /* Library.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Library.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B96DF0542053450A00AE101C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B96DF0562053450A00AE101C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -286,6 +288,7 @@
 			children = (
 				B9E7400C20689B4800BB5FF7 /* APIClient.swift */,
 				B9E7400E2068A08B00BB5FF7 /* BookService.swift */,
+				B96888D8206B0C2F00DC03C5 /* MemberService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -513,6 +516,7 @@
 				B94FBF6E206AD4450039FC73 /* EmployeeMembersViewController.swift in Sources */,
 				04AD17EF20685A6400108858 /* Room.swift in Sources */,
 				04AD17ED2068596500108858 /* Schedule.swift in Sources */,
+				B96888D9206B0C2F00DC03C5 /* MemberService.swift in Sources */,
 				04AD17EB206857D900108858 /* Review.swift in Sources */,
 				B96DF05F2053450A00AE101C /* AppDelegate.swift in Sources */,
 				B96DF0672053474C00AE101C /* WelcomeViewController.swift in Sources */,

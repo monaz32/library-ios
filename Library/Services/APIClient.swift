@@ -12,6 +12,7 @@ enum Router: URLRequestConvertible {
     
     static let baseURLString = "http://localhost:8080"
     
+    //Book
     case getBooks(title: String, author: String, publisher: String, genre:String)
     case addBook(isbn: String, title: String, author: String, publisher: String, genre: String)
     case getBook(isbn: String)
@@ -19,13 +20,21 @@ enum Router: URLRequestConvertible {
     case deleteBook(isbn: String)
     case getBookGenreCount
 
+    //Member
+    case getMembers
+    case addMember(phoneNum: String, email: String, name: String, password: String)
+    case getMember(id: Int)
+    case updateMember(id: Int, phoneNum: String, fines: String, password: String)
+    case memberLogin(email: String, password: String)
+    case calcFines
+
     var method: HTTPMethod {
         switch self {
-        case .addBook, .getBooks:
+        case .addBook, .getBooks, .addMember, .memberLogin:
             return .post
-        case .getBook, .getBookGenreCount:
+        case .getBook, .getBookGenreCount, .getMembers, .getMember:
             return .get
-        case .updateBook:
+        case .updateBook, .updateMember, .calcFines:
             return .put
         case .deleteBook:
             return .delete
@@ -34,12 +43,23 @@ enum Router: URLRequestConvertible {
     
     var path: String {
         switch self {
+        //Book
         case .addBook, .getBook, .updateBook, .deleteBook:
             return "/book"
         case .getBooks:
             return "/book/filter"
         case .getBookGenreCount:
             return "/book/genrecount"
+            
+        //Member
+        case .getMembers, .addMember:
+            return "/member"
+        case .getMember, .updateMember:
+            return "/member/id"
+        case .memberLogin:
+            return "/member/login"
+        case .calcFines:
+            return "/member/fines"
         }
     }
     
@@ -52,6 +72,7 @@ enum Router: URLRequestConvertible {
         urlRequest.httpMethod = method.rawValue
         
         switch self {
+        // Book
         case .getBooks(let title, let author, let publisher, let genre):
             urlRequest = try JSONEncoding.default.encode(urlRequest, with: ["title": title, "author": author, "publisher": publisher, "genre": genre])
         case .addBook(let isbn, let title, let author, let publisher, let genre):
@@ -64,6 +85,19 @@ enum Router: URLRequestConvertible {
             urlRequest.url = URL(string: "\(Router.baseURLString)\(path)/\(isbn)")
         case .getBookGenreCount:
             urlRequest.url = URL(string: "\(Router.baseURLString)\(path)")
+            
+        // Member
+        case .addMember(let phoneNum, let email, let name, let password):
+            urlRequest = try JSONEncoding.default.encode(urlRequest, with: ["phoneNum": phoneNum, "email": email, "name": name, "password": password])
+        case .getMember(let id):
+            urlRequest.url = URL(string: "\(Router.baseURLString)\(path)/\(id)")
+        case .updateMember(let id, let phoneNum, let fines, let password):
+            urlRequest = try JSONEncoding.default.encode(urlRequest, with: ["id": id, "phoneNum": phoneNum, "fines": fines, "password": password])
+        case .memberLogin(let email, let password):
+            urlRequest = try JSONEncoding.default.encode(urlRequest, with: ["email": email, "password": password])
+            
+        default:
+            break
         }
         
         return urlRequest
