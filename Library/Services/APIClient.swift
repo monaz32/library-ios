@@ -66,6 +66,10 @@ enum Router: URLRequestConvertible {
     case getMAXRating
     case getMINRating
     case getAVRRating(isbn: String)
+    
+    // Review
+    case getReviews(isbn: String)
+    case addReview(isbn: String, accountID: Int, rating: Int, review: String)
 
     var method: HTTPMethod {
         switch self {
@@ -74,7 +78,8 @@ enum Router: URLRequestConvertible {
              .addMember, .memberLogin,
              .addEvent,
              .addRental,
-             .addLibraryBook, .getLibraryBooks:
+             .addLibraryBook, .getLibraryBooks,
+             .addReview:
             return .post
             
         case .getBook, .getBookGenreCount,
@@ -83,7 +88,8 @@ enum Router: URLRequestConvertible {
              .getEvents, .getCurrentEvents, .getPastEvents, .getEventFromID, .getEventsWithLocation, .getEventsWithLocationFromBranchName,
              .getCurrentRentalsOfMember,
              .getLibraryBook,
-             .getMAXRating, .getMINRating, .getAVRRating:
+             .getMAXRating, .getMINRating, .getAVRRating,
+             .getReviews:
             return .get
             
         case .updateBook,
@@ -160,6 +166,10 @@ enum Router: URLRequestConvertible {
             return "/rating/min"
         case .getAVRRating:
             return "/rating"
+            
+        // Review
+        case .getReviews, .addReview:
+            return "/review"
         }
     }
     
@@ -238,6 +248,13 @@ enum Router: URLRequestConvertible {
             
         // Rating
         case .getAVRRating(let isbn):
+            urlRequest.url = URL(string: "\(Router.baseURLString)\(path)/\(isbn)")
+            
+        // Review
+        case .getReviews(let isbn):
+            urlRequest.url = URL(string: "\(Router.baseURLString)\(path)/\(isbn)")
+        case .addReview(let isbn, let accountID, let rating, let review):
+            urlRequest = try JSONEncoding.default.encode(urlRequest, with: ["accountID": accountID, "rating": rating, "review": review])
             urlRequest.url = URL(string: "\(Router.baseURLString)\(path)/\(isbn)")
             
         default:
