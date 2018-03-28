@@ -13,6 +13,38 @@ import ObjectMapper
 class EmployeeService {
     static let sharedService = EmployeeService()
     
+    // get details on all employees
+    func getEmployees(completion: @escaping (Result<[Employee]>) -> Void) {
+        APIClient.sharedClient.request(Router.getEmployees) { (response) in
+            switch response {
+            case .success(let result):
+                if let json = result as? [[String: Any]] {
+                    let employees = Mapper<Employee>().mapArray(JSONArray: json)
+                    completion(Result.success(employees))
+                }
+                else {
+                    completion(Result.failure(ServiceError.CastFailure("Result casting failed.")))
+                }
+            case .failure(let error):
+                completion(Result.failure(error))
+            }
+        }
+    }
+    
+    // add an employee
+    func addEmployee(email: String, sin: String, name: String, address: String, phoneNumber: String, branchNumber: Int,
+                     adminStatus: Bool, password: String, completion: @escaping (Result<Bool>) -> Void) {
+        APIClient.sharedClient.request(Router.addEmployee(email: email, sin: sin, name: name, address: address, phoneNumber: phoneNumber, branchNumber: branchNumber, adminStatus: adminStatus, password: password)) { (response) in
+            switch response {
+            case .success:
+                completion(Result.success(true))
+            case .failure(let error):
+                completion(Result.failure(error))
+            }
+        }
+    }
+    
+    // employee login
     func employeeLogin(email: String, password: String, completion: @escaping (Result<Bool>) -> Void) {
         APIClient.sharedClient.request(Router.employeeLogin(email: email, password: password)) { (response) in
             switch response {

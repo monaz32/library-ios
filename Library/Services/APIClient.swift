@@ -25,14 +25,18 @@ enum Router: URLRequestConvertible {
     case getBookGenreCount
     
     // Employee
+    case getEmployees
+    case addEmployee(email: String, sin: String, name: String, address: String, phoneNumber: String, branchNumber: Int,
+        adminStatus: Bool, password: String)
     case employeeLogin(email: String, password: String)
 
     var method: HTTPMethod {
         switch self {
         case .addBook, .getBooks,
-             .employeeLogin:
+             .addEmployee, .employeeLogin:
             return .post
-        case .getBook, .getBookGenreCount:
+        case .getBook, .getBookGenreCount,
+             .getEmployees:
             return .get
         case .updateBook:
             return .put
@@ -52,6 +56,8 @@ enum Router: URLRequestConvertible {
             return "/book/genrecount"
             
         // Employee
+        case .getEmployees, .addEmployee:
+            return "/employee"
         case .employeeLogin:
             return "/employee/login"
         }
@@ -81,6 +87,11 @@ enum Router: URLRequestConvertible {
             urlRequest.url = URL(string: "\(Router.baseURLString)\(path)")
             
         // Employee
+        case .getEmployees:
+            urlRequest.url = URL(string: "\(Router.baseURLString)\(path)")
+        case .addEmployee(let email, let sin, let name, let address, let phoneNumber, let branchNumber, let adminStatus, let password):
+            urlRequest = try JSONEncoding.default.encode(urlRequest, with: ["email": email, "sin": sin, "name": name, "address": address, "phoneNum": phoneNumber, "branch": branchNumber, "admin": adminStatus,
+                "password": password])
         case .employeeLogin(let email, let password):
             urlRequest = try JSONEncoding.default.encode(urlRequest, with: ["email": email, "password": password])
         }
