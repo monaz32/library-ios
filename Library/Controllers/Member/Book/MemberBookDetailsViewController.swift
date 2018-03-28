@@ -36,9 +36,14 @@ class MemberBookDetailsViewController: UIViewController {
             titleLabel.text = "Title: \(title)"
             genreLabel.text = "Genre: \(genre)"
             isbnLabel.text = "ISBN: \(isbn)"
-        }
-    
         
+            RatingService.sharedService.getAVRRating(isbn: isbn, completion: { (result) in
+                if let averageRating = result.value {
+                    self.averageRatingLabel.text = "Average Rating: \(averageRating)"
+                }
+            })
+    
+        }
     }
     
     @IBAction func addReview(_ sender: Any) {
