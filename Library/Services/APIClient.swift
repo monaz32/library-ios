@@ -29,6 +29,8 @@ enum Router: URLRequestConvertible {
     case addEmployee(email: String, sin: String, name: String, address: String, phoneNumber: String, branchNumber: Int,
         adminStatus: Bool, password: String)
     case getEmployee(id: String)
+    case updateEmployee(id: String, email: String, address: String, phoneNumber: String, password: String)
+    case getEmployeeFromName(name: String)
     case employeeLogin(email: String, password: String)
 
     //Member
@@ -45,13 +47,17 @@ enum Router: URLRequestConvertible {
              .addEmployee, .employeeLogin,
              .addMember, .memberLogin:
             return .post
+            
         case .getBook, .getBookGenreCount,
-             .getEmployees, .getEmployee,
+             .getEmployees, .getEmployee, .getEmployeeFromName,
              .getMembers, .getMember:
             return .get
+            
         case .updateBook,
-             .updateMember, .calcFines:
+             .updateMember, .calcFines,
+             .updateEmployee:
             return .put
+            
         case .deleteBook:
             return .delete
         }
@@ -66,9 +72,8 @@ enum Router: URLRequestConvertible {
             return "/book/filter"
         case .getBookGenreCount:
             return "/book/genrecount"
-            
 
-        //Member
+        // Member
         case .getMembers, .addMember:
             return "/member"
         case .getMember, .updateMember:
@@ -83,8 +88,10 @@ enum Router: URLRequestConvertible {
             return "/employee"
         case .employeeLogin:
             return "/employee/login"
-        case .getEmployee:
+        case .getEmployee, .updateEmployee:
             return "/employee/id"
+        case .getEmployeeFromName:
+            return "/employee/name"
         }
     }
     
@@ -129,6 +136,11 @@ enum Router: URLRequestConvertible {
                 "password": password])
         case .getEmployee(let id):
             urlRequest.url = URL(string: "\(Router.baseURLString)\(path)/\(id)")
+        case .updateEmployee(let id, let email, let address, let phoneNumber, let password):
+            urlRequest = try JSONEncoding.default.encode(urlRequest, with: ["email": email, "address": address, "phoneNum": phoneNumber, "password": password])
+            urlRequest.url = URL(string: "\(Router.baseURLString)\(path)/\(id)")
+        case .getEmployeeFromName(let name):
+            urlRequest.url = URL(string: "\(Router.baseURLString)\(path)/\(name)")
         case .employeeLogin(let email, let password):
             urlRequest = try JSONEncoding.default.encode(urlRequest, with: ["email": email, "password": password])
         default:
@@ -186,5 +198,16 @@ class APIClient {
                 }
         }
         )
+    }
+    
+    
+    // Utilities
+    func checkSuccessHandler(response: Result<Any>, completion: @escaping (Result<Bool>) -> Void) {
+        switch response {
+        case .success:
+            completion(Result.success(true))
+        case .failure(let error):
+            completion(Result.failure(error))
+        }
     }
 }

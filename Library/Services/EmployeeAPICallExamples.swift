@@ -46,6 +46,33 @@ class EmployeeAPICallExamples {
         }
     }
     
+    // update an employee
+    func updateEmployee() {
+        EmployeeService.sharedService.updateEmployee(id: "591925", email: "john.smith@library.com", address: "83742 Main St", phoneNumber: "6045555432", password: "cs304") { (result) in
+            switch result {
+            case .success:
+                print("updateEmployee success")
+            case .failure:
+                print("updateEmployee failure")
+            }
+        }
+    }
+    
+    // get information on employees with specified name
+    func getEmployeeFromName() {
+        EmployeeService.sharedService.getEmployeeFromName(name: "lee") { (result) in
+            switch result {
+            case .success:
+                print("getEmployeeFromName success")
+                
+                let employees = result.value!
+                print(employees[0].name)
+            case .failure:
+                print("getEmployeeFromName failure")
+            }
+        }
+    }
+    
     // employee login
     func employeeLogin() {
         EmployeeService.sharedService.employeeLogin(email: "h.ashcroft@library.com", password: "cs304") { (result) in
