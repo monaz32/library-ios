@@ -32,9 +32,11 @@ class MemberBookDetailsViewController: UIViewController {
     }
     
     private func setup() {
-        titleLabel.text = book.title
-        genreLabel.text = book.genre
-        isbnLabel.text = book.isbn
+        if let title = book.title, let genre = book.genre, let isbn = book.isbn {
+            titleLabel.text = "Title: \(title)"
+            genreLabel.text = "Genre: \(genre)"
+            isbnLabel.text = "ISBN: \(isbn)"
+        }
     
         
     }
