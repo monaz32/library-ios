@@ -8,6 +8,10 @@
 
 import Alamofire
 
+enum ServiceError: Error {
+    case CastFailure(String)
+}
+
 enum Router: URLRequestConvertible {
     
     static let baseURLString = "http://localhost:8080"
@@ -19,6 +23,9 @@ enum Router: URLRequestConvertible {
     case updateBook(isbn: String, title: String, author: String, publisher: String, genre: String)
     case deleteBook(isbn: String)
     case getBookGenreCount
+    
+    // Employee
+    case employeeLogin(email: String, password: String)
 
     //Member
     case getMembers
@@ -30,11 +37,15 @@ enum Router: URLRequestConvertible {
 
     var method: HTTPMethod {
         switch self {
-        case .addBook, .getBooks, .addMember, .memberLogin:
+        case .addBook, .getBooks,
+             .employeeLogin,
+             .addMember, .memberLogin:
             return .post
-        case .getBook, .getBookGenreCount, .getMembers, .getMember:
+        case .getBook, .getBookGenreCount,
+            .getMembers, .getMember:
             return .get
-        case .updateBook, .updateMember, .calcFines:
+        case .updateBook,
+             .updateMember, .calcFines:
             return .put
         case .deleteBook:
             return .delete
@@ -43,7 +54,7 @@ enum Router: URLRequestConvertible {
     
     var path: String {
         switch self {
-        //Book
+        // Book
         case .addBook, .getBook, .updateBook, .deleteBook:
             return "/book"
         case .getBooks:
@@ -51,6 +62,7 @@ enum Router: URLRequestConvertible {
         case .getBookGenreCount:
             return "/book/genrecount"
             
+
         //Member
         case .getMembers, .addMember:
             return "/member"
@@ -60,6 +72,10 @@ enum Router: URLRequestConvertible {
             return "/member/login"
         case .calcFines:
             return "/member/fines"
+
+        // Employee
+        case .employeeLogin:
+            return "/employee/login"
         }
     }
     
@@ -95,7 +111,10 @@ enum Router: URLRequestConvertible {
             urlRequest = try JSONEncoding.default.encode(urlRequest, with: ["id": id, "phoneNum": phoneNum, "fines": fines, "password": password])
         case .memberLogin(let email, let password):
             urlRequest = try JSONEncoding.default.encode(urlRequest, with: ["email": email, "password": password])
-            
+
+        // Employee
+        case .employeeLogin(let email, let password):
+            urlRequest = try JSONEncoding.default.encode(urlRequest, with: ["email": email, "password": password])
         default:
             break
         }
