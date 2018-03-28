@@ -16,7 +16,7 @@ enum Router: URLRequestConvertible {
     
     static let baseURLString = "http://localhost:8080"
     
-    // Book
+    //Book
     case getBooks(title: String, author: String, publisher: String, genre:String)
     case addBook(isbn: String, title: String, author: String, publisher: String, genre: String)
     case getBook(isbn: String)
@@ -30,15 +30,26 @@ enum Router: URLRequestConvertible {
         adminStatus: Bool, password: String)
     case employeeLogin(email: String, password: String)
 
+    //Member
+    case getMembers
+    case addMember(phoneNum: String, email: String, name: String, password: String)
+    case getMember(id: Int)
+    case updateMember(id: Int, phoneNum: String, fines: String, password: String)
+    case memberLogin(email: String, password: String)
+    case calcFines
+
     var method: HTTPMethod {
         switch self {
         case .addBook, .getBooks,
-             .addEmployee, .employeeLogin:
+             .addEmployee, .employeeLogin,
+             .addMember, .memberLogin:
             return .post
         case .getBook, .getBookGenreCount,
-             .getEmployees:
+            .getMembers, .getMember,
+            .getEmployees:
             return .get
-        case .updateBook:
+        case .updateBook,
+             .updateMember, .calcFines:
             return .put
         case .deleteBook:
             return .delete
@@ -55,6 +66,17 @@ enum Router: URLRequestConvertible {
         case .getBookGenreCount:
             return "/book/genrecount"
             
+
+        //Member
+        case .getMembers, .addMember:
+            return "/member"
+        case .getMember, .updateMember:
+            return "/member/id"
+        case .memberLogin:
+            return "/member/login"
+        case .calcFines:
+            return "/member/fines"
+
         // Employee
         case .getEmployees, .addEmployee:
             return "/employee"
@@ -86,6 +108,16 @@ enum Router: URLRequestConvertible {
         case .getBookGenreCount:
             urlRequest.url = URL(string: "\(Router.baseURLString)\(path)")
             
+        // Member
+        case .addMember(let phoneNum, let email, let name, let password):
+            urlRequest = try JSONEncoding.default.encode(urlRequest, with: ["phoneNum": phoneNum, "email": email, "name": name, "password": password])
+        case .getMember(let id):
+            urlRequest.url = URL(string: "\(Router.baseURLString)\(path)/\(id)")
+        case .updateMember(let id, let phoneNum, let fines, let password):
+            urlRequest = try JSONEncoding.default.encode(urlRequest, with: ["id": id, "phoneNum": phoneNum, "fines": fines, "password": password])
+        case .memberLogin(let email, let password):
+            urlRequest = try JSONEncoding.default.encode(urlRequest, with: ["email": email, "password": password])
+
         // Employee
         case .getEmployees:
             urlRequest.url = URL(string: "\(Router.baseURLString)\(path)")
@@ -94,6 +126,8 @@ enum Router: URLRequestConvertible {
                 "password": password])
         case .employeeLogin(let email, let password):
             urlRequest = try JSONEncoding.default.encode(urlRequest, with: ["email": email, "password": password])
+        default:
+            break
         }
         
         return urlRequest
