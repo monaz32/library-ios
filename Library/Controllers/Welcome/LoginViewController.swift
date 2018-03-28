@@ -41,17 +41,31 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func loginAction(_ sender: Any) {
-        var vc: UIViewController!
-        
-        if userType == .member {
-            vc = UIStoryboard.init(name: "Member", bundle: nil).instantiateInitialViewController()
-        } else {
-            vc = UIStoryboard.init(name: "Employee", bundle: nil).instantiateInitialViewController()
+        guard let email = emailTextfield.text, !email.isEmpty  else {
+            print("Email text field is empty")
+            return
         }
         
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        appDelegate.window?.rootViewController = vc
+        guard let password = passwordTextField.text, !password.isEmpty  else {
+            print("Password text field is empty")
+            return
+        }
+        
+        MemberService.sharedService.memberLogin(email: email, password: password) { (result) in
+            if result.value == true {
+                var vc: UIViewController!
+                
+                if self.userType == .member {
+                    vc = UIStoryboard.init(name: "Member", bundle: nil).instantiateInitialViewController()
+                } else {
+                    vc = UIStoryboard.init(name: "Employee", bundle: nil).instantiateInitialViewController()
+                }
+                
+                let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                appDelegate.window?.rootViewController = vc
+            } else {
+                print("Login Failed")
+            }
+        }
     }
-    
-    
 }

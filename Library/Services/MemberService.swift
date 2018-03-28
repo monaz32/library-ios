@@ -14,12 +14,13 @@ class MemberService {
     static let sharedService = MemberService()
     
     func memberLogin(email: String, password: String, completion: @escaping (Result<Bool>) -> Void) {
+        
         APIClient.sharedClient.request(Router.memberLogin(email: email, password: password)) { (response) in
             switch response {
             case .success(let result):
-                if let json = result as? [[String: Any]], let id = json[0]["accountID"] as? String {
-                    UserDefaults.standard.set(id, forKey: "id")
-                    completion(Result.success(true))
+                if let json = result as? [[String: Any]], let id = json[0]["accountID"] as? Int {
+                        UserDefaults.standard.set(id, forKey: "id")
+                        completion(Result.success(true))
                 }
             case .failure(let error):
                 completion(Result.failure(error))
