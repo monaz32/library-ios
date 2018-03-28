@@ -53,6 +53,7 @@ enum Router: URLRequestConvertible {
     
     // Rental
     case getCurrentRentalsOfMember(id: Int)
+    case getAllRentalsOfMember(id: Int)
     case addRental(memberID: Int, bookID: Int, fromTime: String, fromDate: String)
     case returnRental(bookID: Int, returnTime: String, returnDate: String)
     
@@ -99,7 +100,7 @@ enum Router: URLRequestConvertible {
              .getEmployees, .getEmployee, .getEmployeeFromName,
              .getMembers, .getMember,
              .getEvents, .getCurrentEvents, .getPastEvents, .getEventFromID, .getEventsWithLocation, .getEventsWithLocationFromBranchName,
-             .getCurrentRentalsOfMember,
+             .getCurrentRentalsOfMember, .getAllRentalsOfMember,
              .getLibraryBook,
              .getMAXRating, .getMINRating, .getAVRRating,
              .getReviews,
@@ -167,6 +168,8 @@ enum Router: URLRequestConvertible {
             return "/rental"
         case .returnRental:
             return "/rental/return"
+        case .getAllRentalsOfMember:
+            return "/rental/history"
             
         // Library Book
         case .addLibraryBook, .getLibraryBook, .deleteLibraryBook:
@@ -258,7 +261,7 @@ enum Router: URLRequestConvertible {
             urlRequest.url = URL(string: "\(Router.baseURLString)\(path)/\(name)")
             
         // Rental
-        case .getCurrentRentalsOfMember(let id):
+        case .getCurrentRentalsOfMember(let id), .getAllRentalsOfMember(let id):
             urlRequest.url = URL(string: "\(Router.baseURLString)\(path)/\(id)")
         case .addRental(let memberID, let bookID, let fromTime, let fromDate):
             urlRequest = try JSONEncoding.default.encode(urlRequest, with: ["bookID": bookID, "fromTime": fromTime, "fromDate": fromDate])
