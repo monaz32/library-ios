@@ -76,6 +76,12 @@ enum Router: URLRequestConvertible {
     case getBranchWithID(id: Int)
     case getRoomsAtBranch(id: Int)
     case getRoomWithIDAtBranch(branchID: Int, roomNum: Int)
+    
+    // Schedules
+    case getSchedules
+    case addSchedule(accountID: Int, roomName: String, fromTime: String, fromDate: String, toTime: String, toDate: String)
+    case getSchedulesWithAccountID(id: Int)
+    case getSchedulesWithRoomName(name: String)
 
     var method: HTTPMethod {
         switch self {
@@ -85,7 +91,8 @@ enum Router: URLRequestConvertible {
              .addEvent,
              .addRental,
              .addLibraryBook, .getLibraryBooks,
-             .addReview:
+             .addReview,
+             .addSchedule:
             return .post
             
         case .getBook, .getBookGenreCount,
@@ -96,7 +103,8 @@ enum Router: URLRequestConvertible {
              .getLibraryBook,
              .getMAXRating, .getMINRating, .getAVRRating,
              .getReviews,
-             .getBranches, .getBranchWithID, .getRoomsAtBranch, .getRoomWithIDAtBranch:
+             .getBranches, .getBranchWithID, .getRoomsAtBranch, .getRoomWithIDAtBranch,
+             .getSchedules, .getSchedulesWithAccountID, .getSchedulesWithRoomName:
             return .get
             
         case .updateBook,
@@ -181,6 +189,15 @@ enum Router: URLRequestConvertible {
         // Branch
         case .getBranches, .getBranchWithID, .getRoomsAtBranch, .getRoomWithIDAtBranch:
             return "/branches"
+            
+        // Schedule
+        case .getSchedules, .addSchedule:
+            return "/schedules"
+        case .getSchedulesWithAccountID:
+            return "/schedules/accids"
+        case .getSchedulesWithRoomName:
+            return "/schedules/rooms"
+            
         }
     }
     
@@ -275,6 +292,14 @@ enum Router: URLRequestConvertible {
         case .getRoomWithIDAtBranch(let branchID, let roomNum):
             urlRequest.url = URL(string: "\(Router.baseURLString)\(path)/\(branchID)/rooms/\(roomNum)")
             
+        // Schedule
+        case .addSchedule(let accountID, let roomName, let fromTime, let fromDate, let toTime, let toDate):
+            urlRequest = try JSONEncoding.default.encode(urlRequest, with: ["accountID": accountID, "roomName": roomName, "fromTime": fromTime, "fromDate": fromDate, "toTime": toTime, "toDate": toDate])
+        case .getSchedulesWithAccountID(let id):
+            urlRequest.url = URL(string: "\(Router.baseURLString)\(path)/\(id)")
+        case .getSchedulesWithRoomName(let name):
+            urlRequest.url = URL(string: "\(Router.baseURLString)\(path)/\(name)")
+        
         default:
             break
         }

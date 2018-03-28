@@ -19,8 +19,8 @@ class BranchService {
             switch response {
             case .success(let result):
                 if let json = result as? [[String: Any]] {
-                    let ratings = Mapper<LibraryBranch>().mapArray(JSONArray: json)
-                    completion(Result.success(ratings))
+                    let results = Mapper<LibraryBranch>().mapArray(JSONArray: json)
+                    completion(Result.success(results))
                 }
                 else {
                     completion(Result.failure(ServiceError.CastFailure("Result casting failed.")))
