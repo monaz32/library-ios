@@ -31,6 +31,21 @@ class EmployeeAPICallExamples {
         }
     }
     
+    // get an employee based on eid
+    func getEmployee() {
+        EmployeeService.sharedService.getEmployee(id: "590912") { (result) in
+            switch result {
+            case .success:
+                print("getEmployee success")
+                
+                let employee = result.value!
+                print(employee.address)
+            case .failure:
+                print("getEmployee failure")
+            }
+        }
+    }
+    
     // employee login
     func employeeLogin() {
         EmployeeService.sharedService.employeeLogin(email: "h.ashcroft@library.com", password: "cs304") { (result) in
