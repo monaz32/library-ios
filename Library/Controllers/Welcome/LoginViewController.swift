@@ -41,12 +41,12 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func loginAction(_ sender: Any) {
-        guard let email = emailTextfield.text, !email.isEmpty  else {
+        guard let email = emailTextfield.text, !email.isEmpty, email.trimmingCharacters(in: .whitespaces).count > 0 else {
             print("Email text field is empty")
             return
         }
         
-        guard let password = passwordTextField.text, !password.isEmpty  else {
+        guard let password = passwordTextField.text, !password.isEmpty, password.trimmingCharacters(in: .whitespaces).count > 0   else {
             print("Password text field is empty")
             return
         }

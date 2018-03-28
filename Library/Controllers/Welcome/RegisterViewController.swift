@@ -15,6 +15,7 @@ class RegisterViewController: UIViewController {
     @IBOutlet var emailTextField: UITextField!
     @IBOutlet var phoneTextField: UITextField!
     @IBOutlet var addressTextField: UITextField!
+    @IBOutlet var passwordTextField: UITextField!
     
     @IBOutlet var sinLabel: UILabel!
     @IBOutlet var sinTextField: UITextField!
@@ -50,15 +51,43 @@ class RegisterViewController: UIViewController {
     }
     
     @IBAction func registerAction(_ sender: Any) {
+        guard let name = nameTextField.text, !name.isEmpty, name.trimmingCharacters(in: .whitespaces).count > 0 else {
+            print("Name text field is empty")
+            return
+        }
+        
+        guard let email = emailTextField.text, !email.isEmpty, email.trimmingCharacters(in: .whitespaces).count > 0 else {
+            print("Email text field is empty")
+            return
+        }
+        
+        guard let phone = phoneTextField.text, !phone.isEmpty, phone.trimmingCharacters(in: .whitespaces).count > 0 else {
+            print("Phone text field is empty")
+            return
+        }
+        
+        guard let password = passwordTextField.text, !password.isEmpty, password.trimmingCharacters(in: .whitespaces).count > 0 else {
+            print("Password text field is empty")
+            return
+        }
+        
         var vc: UIViewController!
         
         if userType == .member {
-            vc = UIStoryboard.init(name: "Member", bundle: nil).instantiateInitialViewController()
+            MemberService.sharedService.addMember(phoneNum: phone, email: email, name: name, password: password, completion: { (result) in
+                if result.value == true {
+                    vc = UIStoryboard.init(name: "Member", bundle: nil).instantiateInitialViewController()
+                    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                    appDelegate.window?.rootViewController = vc
+                }
+            })
         } else {
+            guard let sin = sinTextField.text, !sin.isEmpty, sin.trimmingCharacters(in: .whitespaces).count > 0 else {
+                print("SIN text field is empty")
+                return
+            }
+            
             vc = UIStoryboard.init(name: "Employee", bundle: nil).instantiateInitialViewController()
         }
-        
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        appDelegate.window?.rootViewController = vc
     }
 }
