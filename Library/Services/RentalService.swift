@@ -13,9 +13,16 @@ import ObjectMapper
 class RentalService {
     static let sharedService = RentalService()
     
-    // get details on all current rentals
+    // get details on all current rentals of a member
     func getCurrentRentalsOfMember(id: Int, completion: @escaping (Result<[Rental]>) -> Void) {
         APIClient.sharedClient.request(Router.getCurrentRentalsOfMember(id: id)) { (response) in
+            self.listRentalHandler(response: response, completion: completion)
+        }
+    }
+    
+    // get details on all rentals of a member
+    func getAllRentalsOfMember(id: Int, completion: @escaping (Result<[Rental]>) -> Void) {
+        APIClient.sharedClient.request(Router.getAllRentalsOfMember(id: id)) { (response) in
             self.listRentalHandler(response: response, completion: completion)
         }
     }
