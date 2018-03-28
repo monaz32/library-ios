@@ -17,6 +17,7 @@ class Employee: Mappable {
     var address: String?
     var phoneNumber: String?
     var branchNum: Int?
+    var adminStatus: Bool?
     
     required init?(map: Map) {
         
@@ -24,12 +25,13 @@ class Employee: Mappable {
     
     // Mappable
     func mapping(map: Map) {
-        ID          <- map["eID"]
+        ID          <- map["eid"]
         email       <- map["eEmail"]
-        branchNum   <- map["branchNum"]
-        SIN         <- map["SIN"]
-        name        <- map["eName"]
-        address     <- map["eAddress"]
-        phoneNumber <- map["ePhoneNumber"]
+        branchNum   <- map["branchnum"]
+        SIN         <- map["sin"]
+        name        <- map["ename"]
+        address     <- map["eaddress"]
+        phoneNumber <- map["ephonenumber"]
+        adminStatus <- map["adminStatus"]
     }
 }

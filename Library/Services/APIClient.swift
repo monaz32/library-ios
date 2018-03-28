@@ -25,6 +25,12 @@ enum Router: URLRequestConvertible {
     case getBookGenreCount
     
     // Employee
+    case getEmployees
+    case addEmployee(email: String, sin: String, name: String, address: String, phoneNumber: String, branchNumber: Int,
+        adminStatus: Bool, password: String)
+    case getEmployee(id: String)
+    case updateEmployee(id: String, email: String, address: String, phoneNumber: String, password: String)
+    case getEmployeeFromName(name: String)
     case employeeLogin(email: String, password: String)
 
     //Member
@@ -34,20 +40,67 @@ enum Router: URLRequestConvertible {
     case updateMember(id: Int, phoneNum: String, fines: String, password: String)
     case memberLogin(email: String, password: String) //
     case calcFines
+    
+    // Event
+    case getEvents
+    case addEvent(name: String, branchNum: Int, fromTime: String, toTime: String, fromDate: String, toDate: String)
+    case getCurrentEvents
+    case getPastEvents
+    case getEventFromID(id: String)
+    case deleteEvent(id: String)
+    case getEventsWithLocation
+    case getEventsWithLocationFromBranchName(name: String)
+    
+    // Rental
+    case getCurrentRentalsOfMember(id: Int)
+    case addRental(memberID: Int, bookID: Int, fromTime: String, fromDate: String)
+    case returnRental(bookID: Int, returnTime: String, returnDate: String)
+    
+    // Library Book
+    case addLibraryBook(bookID: Int, isbn: String, branchNum: Int, status: Bool)
+    case getLibraryBooks(branchNum: Int, status: Bool)
+    case getLibraryBook(id: Int)
+    case deleteLibraryBook(id: Int)
+    
+    // Rating
+    case getMAXRating
+    case getMINRating
+    case getAVRRating(isbn: String)
+    
+    // Review
+    case getReviews(isbn: String)
+    case addReview(isbn: String, accountID: Int, rating: Int, review: String)
 
     var method: HTTPMethod {
         switch self {
         case .addBook, .getBooks,
-             .employeeLogin,
-             .addMember, .memberLogin:
+             .addEmployee, .employeeLogin,
+             .addMember, .memberLogin,
+             .addEvent,
+             .addRental,
+             .addLibraryBook, .getLibraryBooks,
+             .addReview:
             return .post
+            
         case .getBook, .getBookGenreCount,
-            .getMembers, .getMember:
+             .getEmployees, .getEmployee, .getEmployeeFromName,
+             .getMembers, .getMember,
+             .getEvents, .getCurrentEvents, .getPastEvents, .getEventFromID, .getEventsWithLocation, .getEventsWithLocationFromBranchName,
+             .getCurrentRentalsOfMember,
+             .getLibraryBook,
+             .getMAXRating, .getMINRating, .getAVRRating,
+             .getReviews:
             return .get
+            
         case .updateBook,
-             .updateMember, .calcFines:
+             .updateMember, .calcFines,
+             .updateEmployee,
+             .returnRental:
             return .put
-        case .deleteBook:
+            
+        case .deleteBook,
+             .deleteEvent,
+             .deleteLibraryBook:
             return .delete
         }
     }
@@ -61,9 +114,8 @@ enum Router: URLRequestConvertible {
             return "/book/filter"
         case .getBookGenreCount:
             return "/book/genrecount"
-            
 
-        //Member
+        // Member
         case .getMembers, .addMember:
             return "/member"
         case .getMember, .updateMember:
@@ -74,8 +126,50 @@ enum Router: URLRequestConvertible {
             return "/member/fines"
 
         // Employee
+        case .getEmployees, .addEmployee:
+            return "/employee"
         case .employeeLogin:
             return "/employee/login"
+        case .getEmployee, .updateEmployee:
+            return "/employee/id"
+        case .getEmployeeFromName:
+            return "/employee/name"
+            
+        // Event
+        case .getEvents, .addEvent:
+            return "/event"
+        case .getCurrentEvents:
+            return "/event/current"
+        case .getPastEvents:
+            return "/event/past"
+        case .getEventFromID, .deleteEvent:
+            return "/event/id"
+        case .getEventsWithLocation, .getEventsWithLocationFromBranchName:
+            return "/event/location"
+            
+        // Rental
+        case .getCurrentRentalsOfMember, .addRental:
+            return "/rental"
+        case .returnRental:
+            return "/rental/return"
+            
+        // Library Book
+        case .addLibraryBook, .getLibraryBook, .deleteLibraryBook:
+            return "/librarybook"
+        case .getLibraryBooks:
+            return "/librarybook/filter"
+            
+        // Rating
+        case .getMAXRating:
+            return "/rating/max"
+        case .getMINRating:
+            return "/rating/min"
+        case .getAVRRating:
+            return "/rating"
+            
+        // Review
+        case .getReviews, .addReview:
+            return "/review"
         }
     }
     
@@ -113,8 +207,56 @@ enum Router: URLRequestConvertible {
             urlRequest = try JSONEncoding.default.encode(urlRequest, with: ["email": email, "password": password])
 
         // Employee
+        case .addEmployee(let email, let sin, let name, let address, let phoneNumber, let branchNumber, let adminStatus, let password):
+            urlRequest = try JSONEncoding.default.encode(urlRequest, with: ["email": email, "sin": sin, "name": name, "address": address, "phoneNum": phoneNumber, "branch": branchNumber, "admin": adminStatus,
+                "password": password])
+        case .getEmployee(let id):
+            urlRequest.url = URL(string: "\(Router.baseURLString)\(path)/\(id)")
+        case .updateEmployee(let id, let email, let address, let phoneNumber, let password):
+            urlRequest = try JSONEncoding.default.encode(urlRequest, with: ["email": email, "address": address, "phoneNum": phoneNumber, "password": password])
+            urlRequest.url = URL(string: "\(Router.baseURLString)\(path)/\(id)")
+        case .getEmployeeFromName(let name):
+            urlRequest.url = URL(string: "\(Router.baseURLString)\(path)/\(name)")
         case .employeeLogin(let email, let password):
             urlRequest = try JSONEncoding.default.encode(urlRequest, with: ["email": email, "password": password])
+            
+        // Event
+        case .addEvent(let name, let branchNum, let fromTime, let toTime, let fromDate, let toDate):
+            urlRequest = try JSONEncoding.default.encode(urlRequest, with: ["name": name, "branchNum": branchNum, "fromTime": fromTime, "toTime": toTime, "fromDate": fromDate, "toDate": toDate])
+        case .getEventFromID(let id), .deleteEvent(let id):
+            urlRequest.url = URL(string: "\(Router.baseURLString)\(path)/\(id)")
+        case .getEventsWithLocationFromBranchName(let name):
+            urlRequest.url = URL(string: "\(Router.baseURLString)\(path)/\(name)")
+            
+        // Rental
+        case .getCurrentRentalsOfMember(let id):
+            urlRequest.url = URL(string: "\(Router.baseURLString)\(path)/\(id)")
+        case .addRental(let memberID, let bookID, let fromTime, let fromDate):
+            urlRequest = try JSONEncoding.default.encode(urlRequest, with: ["bookID": bookID, "fromTime": fromTime, "fromDate": fromDate])
+            urlRequest.url = URL(string: "\(Router.baseURLString)\(path)/\(memberID)")
+        case .returnRental(let bookID, let returnTime, let returnDate):
+            urlRequest = try JSONEncoding.default.encode(urlRequest, with: ["bookID": bookID, "returnTime": returnTime, "returnDate": returnDate])
+            
+        // Library Book
+        case .addLibraryBook(let bookID, let isbn, let branchNum, let status):
+            urlRequest = try JSONEncoding.default.encode(urlRequest, with: ["bookid": bookID, "isbn": isbn, "branchNum": branchNum, "status": status ? 1 : 0])
+        case .getLibraryBooks(let branchNum, let status):
+            status ? print("true\n") : print("false")
+            urlRequest = try JSONEncoding.default.encode(urlRequest, with: ["branchNum": branchNum, "status": status ? 1 : 0])
+        case .getLibraryBook(let id), .deleteLibraryBook(let id):
+            urlRequest.url = URL(string: "\(Router.baseURLString)\(path)/\(id)")
+            
+        // Rating
+        case .getAVRRating(let isbn):
+            urlRequest.url = URL(string: "\(Router.baseURLString)\(path)/\(isbn)")
+            
+        // Review
+        case .getReviews(let isbn):
+            urlRequest.url = URL(string: "\(Router.baseURLString)\(path)/\(isbn)")
+        case .addReview(let isbn, let accountID, let rating, let review):
+            urlRequest = try JSONEncoding.default.encode(urlRequest, with: ["accountID": accountID, "rating": rating, "review": review])
+            urlRequest.url = URL(string: "\(Router.baseURLString)\(path)/\(isbn)")
+            
         default:
             break
         }
@@ -170,5 +312,16 @@ class APIClient {
                 }
         }
         )
+    }
+    
+    
+    // Utilities
+    func checkSuccessHandler(response: Result<Any>, completion: @escaping (Result<Bool>) -> Void) {
+        switch response {
+        case .success:
+            completion(Result.success(true))
+        case .failure(let error):
+            completion(Result.failure(error))
+        }
     }
 }

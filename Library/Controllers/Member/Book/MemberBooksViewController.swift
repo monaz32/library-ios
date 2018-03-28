@@ -57,7 +57,7 @@ extension MemberBooksViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = UIStoryboard(name: "MemberBooks", bundle: nil).instantiateViewController(withIdentifier: MemberBookDetailsViewController.identifier) as! MemberBookDetailsViewController
         let book = books[indexPath.row]
-        vc.setup(book: book)
+        vc.config(book: book)
         navigationController?.pushViewController(vc, animated: true)
     }
 }
