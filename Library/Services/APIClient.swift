@@ -37,7 +37,7 @@ enum Router: URLRequestConvertible {
     case getMembers
     case addMember(phoneNum: String, email: String, name: String, password: String) //
     case getMember(id: Int)
-    case updateMember(id: Int, phoneNum: String, fines: String, password: String)
+    case updateMember(id: Int, phoneNum: String, fines: Decimal, password: String)
     case memberLogin(email: String, password: String) //
     case calcFines
     
@@ -202,6 +202,7 @@ enum Router: URLRequestConvertible {
         case .getMember(let id):
             urlRequest.url = URL(string: "\(Router.baseURLString)\(path)/\(id)")
         case .updateMember(let id, let phoneNum, let fines, let password):
+            urlRequest.url = URL(string: "\(Router.baseURLString)\(path)/\(id)")
             urlRequest = try JSONEncoding.default.encode(urlRequest, with: ["id": id, "phoneNum": phoneNum, "fines": fines, "password": password])
         case .memberLogin(let email, let password):
             urlRequest = try JSONEncoding.default.encode(urlRequest, with: ["email": email, "password": password])

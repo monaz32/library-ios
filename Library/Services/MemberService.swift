@@ -67,7 +67,7 @@ class MemberService {
         }
     }
     
-    func updateMember(id: Int, phoneNum: String, fines: String, password: String, completion: @escaping (Result<Bool>) -> Void) {
+    func updateMember(id: Int, phoneNum: String, fines: Decimal, password: String, completion: @escaping (Result<Bool>) -> Void) {
         APIClient.sharedClient.request(Router.updateMember(id: id, phoneNum: phoneNum, fines: fines, password: password)) { (response) in
             switch response {
             case .success:

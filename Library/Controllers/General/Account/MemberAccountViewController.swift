@@ -37,17 +37,47 @@ class MemberAccountViewController: UIViewController {
                 self.emailTextField.text = member.email
                 self.phoneNumberTextField.text = member.phoneNumber
                 
-                if let fines = member.fines {
-                    self.finesLabel.text = "Total Fines: \(fines)"
-                } else {
-                    self.finesLabel.text = "Total Fines: 0"
+                if member.fines == nil {
+                    member.fines = 0
                 }
+                
+                self.finesLabel.text = "Total Fines: \(member.fines!)"
             }
         }
     }
     
     @IBAction func updateAction(_ sender: Any) {
+        guard let name = nameTextField.text, !name.isEmpty, name.trimmingCharacters(in: .whitespaces).count > 0 else {
+            print("Name text field is empty")
+            return
+        }
         
+        guard let email = emailTextField.text, !email.isEmpty, email.trimmingCharacters(in: .whitespaces).count > 0 else {
+            print("Email text field is empty")
+            return
+        }
+        
+        guard let phone = phoneNumberTextField.text, !phone.isEmpty, phone.trimmingCharacters(in: .whitespaces).count > 0 else {
+            print("Phone text field is empty")
+            return
+        }
+        
+        let id = UserDefaults.standard.integer(forKey: "id")
+        
+        MemberService.sharedService.updateMember(id: id, phoneNum: phone, fines: member.fines!, password: "") { (result) in
+            var alertController: UIAlertController
+    
+            if result.isSuccess {
+                alertController = UIAlertController(title: "Update succesful", message: "", preferredStyle: .alert)
+            } else {
+                alertController = UIAlertController(title: "Update not succesful", message: "", preferredStyle: .alert)
+            }
+            let action = UIAlertAction(title: "OK", style: .default) { (action:UIAlertAction) in
+            }
+            
+            alertController.addAction(action)
+            self.present(alertController, animated: true, completion: nil)
+        }
     }
     
     
