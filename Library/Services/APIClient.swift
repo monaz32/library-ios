@@ -55,6 +55,12 @@ enum Router: URLRequestConvertible {
     case getCurrentRentalsOfMember(id: Int)
     case addRental(memberID: Int, bookID: Int, fromTime: String, fromDate: String)
     case returnRental(bookID: Int, returnTime: String, returnDate: String)
+    
+    // Library Book
+    case addLibraryBook(bookID: Int, isbn: String, branchNum: Int, status: Bool)
+    case getLibraryBooks(branchNum: Int, status: Bool)
+    case getLibraryBook(id: Int)
+    case deleteLibraryBook(id: Int)
 
     var method: HTTPMethod {
         switch self {
@@ -62,14 +68,16 @@ enum Router: URLRequestConvertible {
              .addEmployee, .employeeLogin,
              .addMember, .memberLogin,
              .addEvent,
-             .addRental:
+             .addRental,
+             .addLibraryBook, .getLibraryBooks:
             return .post
             
         case .getBook, .getBookGenreCount,
              .getEmployees, .getEmployee, .getEmployeeFromName,
              .getMembers, .getMember,
              .getEvents, .getCurrentEvents, .getPastEvents, .getEventFromID, .getEventsWithLocation, .getEventsWithLocationFromBranchName,
-             .getCurrentRentalsOfMember:
+             .getCurrentRentalsOfMember,
+             .getLibraryBook:
             return .get
             
         case .updateBook,
@@ -79,7 +87,8 @@ enum Router: URLRequestConvertible {
             return .put
             
         case .deleteBook,
-             .deleteEvent:
+             .deleteEvent,
+             .deleteLibraryBook:
             return .delete
         }
     }
@@ -131,6 +140,12 @@ enum Router: URLRequestConvertible {
             return "/rental"
         case .returnRental:
             return "/rental/return"
+            
+        // Library Book
+        case .addLibraryBook, .getLibraryBook, .deleteLibraryBook:
+            return "/librarybook"
+        case .getLibraryBooks:
+            return "/librarybook/filter"
         }
     }
     
@@ -197,6 +212,15 @@ enum Router: URLRequestConvertible {
             urlRequest.url = URL(string: "\(Router.baseURLString)\(path)/\(memberID)")
         case .returnRental(let bookID, let returnTime, let returnDate):
             urlRequest = try JSONEncoding.default.encode(urlRequest, with: ["bookID": bookID, "returnTime": returnTime, "returnDate": returnDate])
+            
+        // Library Book
+        case .addLibraryBook(let bookID, let isbn, let branchNum, let status):
+            urlRequest = try JSONEncoding.default.encode(urlRequest, with: ["bookid": bookID, "isbn": isbn, "branchNum": branchNum, "status": status ? 1 : 0])
+        case .getLibraryBooks(let branchNum, let status):
+            status ? print("true\n") : print("false")
+            urlRequest = try JSONEncoding.default.encode(urlRequest, with: ["branchNum": branchNum, "status": status ? 1 : 0])
+        case .getLibraryBook(let id), .deleteLibraryBook(let id):
+            urlRequest.url = URL(string: "\(Router.baseURLString)\(path)/\(id)")
             
         default:
             break
