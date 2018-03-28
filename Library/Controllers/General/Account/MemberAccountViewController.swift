@@ -68,6 +68,13 @@ class MemberAccountViewController: UIViewController {
                 self.bookTableView.reloadData()
             }
         }
+        
+        RentalService.sharedService.getAllRentalsOfMember(id: id) { (result) in
+            if result.isSuccess, let pastRentals = result.value {
+                self.pastRentals = pastRentals
+                self.pastHistoryTableView.reloadData()
+            }
+        }
     }
     
     @IBAction func updateAction(_ sender: Any) {
