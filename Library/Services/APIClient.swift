@@ -17,7 +17,7 @@ enum Router: URLRequestConvertible {
     static let baseURLString = "http://localhost:8080"
     
     //Book
-    case getBooks(title: String, author: String, publisher: String, genre:String)
+    case getBooks(title: String, author: String, publisher: String, genre:String) //
     case addBook(isbn: String, title: String, author: String, publisher: String, genre: String)
     case getBook(isbn: String)
     case updateBook(isbn: String, title: String, author: String, publisher: String, genre: String)
@@ -29,10 +29,10 @@ enum Router: URLRequestConvertible {
 
     //Member
     case getMembers
-    case addMember(phoneNum: String, email: String, name: String, password: String)
+    case addMember(phoneNum: String, email: String, name: String, password: String) //
     case getMember(id: Int)
     case updateMember(id: Int, phoneNum: String, fines: String, password: String)
-    case memberLogin(email: String, password: String)
+    case memberLogin(email: String, password: String) //
     case calcFines
 
     var method: HTTPMethod {
