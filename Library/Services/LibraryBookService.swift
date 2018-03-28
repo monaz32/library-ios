@@ -14,8 +14,8 @@ class LibraryBookService {
     static let sharedService = LibraryBookService()
     
     // add a library book
-    func addLibraryBook(bookID: Int, isbn: String, branchNum: Int, status: Bool, completion: @escaping (Result<Bool>) -> Void) {
-        APIClient.sharedClient.request(Router.addLibraryBook(bookID: bookID, isbn: isbn, branchNum: branchNum, status: status)) { (response) in
+    func addLibraryBook(isbn: String, branchNum: Int, completion: @escaping (Result<Bool>) -> Void) {
+        APIClient.sharedClient.request(Router.addLibraryBook(isbn: isbn, branchNum: branchNum)) { (response) in
             APIClient.sharedClient.checkSuccessHandler(response: response, completion: completion)
         }
     }
