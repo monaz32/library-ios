@@ -8,20 +8,29 @@
 
 import Alamofire
 
+enum ServiceError: Error {
+    case CastFailure(String)
+}
+
 enum Router: URLRequestConvertible {
     
     static let baseURLString = "http://localhost:8080"
     
+    // Book
     case getBooks(title: String, author: String, publisher: String, genre:String)
     case addBook(isbn: String, title: String, author: String, publisher: String, genre: String)
     case getBook(isbn: String)
     case updateBook(isbn: String, title: String, author: String, publisher: String, genre: String)
     case deleteBook(isbn: String)
     case getBookGenreCount
+    
+    // Employee
+    case employeeLogin(email: String, password: String)
 
     var method: HTTPMethod {
         switch self {
-        case .addBook, .getBooks:
+        case .addBook, .getBooks,
+             .employeeLogin:
             return .post
         case .getBook, .getBookGenreCount:
             return .get
@@ -34,12 +43,17 @@ enum Router: URLRequestConvertible {
     
     var path: String {
         switch self {
+        // Book
         case .addBook, .getBook, .updateBook, .deleteBook:
             return "/book"
         case .getBooks:
             return "/book/filter"
         case .getBookGenreCount:
             return "/book/genrecount"
+            
+        // Employee
+        case .employeeLogin:
+            return "/employee/login"
         }
     }
     
@@ -52,6 +66,7 @@ enum Router: URLRequestConvertible {
         urlRequest.httpMethod = method.rawValue
         
         switch self {
+        // Book
         case .getBooks(let title, let author, let publisher, let genre):
             urlRequest = try JSONEncoding.default.encode(urlRequest, with: ["title": title, "author": author, "publisher": publisher, "genre": genre])
         case .addBook(let isbn, let title, let author, let publisher, let genre):
@@ -64,6 +79,10 @@ enum Router: URLRequestConvertible {
             urlRequest.url = URL(string: "\(Router.baseURLString)\(path)/\(isbn)")
         case .getBookGenreCount:
             urlRequest.url = URL(string: "\(Router.baseURLString)\(path)")
+            
+        // Employee
+        case .employeeLogin(let email, let password):
+            urlRequest = try JSONEncoding.default.encode(urlRequest, with: ["email": email, "password": password])
         }
         
         return urlRequest

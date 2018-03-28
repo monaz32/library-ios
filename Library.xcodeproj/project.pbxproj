@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		04341A28206B02B400A41A5A /* GenreCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04341A27206B02B400A41A5A /* GenreCount.swift */; };
 		04341A2A206B067800A41A5A /* BookAPICallExamples.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04341A29206B067800A41A5A /* BookAPICallExamples.swift */; };
+		04341A2C206B0CB200A41A5A /* EmployeeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04341A2B206B0CB200A41A5A /* EmployeeService.swift */; };
+		04341A2E206B198700A41A5A /* EmployeeAPICallExamples.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04341A2D206B198700A41A5A /* EmployeeAPICallExamples.swift */; };
 		04AD17DD20684BCB00108858 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AD17DC20684BCB00108858 /* Event.swift */; };
 		04AD17DF2068504200108858 /* Employee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AD17DE2068504200108858 /* Employee.swift */; };
 		04AD17E12068540B00108858 /* EmployeeWorkedFor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AD17E02068540B00108858 /* EmployeeWorkedFor.swift */; };
@@ -57,6 +59,8 @@
 /* Begin PBXFileReference section */
 		04341A27206B02B400A41A5A /* GenreCount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreCount.swift; sourceTree = "<group>"; };
 		04341A29206B067800A41A5A /* BookAPICallExamples.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BookAPICallExamples.swift; path = Library/Models/BookAPICallExamples.swift; sourceTree = SOURCE_ROOT; };
+		04341A2B206B0CB200A41A5A /* EmployeeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeService.swift; sourceTree = "<group>"; };
+		04341A2D206B198700A41A5A /* EmployeeAPICallExamples.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EmployeeAPICallExamples.swift; path = Library/Services/EmployeeAPICallExamples.swift; sourceTree = SOURCE_ROOT; };
 		04AD17DC20684BCB00108858 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		04AD17DE2068504200108858 /* Employee.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Employee.swift; sourceTree = "<group>"; };
 		04AD17E02068540B00108858 /* EmployeeWorkedFor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmployeeWorkedFor.swift; sourceTree = "<group>"; };
@@ -251,6 +255,7 @@
 			isa = PBXGroup;
 			children = (
 				04341A29206B067800A41A5A /* BookAPICallExamples.swift */,
+				04341A2D206B198700A41A5A /* EmployeeAPICallExamples.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -286,6 +291,7 @@
 			children = (
 				B9E7400C20689B4800BB5FF7 /* APIClient.swift */,
 				B9E7400E2068A08B00BB5FF7 /* BookService.swift */,
+				04341A2B206B0CB200A41A5A /* EmployeeService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -503,6 +509,7 @@
 				B9E740072068749100BB5FF7 /* EventsViewController.swift in Sources */,
 				B94FBF75206AFFD30039FC73 /* MemberBookDetailsViewController.swift in Sources */,
 				04AD17DD20684BCB00108858 /* Event.swift in Sources */,
+				04341A2C206B0CB200A41A5A /* EmployeeService.swift in Sources */,
 				B9E74004206871D500BB5FF7 /* EmployeeAccountViewController.swift in Sources */,
 				04AD17E52068555000108858 /* LibraryBranch.swift in Sources */,
 				04AD17E12068540B00108858 /* EmployeeWorkedFor.swift in Sources */,
@@ -520,6 +527,7 @@
 				04AD17DF2068504200108858 /* Employee.swift in Sources */,
 				B9E73FEB206849E000BB5FF7 /* Book.swift in Sources */,
 				B9E73FF6206869D200BB5FF7 /* MemberTabBarController.swift in Sources */,
+				04341A2E206B198700A41A5A /* EmployeeAPICallExamples.swift in Sources */,
 				B94FBF73206AED2A0039FC73 /* MemberBooksViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -2,7 +2,7 @@
 //  BookAPICallExamples.swift
 //  Library
 //
-//  Created by Alumina on 2018-03-27.
+//  Created by Mona Zhao on 2018-03-27.
 //  Copyright © 2018 Paco Lee. All rights reserved.
 //
 
@@ -67,6 +67,4 @@ class BookAPICallExamples {
             }
         })
     }
-        
-    
 }
