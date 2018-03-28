@@ -50,24 +50,32 @@ enum Router: URLRequestConvertible {
     case deleteEvent(id: String)
     case getEventsWithLocation
     case getEventsWithLocationFromBranchName(name: String)
+    
+    // Rental
+    case getCurrentRentalsOfMember(id: Int)
+    case addRental(memberID: Int, bookID: Int, fromTime: String, fromDate: String)
+    case returnRental(bookID: Int, returnTime: String, returnDate: String)
 
     var method: HTTPMethod {
         switch self {
         case .addBook, .getBooks,
              .addEmployee, .employeeLogin,
              .addMember, .memberLogin,
-             .addEvent:
+             .addEvent,
+             .addRental:
             return .post
             
         case .getBook, .getBookGenreCount,
              .getEmployees, .getEmployee, .getEmployeeFromName,
              .getMembers, .getMember,
-             .getEvents, .getCurrentEvents, .getPastEvents, .getEventFromID, .getEventsWithLocation, .getEventsWithLocationFromBranchName:
+             .getEvents, .getCurrentEvents, .getPastEvents, .getEventFromID, .getEventsWithLocation, .getEventsWithLocationFromBranchName,
+             .getCurrentRentalsOfMember:
             return .get
             
         case .updateBook,
              .updateMember, .calcFines,
-             .updateEmployee:
+             .updateEmployee,
+             .returnRental:
             return .put
             
         case .deleteBook,
@@ -117,6 +125,12 @@ enum Router: URLRequestConvertible {
             return "/event/id"
         case .getEventsWithLocation, .getEventsWithLocationFromBranchName:
             return "/event/location"
+            
+        // Rental
+        case .getCurrentRentalsOfMember, .addRental:
+            return "/rental"
+        case .returnRental:
+            return "/rental/return"
         }
     }
     
@@ -174,6 +188,15 @@ enum Router: URLRequestConvertible {
             urlRequest.url = URL(string: "\(Router.baseURLString)\(path)/\(id)")
         case .getEventsWithLocationFromBranchName(let name):
             urlRequest.url = URL(string: "\(Router.baseURLString)\(path)/\(name)")
+            
+        // Rental
+        case .getCurrentRentalsOfMember(let id):
+            urlRequest.url = URL(string: "\(Router.baseURLString)\(path)/\(id)")
+        case .addRental(let memberID, let bookID, let fromTime, let fromDate):
+            urlRequest = try JSONEncoding.default.encode(urlRequest, with: ["bookID": bookID, "fromTime": fromTime, "fromDate": fromDate])
+            urlRequest.url = URL(string: "\(Router.baseURLString)\(path)/\(memberID)")
+        case .returnRental(let bookID, let returnTime, let returnDate):
+            urlRequest = try JSONEncoding.default.encode(urlRequest, with: ["bookID": bookID, "returnTime": returnTime, "returnDate": returnDate])
             
         default:
             break
