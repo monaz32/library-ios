@@ -40,17 +40,29 @@ enum Router: URLRequestConvertible {
     case updateMember(id: Int, phoneNum: String, fines: String, password: String)
     case memberLogin(email: String, password: String)
     case calcFines
+    
+    // Event
+    case getEvents
+    case addEvent(name: String, branchNum: Int, fromTime: String, toTime: String, fromDate: String, toDate: String)
+    case getCurrentEvents
+    case getPastEvents
+    case getEventFromID(id: String)
+    case deleteEvent(id: String)
+    case getEventsWithLocation
+    case getEventsWithLocationFromBranchName(name: String)
 
     var method: HTTPMethod {
         switch self {
         case .addBook, .getBooks,
              .addEmployee, .employeeLogin,
-             .addMember, .memberLogin:
+             .addMember, .memberLogin,
+             .addEvent:
             return .post
             
         case .getBook, .getBookGenreCount,
              .getEmployees, .getEmployee, .getEmployeeFromName,
-             .getMembers, .getMember:
+             .getMembers, .getMember,
+             .getEvents, .getCurrentEvents, .getPastEvents, .getEventFromID, .getEventsWithLocation, .getEventsWithLocationFromBranchName:
             return .get
             
         case .updateBook,
@@ -58,7 +70,8 @@ enum Router: URLRequestConvertible {
              .updateEmployee:
             return .put
             
-        case .deleteBook:
+        case .deleteBook,
+             .deleteEvent:
             return .delete
         }
     }
@@ -92,6 +105,18 @@ enum Router: URLRequestConvertible {
             return "/employee/id"
         case .getEmployeeFromName:
             return "/employee/name"
+            
+        // Event
+        case .getEvents, .addEvent:
+            return "/event"
+        case .getCurrentEvents:
+            return "/event/current"
+        case .getPastEvents:
+            return "/event/past"
+        case .getEventFromID, .deleteEvent:
+            return "/event/id"
+        case .getEventsWithLocation, .getEventsWithLocationFromBranchName:
+            return "/event/location"
         }
     }
     
@@ -129,8 +154,6 @@ enum Router: URLRequestConvertible {
             urlRequest = try JSONEncoding.default.encode(urlRequest, with: ["email": email, "password": password])
 
         // Employee
-        case .getEmployees:
-            urlRequest.url = URL(string: "\(Router.baseURLString)\(path)")
         case .addEmployee(let email, let sin, let name, let address, let phoneNumber, let branchNumber, let adminStatus, let password):
             urlRequest = try JSONEncoding.default.encode(urlRequest, with: ["email": email, "sin": sin, "name": name, "address": address, "phoneNum": phoneNumber, "branch": branchNumber, "admin": adminStatus,
                 "password": password])
@@ -143,6 +166,15 @@ enum Router: URLRequestConvertible {
             urlRequest.url = URL(string: "\(Router.baseURLString)\(path)/\(name)")
         case .employeeLogin(let email, let password):
             urlRequest = try JSONEncoding.default.encode(urlRequest, with: ["email": email, "password": password])
+            
+        // Event
+        case .addEvent(let name, let branchNum, let fromTime, let toTime, let fromDate, let toDate):
+            urlRequest = try JSONEncoding.default.encode(urlRequest, with: ["name": name, "branchNum": branchNum, "fromTime": fromTime, "toTime": toTime, "fromDate": fromDate, "toDate": toDate])
+        case .getEventFromID(let id), .deleteEvent(let id):
+            urlRequest.url = URL(string: "\(Router.baseURLString)\(path)/\(id)")
+        case .getEventsWithLocationFromBranchName(let name):
+            urlRequest.url = URL(string: "\(Router.baseURLString)\(path)/\(name)")
+            
         default:
             break
         }

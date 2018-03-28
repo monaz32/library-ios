@@ -60,7 +60,7 @@ class BookAPICallExamples {
                 print("getBookGenreCount success")
                 let counts = result.value!
                 for count in counts {
-                    print("\(count.genre): \(count.count)")
+                    print("\(count.genre as String?): \(count.count as Int?)")
                 }
             case .failure:
                 print("getBookGenreCount failure")

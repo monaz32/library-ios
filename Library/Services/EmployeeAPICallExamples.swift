@@ -15,7 +15,7 @@ class EmployeeAPICallExamples {
     func getEmployees() {
         EmployeeService.sharedService.getEmployees { (result) in
             let employees = result.value!
-            print(employees[0].email)
+            print(employees[0].email!)
         }
     }
     
@@ -39,7 +39,7 @@ class EmployeeAPICallExamples {
                 print("getEmployee success")
                 
                 let employee = result.value!
-                print(employee.address)
+                print(employee.address!)
             case .failure:
                 print("getEmployee failure")
             }
@@ -66,7 +66,7 @@ class EmployeeAPICallExamples {
                 print("getEmployeeFromName success")
                 
                 let employees = result.value!
-                print(employees[0].name)
+                print(employees[0].name!)
             case .failure:
                 print("getEmployeeFromName failure")
             }
