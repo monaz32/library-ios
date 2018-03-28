@@ -19,13 +19,30 @@ class MemberAccountViewController: UIViewController {
     @IBOutlet var finesLabel: UILabel!
     
     var member: Member!
+    var currentRentals = [Rental]()
+    var pastRentals = [Rental]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupTableView()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         setup()
+    }
+    
+    private func setupTableView() {
+        pastHistoryTableView.dataSource = self
+        pastHistoryTableView.register(UINib(nibName: MemberBooksTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: MemberBooksTableViewCell.identifier)
+        pastHistoryTableView.rowHeight = UITableViewAutomaticDimension
+        pastHistoryTableView.estimatedRowHeight = 44
+        pastHistoryTableView.tableFooterView = UIView()
+        
+        bookTableView.dataSource = self
+        bookTableView.register(UINib(nibName: MemberBooksTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: MemberBooksTableViewCell.identifier)
+        bookTableView.rowHeight = UITableViewAutomaticDimension
+        bookTableView.estimatedRowHeight = 44
+        bookTableView.tableFooterView = UIView()
     }
     
     func setup() {
@@ -42,6 +59,13 @@ class MemberAccountViewController: UIViewController {
                 }
                 
                 self.finesLabel.text = "Total Fines: \(member.fines!)"
+            }
+        }
+        
+        RentalService.sharedService.getCurrentRentalsOfMember(id: id) { (result) in
+            if result.isSuccess, let currentRentals = result.value {
+                self.currentRentals = currentRentals
+                self.bookTableView.reloadData()
             }
         }
     }
@@ -79,6 +103,30 @@ class MemberAccountViewController: UIViewController {
             self.present(alertController, animated: true, completion: nil)
         }
     }
+}
+
+// MARK: - Table view data source
+
+extension MemberAccountViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if tableView == pastHistoryTableView {
+            let cell = tableView.dequeueReusableCell(withIdentifier: MemberBooksTableViewCell.identifier, for: indexPath) as! MemberBooksTableViewCell
+            let pastRental = pastRentals[indexPath.row]
+            cell.config(rental: pastRental)
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: MemberBooksTableViewCell.identifier, for: indexPath) as! MemberBooksTableViewCell
+            let currentRental = currentRentals[indexPath.row]
+            cell.config(rental: currentRental)
+            return cell
+        }
+    }
     
-    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if tableView == pastHistoryTableView {
+            return pastRentals.count
+        } else {
+            return currentRentals.count
+        }
+    }
 }

@@ -12,6 +12,7 @@ class MemberBooksTableViewCell: UITableViewCell {
     static let identifier = "MemberBooksTableViewCell"
 
     var book: Book!
+    var rental: Rental!
     
     @IBOutlet var titleAuthorLabel: UILabel!
     
@@ -23,6 +24,13 @@ class MemberBooksTableViewCell: UITableViewCell {
         self.book = book
         if let title = book.title, let author = book.author {
             titleAuthorLabel.text = "\(title) by \(author)"
+        }
+    }
+    
+    func config(rental: Rental) {
+        self.rental = rental
+        if let bookID = rental.bookID {
+            titleAuthorLabel.text = "\(bookID)"
         }
     }
 

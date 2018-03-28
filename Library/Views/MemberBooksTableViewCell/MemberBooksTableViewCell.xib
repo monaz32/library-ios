@@ -17,7 +17,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YNc-bT-mu7">
-                    <rect key="frame" x="16" y="12" width="42" height="21"/>
+                    <rect key="frame" x="32" y="12" width="42" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -26,7 +26,7 @@
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <accessibility key="accessibilityConfiguration" identifier="MemberBooksTableViewCell"/>
             <constraints>
-                <constraint firstItem="YNc-bT-mu7" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="0FF-fU-R1o"/>
+                <constraint firstItem="YNc-bT-mu7" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="32" id="0FF-fU-R1o"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="YNc-bT-mu7" secondAttribute="bottom" constant="11" id="0pL-iC-GDM"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="YNc-bT-mu7" secondAttribute="trailing" constant="32" id="NKZ-fO-NtN"/>
                 <constraint firstItem="YNc-bT-mu7" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="12" id="u5o-M2-eXg"/>
