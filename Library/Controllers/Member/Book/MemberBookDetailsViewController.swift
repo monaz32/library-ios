@@ -114,7 +114,38 @@ class MemberBookDetailsViewController: UIViewController {
 
 extension MemberBookDetailsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        let libraryBook = libraryBooks[indexPath.row]
+        if libraryBook.status == true,  let bookID = libraryBook.ID {
+            let memberID = UserDefaults.standard.integer(forKey: "id")
+            RentalService.sharedService.addRental(memberID: memberID, bookID: bookID, fromTime: "09:34", fromDate: "04/04/18", completion: { (result) in
+                if result.isSuccess {
+                    LibraryBookService.sharedService.getLibraryBooks(isbn: self.book.isbn!, completion: { (result) in
+                        if result.isSuccess, let libraryBooks = result.value {
+                            self.libraryBooks = libraryBooks
+                            self.libraryBookTableView.reloadData()
+                        } else {
+                            let alertController = UIAlertController(title: "Error 422", message: "Unprocessable Entity", preferredStyle: .alert)
+                            let action = UIAlertAction(title: "OK", style: .default) { (action:UIAlertAction) in
+                            }
+                            alertController.addAction(action)
+                            self.present(alertController, animated: true, completion: nil)
+                        }
+                    })
+                } else {
+                    let alertController = UIAlertController(title: "Error 422", message: "Unprocessable Entity", preferredStyle: .alert)
+                    let action = UIAlertAction(title: "OK", style: .default) { (action:UIAlertAction) in
+                    }
+                    alertController.addAction(action)
+                    self.present(alertController, animated: true, completion: nil)
+                }
+            })
+        } else {
+            let alertController = UIAlertController(title: "Booked Already Checked Out", message: "", preferredStyle: .alert)
+            let action = UIAlertAction(title: "OK", style: .default) { (action:UIAlertAction) in
+            }
+            alertController.addAction(action)
+            self.present(alertController, animated: true, completion: nil)
+        }
     }
 }
 
