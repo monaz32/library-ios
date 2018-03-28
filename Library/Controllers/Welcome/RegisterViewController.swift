@@ -79,6 +79,12 @@ class RegisterViewController: UIViewController {
                     vc = UIStoryboard.init(name: "Member", bundle: nil).instantiateInitialViewController()
                     let appDelegate = UIApplication.shared.delegate as! AppDelegate
                     appDelegate.window?.rootViewController = vc
+                } else {
+                    let alertController = UIAlertController(title: "Registration Failed", message: "Check Fields", preferredStyle: .alert)
+                    let action = UIAlertAction(title: "OK", style: .default) { (action:UIAlertAction) in
+                    }
+                    alertController.addAction(action)
+                    self.present(alertController, animated: true, completion: nil)
                 }
             })
         } else {

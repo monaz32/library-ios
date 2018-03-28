@@ -34,16 +34,28 @@ class MemberBookDetailsViewController: UIViewController {
         
         if let isbn = book.isbn {
             ReviewService.sharedService.getReviews(isbn: isbn, completion: { (result) in
-                if let reviews = result.value {
+                if result.isSuccess, let reviews = result.value {
                     self.reviews = reviews
                     self.reviewTableView.reloadData()
+                } else {
+                    let alertController = UIAlertController(title: "Error 422", message: "Unprocessable Entity", preferredStyle: .alert)
+                    let action = UIAlertAction(title: "OK", style: .default) { (action:UIAlertAction) in
+                    }
+                    alertController.addAction(action)
+                    self.present(alertController, animated: true, completion: nil)
                 }
             })
             
             LibraryBookService.sharedService.getLibraryBooks(isbn: isbn, completion: { (result) in
-                if let libraryBooks = result.value {
+                if result.isSuccess, let libraryBooks = result.value {
                     self.libraryBooks = libraryBooks
                     self.libraryBookTableView.reloadData()
+                } else {
+                    let alertController = UIAlertController(title: "Error 422", message: "Unprocessable Entity", preferredStyle: .alert)
+                    let action = UIAlertAction(title: "OK", style: .default) { (action:UIAlertAction) in
+                    }
+                    alertController.addAction(action)
+                    self.present(alertController, animated: true, completion: nil)
                 }
             })
         }
@@ -61,8 +73,14 @@ class MemberBookDetailsViewController: UIViewController {
             isbnLabel.text = "ISBN: \(isbn)"
         
             RatingService.sharedService.getAVRRating(isbn: isbn, completion: { (result) in
-                if let averageRating = result.value {
+                if result.isSuccess, let averageRating = result.value {
                     self.averageRatingLabel.text = "Average Rating: \(averageRating)"
+                } else {
+                    let alertController = UIAlertController(title: "Error 422", message: "Unprocessable Entity", preferredStyle: .alert)
+                    let action = UIAlertAction(title: "OK", style: .default) { (action:UIAlertAction) in
+                    }
+                    alertController.addAction(action)
+                    self.present(alertController, animated: true, completion: nil)
                 }
             })
     

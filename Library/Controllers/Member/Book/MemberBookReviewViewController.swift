@@ -39,8 +39,14 @@ class MemberBookReviewViewController: UIViewController {
         if let isbn = book.isbn {
             let id = UserDefaults.standard.integer(forKey: "id")
             ReviewService.sharedService.addReview(isbn: isbn, accountID: id, rating: ratingInt, review: summary, completion: { (result) in
-                if let success = result.value, success {
+                if result.isSuccess, let success = result.value, success {
                     self.navigationController?.popViewController(animated: true)
+                } else {
+                    let alertController = UIAlertController(title: "Error 422", message: "Unprocessable Entity", preferredStyle: .alert)
+                    let action = UIAlertAction(title: "OK", style: .default) { (action:UIAlertAction) in
+                    }
+                    alertController.addAction(action)
+                    self.present(alertController, animated: true, completion: nil)
                 }
             })
         }
