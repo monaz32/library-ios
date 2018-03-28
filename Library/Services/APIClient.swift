@@ -61,6 +61,11 @@ enum Router: URLRequestConvertible {
     case getLibraryBooks(branchNum: Int, status: Bool)
     case getLibraryBook(id: Int)
     case deleteLibraryBook(id: Int)
+    
+    // Rating
+    case getMAXRating
+    case getMINRating
+    case getAVRRating(isbn: String)
 
     var method: HTTPMethod {
         switch self {
@@ -77,7 +82,8 @@ enum Router: URLRequestConvertible {
              .getMembers, .getMember,
              .getEvents, .getCurrentEvents, .getPastEvents, .getEventFromID, .getEventsWithLocation, .getEventsWithLocationFromBranchName,
              .getCurrentRentalsOfMember,
-             .getLibraryBook:
+             .getLibraryBook,
+             .getMAXRating, .getMINRating, .getAVRRating:
             return .get
             
         case .updateBook,
@@ -146,6 +152,14 @@ enum Router: URLRequestConvertible {
             return "/librarybook"
         case .getLibraryBooks:
             return "/librarybook/filter"
+            
+        // Rating
+        case .getMAXRating:
+            return "/rating/max"
+        case .getMINRating:
+            return "/rating/min"
+        case .getAVRRating:
+            return "/rating"
         }
     }
     
@@ -221,6 +235,10 @@ enum Router: URLRequestConvertible {
             urlRequest = try JSONEncoding.default.encode(urlRequest, with: ["branchNum": branchNum, "status": status ? 1 : 0])
         case .getLibraryBook(let id), .deleteLibraryBook(let id):
             urlRequest.url = URL(string: "\(Router.baseURLString)\(path)/\(id)")
+            
+        // Rating
+        case .getAVRRating(let isbn):
+            urlRequest.url = URL(string: "\(Router.baseURLString)\(path)/\(isbn)")
             
         default:
             break

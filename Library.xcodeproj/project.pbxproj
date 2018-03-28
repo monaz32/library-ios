@@ -16,6 +16,8 @@
 		04341A34206B7C7700A41A5A /* EventWithLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04341A33206B7C7700A41A5A /* EventWithLocation.swift */; };
 		04341A36206B81A300A41A5A /* RentalService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04341A35206B81A300A41A5A /* RentalService.swift */; };
 		04341A38206B8FBF00A41A5A /* LibraryBookService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04341A37206B8FBE00A41A5A /* LibraryBookService.swift */; };
+		04341A3A206B9E5600A41A5A /* RatingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04341A39206B9E5600A41A5A /* RatingService.swift */; };
+		04341A3C206B9FC200A41A5A /* Rating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04341A3B206B9FC200A41A5A /* Rating.swift */; };
 		04AD17DD20684BCB00108858 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AD17DC20684BCB00108858 /* Event.swift */; };
 		04AD17DF2068504200108858 /* Employee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AD17DE2068504200108858 /* Employee.swift */; };
 		04AD17E12068540B00108858 /* EmployeeWorkedFor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AD17E02068540B00108858 /* EmployeeWorkedFor.swift */; };
@@ -72,6 +74,8 @@
 		04341A33206B7C7700A41A5A /* EventWithLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventWithLocation.swift; sourceTree = "<group>"; };
 		04341A35206B81A300A41A5A /* RentalService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RentalService.swift; sourceTree = "<group>"; };
 		04341A37206B8FBE00A41A5A /* LibraryBookService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryBookService.swift; sourceTree = "<group>"; };
+		04341A39206B9E5600A41A5A /* RatingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingService.swift; sourceTree = "<group>"; };
+		04341A3B206B9FC200A41A5A /* Rating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rating.swift; sourceTree = "<group>"; };
 		04AD17DC20684BCB00108858 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		04AD17DE2068504200108858 /* Employee.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Employee.swift; sourceTree = "<group>"; };
 		04AD17E02068540B00108858 /* EmployeeWorkedFor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmployeeWorkedFor.swift; sourceTree = "<group>"; };
@@ -289,6 +293,7 @@
 				04AD17EA206857D900108858 /* Review.swift */,
 				04AD17EC2068596500108858 /* Schedule.swift */,
 				04AD17EE20685A6400108858 /* Room.swift */,
+				04341A3B206B9FC200A41A5A /* Rating.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -310,6 +315,7 @@
 				04341A2B206B0CB200A41A5A /* EmployeeService.swift */,
 				04341A35206B81A300A41A5A /* RentalService.swift */,
 				04341A37206B8FBE00A41A5A /* LibraryBookService.swift */,
+				04341A39206B9E5600A41A5A /* RatingService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -496,6 +502,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04341A3A206B9E5600A41A5A /* RatingService.swift in Sources */,
 				04341A2A206B067800A41A5A /* BookAPICallExamples.swift in Sources */,
 				B9E74002206871B100BB5FF7 /* MemberAccountViewController.swift in Sources */,
 				B9E73FF2206852BA00BB5FF7 /* LoginViewController.swift in Sources */,
@@ -531,6 +538,7 @@
 				B9E7400B2068787900BB5FF7 /* CreateEventViewController.swift in Sources */,
 				04AD17DF2068504200108858 /* Employee.swift in Sources */,
 				B9E73FEB206849E000BB5FF7 /* Book.swift in Sources */,
+				04341A3C206B9FC200A41A5A /* Rating.swift in Sources */,
 				04341A32206B72D900A41A5A /* EventAPICallExamples.swift in Sources */,
 				B9E73FF6206869D200BB5FF7 /* MemberTabBarController.swift in Sources */,
 				04341A2E206B198700A41A5A /* EmployeeAPICallExamples.swift in Sources */,
