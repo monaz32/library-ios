@@ -70,6 +70,12 @@ enum Router: URLRequestConvertible {
     // Review
     case getReviews(isbn: String)
     case addReview(isbn: String, accountID: Int, rating: Int, review: String)
+    
+    // Branch
+    case getBranches
+    case getBranchWithID(id: Int)
+    case getRoomsAtBranch(id: Int)
+    case getRoomWithIDAtBranch(branchID: Int, roomNum: Int)
 
     var method: HTTPMethod {
         switch self {
@@ -89,7 +95,8 @@ enum Router: URLRequestConvertible {
              .getCurrentRentalsOfMember,
              .getLibraryBook,
              .getMAXRating, .getMINRating, .getAVRRating,
-             .getReviews:
+             .getReviews,
+             .getBranches, .getBranchWithID, .getRoomsAtBranch, .getRoomWithIDAtBranch:
             return .get
             
         case .updateBook,
@@ -170,6 +177,10 @@ enum Router: URLRequestConvertible {
         // Review
         case .getReviews, .addReview:
             return "/review"
+            
+        // Branch
+        case .getBranches, .getBranchWithID, .getRoomsAtBranch, .getRoomWithIDAtBranch:
+            return "/branches"
         }
     }
     
@@ -255,6 +266,14 @@ enum Router: URLRequestConvertible {
         case .addReview(let isbn, let accountID, let rating, let review):
             urlRequest = try JSONEncoding.default.encode(urlRequest, with: ["accountID": accountID, "rating": rating, "review": review])
             urlRequest.url = URL(string: "\(Router.baseURLString)\(path)/\(isbn)")
+            
+        // Branch
+        case .getBranchWithID(let id):
+            urlRequest.url = URL(string: "\(Router.baseURLString)\(path)/\(id)")
+        case .getRoomsAtBranch(let id):
+            urlRequest.url = URL(string: "\(Router.baseURLString)\(path)/\(id)/rooms")
+        case .getRoomWithIDAtBranch(let branchID, let roomNum):
+            urlRequest.url = URL(string: "\(Router.baseURLString)\(path)/\(branchID)/rooms/\(roomNum)")
             
         default:
             break
