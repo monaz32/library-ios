@@ -21,8 +21,8 @@ class LibraryBookService {
     }
     
     // filter library books
-    func getLibraryBooks(branchNum: Int, status: Bool, completion: @escaping (Result<[LibraryBook]>) -> Void) {
-        APIClient.sharedClient.request(Router.getLibraryBooks(branchNum: branchNum, status: status)) { (response) in
+    func getLibraryBooks(isbn: String, completion: @escaping (Result<[LibraryBook]>) -> Void) {
+        APIClient.sharedClient.request(Router.getLibraryBooks(isbn: isbn)) { (response) in
             switch response {
             case .success(let result):
                 if let json = result as? [[String: Any]] {

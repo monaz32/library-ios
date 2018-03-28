@@ -26,11 +26,6 @@ class MemberBookReviewViewController: UIViewController {
     }
     
     @IBAction func postReview(_ sender: Any) {
-        guard let title = titleTextField.text, !title.isEmpty, title.trimmingCharacters(in: .whitespaces).count > 0 else {
-            print("Title text field is empty")
-            return
-        }
-        
         guard let summary = summaryTextView.text, !summary.isEmpty, summary.trimmingCharacters(in: .whitespaces).count > 0 else {
             print("Summary text view is empty")
             return
