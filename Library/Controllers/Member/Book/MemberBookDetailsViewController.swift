@@ -47,6 +47,9 @@ class MemberBookDetailsViewController: UIViewController {
     }
     
     @IBAction func addReview(_ sender: Any) {
+        let vc = UIStoryboard(name: "MemberBooks", bundle: nil).instantiateViewController(withIdentifier: MemberBookReviewViewController.identifier) as! MemberBookReviewViewController
+        vc.config(book: book)
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     
