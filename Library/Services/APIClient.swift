@@ -29,7 +29,7 @@ enum Router: URLRequestConvertible {
     case addEmployee(email: String, sin: String, name: String, address: String, phoneNumber: String, branchNumber: Int,
         adminStatus: Bool, password: String)
     case getEmployee(id: String)
-    case updateEmployee(id: String, email: String, address: String, phoneNumber: String, password: String)
+    case updateEmployee(id: String, address: String, phoneNumber: String)
     case getEmployeeFromName(name: String)
     case employeeLogin(email: String, password: String)
 
@@ -247,8 +247,8 @@ enum Router: URLRequestConvertible {
                 "password": password])
         case .getEmployee(let id):
             urlRequest.url = URL(string: "\(Router.baseURLString)\(path)/\(id)")
-        case .updateEmployee(let id, let email, let address, let phoneNumber, let password):
-            urlRequest = try JSONEncoding.default.encode(urlRequest, with: ["email": email, "address": address, "phoneNum": phoneNumber, "password": password])
+        case .updateEmployee(let id, let address, let phoneNumber):
+            urlRequest = try JSONEncoding.default.encode(urlRequest, with: ["address": address, "phoneNum": phoneNumber])
             urlRequest.url = URL(string: "\(Router.baseURLString)\(path)/\(id)")
         case .getEmployeeFromName(let name):
             urlRequest.url = URL(string: "\(Router.baseURLString)\(path)/\(name)")

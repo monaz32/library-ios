@@ -49,9 +49,10 @@ class EmployeeService {
         }
     }
     
+    
     // update an employee's information
-    func updateEmployee(id: String, email: String, address: String, phoneNumber: String, password: String, completion: @escaping (Result<Bool>) -> Void) {
-        APIClient.sharedClient.request(Router.updateEmployee(id: id, email: email, address: address, phoneNumber: phoneNumber, password: password)) { (response) in
+    func updateEmployee(id: String, address: String, phoneNumber: String, completion: @escaping (Result<Bool>) -> Void) {
+        APIClient.sharedClient.request(Router.updateEmployee(id: id, address: address, phoneNumber: phoneNumber)) { (response) in
             APIClient.sharedClient.checkSuccessHandler(response: response, completion: completion)
         }
     }
