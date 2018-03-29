@@ -29,7 +29,7 @@ class EmployeeService {
     }
     
     // get an employee based on employee id
-    func getEmployee(id: String, completion: @escaping (Result<Employee>) -> Void) {
+    func getEmployee(id: Int, completion: @escaping (Result<Employee>) -> Void) {
         APIClient.sharedClient.request(Router.getEmployee(id: id)) { (response) in
             switch response {
             case .success(let result):

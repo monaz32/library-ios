@@ -28,7 +28,7 @@ enum Router: URLRequestConvertible {
     case getEmployees
     case addEmployee(email: String, sin: String, name: String, address: String, phoneNumber: String, branchNumber: Int,
         adminStatus: Bool, password: String)
-    case getEmployee(id: String)
+    case getEmployee(id: Int)
     case updateEmployee(id: String, address: String, phoneNumber: String)
     case getEmployeeFromName(name: String)
     case employeeLogin(email: String, password: String)
