@@ -74,7 +74,7 @@
         <scene sceneID="izT-t7-AxP">
             <objects>
                 <viewControllerPlaceholder storyboardName="Welcome" referencedIdentifier="RegisterViewController" id="3hJ-3L-aR7" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="Hgu-Tl-Yve"/>
+                    <tabBarItem key="tabBarItem" title="Employee" id="Hgu-Tl-Yve"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AUR-yS-lb4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

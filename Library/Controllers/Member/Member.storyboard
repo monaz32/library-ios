@@ -42,7 +42,7 @@
         <scene sceneID="hkZ-l2-iH4">
             <objects>
                 <viewControllerPlaceholder storyboardName="MemberBooks" id="LJW-jg-QFd" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="UT5-FB-q93"/>
+                    <tabBarItem key="tabBarItem" title="Books" id="UT5-FB-q93"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Icw-pg-6Qh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -52,7 +52,7 @@
         <scene sceneID="fzx-Iv-qa7">
             <objects>
                 <viewControllerPlaceholder storyboardName="MemberRoom" id="PU8-NS-PJ4" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="btY-zS-rtK"/>
+                    <tabBarItem key="tabBarItem" title="Room" id="btY-zS-rtK"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kdy-jA-yi9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
