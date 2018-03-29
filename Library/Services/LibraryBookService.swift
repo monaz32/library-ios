@@ -62,6 +62,25 @@ class LibraryBookService {
         }
     }
     
-    // todo: updateLibraryBook
+    // get number of each book at the library
+    func getLibraryBookCount(completion: @escaping (Result<Int>) -> Void) {
+        APIClient.sharedClient.request(Router.getLibraryBookCount) { (response) in
+            switch response {
+            case .success(let result):
+                // Note that result is an array. This casting works because result is guaranteed
+                // to contain only one object with {"Count": count}
+                if let result =  result as? [[String: Any]], let count = result[0]["Count"] as? Int {
+                    completion(Result.success(count))
+                }
+                else {
+                    completion(Result.failure(ServiceError.CastFailure("Result casting failed.")))
+                }
+                
+            case .failure(let error):
+                completion(Result.failure(error))
+            }
+        }
+        
+    }
 }
 
