@@ -31,16 +31,6 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tvO-EB-pJl">
                                 <rect key="frame" x="0.0" y="172" width="375" height="495"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="EventTableViewCell" id="muS-6a-zaK">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="muS-6a-zaK" id="1af-3F-Dgf">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -193,6 +183,14 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="VkB-wX-WbQ"/>
                     </view>
+                    <connections>
+                        <outlet property="branchNumTextField" destination="Zid-ND-xmT" id="Q9q-ZZ-bsC"/>
+                        <outlet property="fromDateTextField" destination="BgS-oW-kZe" id="hSe-BW-ppC"/>
+                        <outlet property="fromTimeTextField" destination="lK3-qT-YzK" id="jLt-NR-GLO"/>
+                        <outlet property="nameTextField" destination="ABH-Jj-2Cc" id="cmh-RV-ekY"/>
+                        <outlet property="toDateTextField" destination="4os-SL-OZl" id="tYg-sy-EIe"/>
+                        <outlet property="toTimeTextField" destination="96L-hE-faP" id="U3A-YI-s3D"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iL3-MB-Qcb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

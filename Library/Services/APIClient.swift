@@ -28,17 +28,17 @@ enum Router: URLRequestConvertible {
     case getEmployees
     case addEmployee(email: String, sin: String, name: String, address: String, phoneNumber: String, branchNumber: Int,
         adminStatus: Bool, password: String)
-    case getEmployee(id: String)
-    case updateEmployee(id: String, address: String, phoneNumber: String)
+    case getEmployee(id: Int)
+    case updateEmployee(id: Int, address: String, phoneNumber: String)
     case getEmployeeFromName(name: String)
     case employeeLogin(email: String, password: String)
 
     //Member
     case getMembers
-    case addMember(phoneNum: String, email: String, name: String, password: String) //
+    case addMember(phoneNum: String, email: String, name: String, password: String)
     case getMember(id: Int)
     case updateMember(id: Int, phoneNum: String, fines: Decimal, password: String)
-    case memberLogin(email: String, password: String) //
+    case memberLogin(email: String, password: String) 
     case calcFines
     
     // Event
