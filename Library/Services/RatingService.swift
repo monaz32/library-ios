@@ -28,14 +28,14 @@ class RatingService {
     }
     
     // get the average rating of a book
-    func getAVRRating(isbn: String, completion: @escaping (Result<Int>) -> Void) {
+    func getAVRRating(isbn: String, completion: @escaping (Result<Double>) -> Void) {
         APIClient.sharedClient.request(Router.getAVRRating(isbn: isbn)) { (response) in
             switch response {
             case .success(let result):
                 // Note that result is an array. This casting works because result is guaranteed
                 // to contain only one object with {"rating": rating}
                 if let result = result as? [[String: Any]] {
-                    if let rating = result[0]["rating"] as? Int {
+                    if let rating = result[0]["rating"] as? Double {
                         completion(Result.success(rating))
                     } else {
                         // Book has no average rating. Pass invalid value.

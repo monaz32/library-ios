@@ -12,7 +12,7 @@ import ObjectMapper
 class Rating: Mappable {
     var isbn: String?
     var title: String?
-    var average: Int?
+    var average: Double?
     
     required init?(map: Map) {
         
