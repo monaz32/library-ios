@@ -126,6 +126,12 @@ extension MemberBookDetailsViewController: UITableViewDelegate {
                 if result.isSuccess {
                     LibraryBookService.sharedService.getLibraryBooks(isbn: self.book.isbn!, completion: { (result) in
                         if result.isSuccess, let libraryBooks = result.value {
+                            let alertController = UIAlertController(title: "Success", message: "Checked out book", preferredStyle: .alert)
+                            let action = UIAlertAction(title: "OK", style: .default) { (action:UIAlertAction) in
+                            }
+                            alertController.addAction(action)
+                            self.present(alertController, animated: true, completion: nil)
+                            
                             self.libraryBooks = libraryBooks
                             self.libraryBookTableView.reloadData()
                         } else {

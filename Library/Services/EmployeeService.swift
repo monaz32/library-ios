@@ -21,10 +21,20 @@ class EmployeeService {
     }
     
     // add an employee
-    func addEmployee(email: String, sin: String, name: String, address: String, phoneNumber: String, branchNumber: Int,
-                     adminStatus: Bool, password: String, completion: @escaping (Result<Bool>) -> Void) {
+    func addEmployee(email: String, sin: String, name: String, address: String, phoneNumber: String, branchNumber: Int, adminStatus: Bool, password: String, completion: @escaping (Result<Bool>) -> Void) {
         APIClient.sharedClient.request(Router.addEmployee(email: email, sin: sin, name: name, address: address, phoneNumber: phoneNumber, branchNumber: branchNumber, adminStatus: adminStatus, password: password)) { (response) in
-            APIClient.sharedClient.checkSuccessHandler(response: response, completion: completion)
+            switch response {
+            case .success(let result):
+                if let json = result as? [[String: Any]], let id = json[0]["newID"] as? Int {
+                    UserDefaults.standard.set(id, forKey: "id")
+                    completion(Result.success(true))
+                }
+                else {
+                    completion(Result.failure(ServiceError.CastFailure("Result casting failed.")))
+                }
+            case .failure(let error):
+                completion(Result.failure(error))
+            }
         }
     }
     

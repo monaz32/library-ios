@@ -87,10 +87,14 @@ class RegisterViewController: UIViewController {
             return
         }
         
+        var vc: UIViewController!
+        
         if userType == .member {
             MemberService.sharedService.addMember(phoneNum: phone, email: email, name: name, password: password, completion: { (result) in
                 if result.value == true {
-                    self.navigationController?.popViewController(animated: true)
+                    vc = UIStoryboard.init(name: "Member", bundle: nil).instantiateInitialViewController()
+                    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                    appDelegate.window?.rootViewController = vc
                 } else {
                     let alertController = UIAlertController(title: "Registration Failed", message: "Check Fields", preferredStyle: .alert)
                     let action = UIAlertAction(title: "OK", style: .default) { (action:UIAlertAction) in
@@ -117,7 +121,9 @@ class RegisterViewController: UIViewController {
             
             EmployeeService.sharedService.addEmployee(email: email, sin: sin, name: name, address: address, phoneNumber: phone, branchNumber: branchNumInt, adminStatus: isAdmin, password: password, completion: { (result) in
                 if result.isSuccess {
-                    self.navigationController?.popViewController(animated: true)
+                    vc = UIStoryboard.init(name: "Employee", bundle: nil).instantiateInitialViewController()
+                    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                    appDelegate.window?.rootViewController = vc
                 } else {
                     let alertController = UIAlertController(title: "Registration Failed", message: "Check Fields", preferredStyle: .alert)
                     let action = UIAlertAction(title: "OK", style: .default) { (action:UIAlertAction) in

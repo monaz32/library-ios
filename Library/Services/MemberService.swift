@@ -45,8 +45,11 @@ class MemberService {
     func addMember(phoneNum: String, email: String, name: String, password: String, completion: @escaping (Result<Bool>) -> Void) {
         APIClient.sharedClient.request(Router.addMember(phoneNum: phoneNum, email: email, name: name, password: password)) { (response) in
             switch response {
-            case .success:
-                completion(Result.success(true))
+            case .success(let result):
+                if let json = result as? [[String: Any]], let id = json[0]["newID"] as? Int {
+                    UserDefaults.standard.set(id, forKey: "id")
+                    completion(Result.success(true))
+                }
             case .failure(let error):
                 completion(Result.failure(error))
             }
