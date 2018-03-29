@@ -29,9 +29,9 @@ class EmployeeAccountViewController: UIViewController {
                 self.employee = employee
                 self.phoneTextField.text = employee.phoneNumber
                 self.addressTextField.text = employee.address
+                self.adminLabel.text = employee.adminStatus! ? "Admin: Yes" : "Admin: No"
             }
         }
-        
     }
     
     @IBAction func updateAction(_ sender: Any) {
