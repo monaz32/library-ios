@@ -28,7 +28,7 @@ class RegisterViewController: UIViewController {
     @IBOutlet var adminNoButton: UIButton!
     
     var isAdmin = false
-    var userType: UserType!
+    var userType: UserType?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,15 +37,10 @@ class RegisterViewController: UIViewController {
     
     func setup(with userType: UserType) {
         self.userType = userType
-        if userType == .member {
-            navigationController?.title = "Member Registration"
-        } else if userType == .employee {
-            navigationController?.title = "Employee Registration"
-        }
     }
     
     func setupUI() {
-        if userType == .member {
+        if let userType = userType, userType == .member {
             sinLabel.isHidden = true
             sinTextField.isHidden = true
             adminLabel.isHidden = true
@@ -89,7 +84,7 @@ class RegisterViewController: UIViewController {
         
         var vc: UIViewController!
         
-        if userType == .member {
+        if let userType = userType, userType == .member {
             MemberService.sharedService.addMember(phoneNum: phone, email: email, name: name, password: password, completion: { (result) in
                 if result.value == true {
                     vc = UIStoryboard.init(name: "Member", bundle: nil).instantiateInitialViewController()
@@ -121,9 +116,17 @@ class RegisterViewController: UIViewController {
             
             EmployeeService.sharedService.addEmployee(email: email, sin: sin, name: name, address: address, phoneNumber: phone, branchNumber: branchNumInt, adminStatus: isAdmin, password: password, completion: { (result) in
                 if result.isSuccess {
-                    vc = UIStoryboard.init(name: "Employee", bundle: nil).instantiateInitialViewController()
-                    let appDelegate = UIApplication.shared.delegate as! AppDelegate
-                    appDelegate.window?.rootViewController = vc
+                    if let userType = self.userType {
+                        vc = UIStoryboard.init(name: "Employee", bundle: nil).instantiateInitialViewController()
+                        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                        appDelegate.window?.rootViewController = vc
+                    } else {
+                        let alertController = UIAlertController(title: "Registration Succesful", message: "", preferredStyle: .alert)
+                        let action = UIAlertAction(title: "OK", style: .default) { (action:UIAlertAction) in
+                        }
+                        alertController.addAction(action)
+                        self.present(alertController, animated: true, completion: nil)
+                    }
                 } else {
                     let alertController = UIAlertController(title: "Registration Failed", message: "Check Fields", preferredStyle: .alert)
                     let action = UIAlertAction(title: "OK", style: .default) { (action:UIAlertAction) in
