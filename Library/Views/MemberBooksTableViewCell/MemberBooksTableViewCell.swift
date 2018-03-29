@@ -15,6 +15,7 @@ class MemberBooksTableViewCell: UITableViewCell {
     var rental: Rental!
     var schedule: Schedule!
     var event: Event!
+    var member: Member!
     
     @IBOutlet var titleAuthorLabel: UILabel!
     
@@ -49,6 +50,14 @@ class MemberBooksTableViewCell: UITableViewCell {
         
         if let name = event.name, let fromDate = event.fromDate, let fromTime = event.fromTime, let toDate = event.toDate, let toTime = event.toTime {
             titleAuthorLabel.text = "\(name)/From: \(fromDate) \(fromTime)/To: \(toDate) \(toTime)"
+        }
+    }
+    
+    func config(member: Member) {
+        self.member = member
+        
+        if let id = member.ID, let name = member.name {
+            titleAuthorLabel.text = "\(id): \(name)"
         }
     }
 }

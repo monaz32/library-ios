@@ -353,6 +353,7 @@
                     <connections>
                         <outlet property="emailTextfield" destination="n7G-d0-pAH" id="445-3r-2sI"/>
                         <outlet property="passwordTextField" destination="Xk5-xA-6PS" id="rno-A8-1Ka"/>
+                        <outlet property="registerButton" destination="9bZ-gU-lR6" id="8fr-LA-pGi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dP0-bS-ZGF" userLabel="First Responder" sceneMemberID="firstResponder"/>

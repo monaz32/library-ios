@@ -30,6 +30,9 @@
                                     <constraint firstAttribute="height" constant="44" id="wVX-hw-alf"/>
                                 </constraints>
                                 <state key="normal" title="Search"/>
+                                <connections>
+                                    <action selector="searchAction:" destination="U5s-5P-HKr" eventType="touchUpInside" id="9fR-PF-xUJ"/>
+                                </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="E2d-qc-6kJ">
                                 <rect key="frame" x="0.0" y="234" width="375" height="433"/>
@@ -52,6 +55,10 @@
                         <viewLayoutGuide key="safeArea" id="S6W-mQ-1zc"/>
                     </view>
                     <navigationItem key="navigationItem" id="5Rx-UJ-YHV"/>
+                    <connections>
+                        <outlet property="tableView" destination="E2d-qc-6kJ" id="5Ce-o3-mls"/>
+                        <outlet property="textField" destination="uBk-9G-rrc" id="NMP-uN-thc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="beT-DO-efT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -18,16 +18,21 @@ class LoginViewController: UIViewController {
 
     @IBOutlet var emailTextfield: UITextField!
     @IBOutlet var passwordTextField: UITextField!
+    @IBOutlet var registerButton: UIButton!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if userType == .employee {
+            registerButton.isHidden = true
+        }
     }
     
     func setup(with userType: UserType) {
         self.userType = userType
         
-        if userType == .member {
+        if userType == .employee {
             navigationController?.title = "Member Login"
         } else {
             navigationController?.title = "Employee Login"

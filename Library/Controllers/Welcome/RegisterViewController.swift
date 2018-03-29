@@ -112,15 +112,11 @@ class RegisterViewController: UIViewController {
             
             EmployeeService.sharedService.addEmployee(email: email, sin: sin, name: name, address: address, phoneNumber: phone, branchNumber: branchNumInt, adminStatus: isAdmin, password: password, completion: { (result) in
                 if result.isSuccess {
-                    if let _ = self.userType {
-                        self.navigationController?.popViewController(animated: true)
-                    } else {
-                        let alertController = UIAlertController(title: "Registration Succesful", message: "", preferredStyle: .alert)
-                        let action = UIAlertAction(title: "OK", style: .default) { (action:UIAlertAction) in
-                        }
-                        alertController.addAction(action)
-                        self.present(alertController, animated: true, completion: nil)
+                    let alertController = UIAlertController(title: "Registration Succesful", message: "", preferredStyle: .alert)
+                    let action = UIAlertAction(title: "OK", style: .default) { (action:UIAlertAction) in
                     }
+                    alertController.addAction(action)
+                    self.present(alertController, animated: true, completion: nil)
                 } else {
                     let alertController = UIAlertController(title: "Registration Failed", message: "Check Fields", preferredStyle: .alert)
                     let action = UIAlertAction(title: "OK", style: .default) { (action:UIAlertAction) in
