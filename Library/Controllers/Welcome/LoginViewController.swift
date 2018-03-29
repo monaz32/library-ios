@@ -50,26 +50,34 @@ class LoginViewController: UIViewController {
             print("Password text field is empty")
             return
         }
-        
-        MemberService.sharedService.memberLogin(email: email, password: password) { (result) in
-            if result.value == true {
-                var vc: UIViewController!
-                
-                if self.userType == .member {
-                    vc = UIStoryboard.init(name: "Member", bundle: nil).instantiateInitialViewController()
+        if userType == .member {
+            MemberService.sharedService.memberLogin(email: email, password: password) { (result) in
+                if result.value == true {
+                    let vc = UIStoryboard.init(name: "Member", bundle: nil).instantiateInitialViewController()
+                    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                    appDelegate.window?.rootViewController = vc
                 } else {
-                    vc = UIStoryboard.init(name: "Employee", bundle: nil).instantiateInitialViewController()
+                    let alertController = UIAlertController(title: "Login Failed", message: "Check email or password", preferredStyle: .alert)
+                    let action = UIAlertAction(title: "OK", style: .default) { (action:UIAlertAction) in
+                    }
+                    alertController.addAction(action)
+                    self.present(alertController, animated: true, completion: nil)
                 }
-                
-                let appDelegate = UIApplication.shared.delegate as! AppDelegate
-                appDelegate.window?.rootViewController = vc
-            } else {
-                let alertController = UIAlertController(title: "Login Failed", message: "Check email or password", preferredStyle: .alert)
-                let action = UIAlertAction(title: "OK", style: .default) { (action:UIAlertAction) in
-                }
-                alertController.addAction(action)
-                self.present(alertController, animated: true, completion: nil)
             }
+        } else {
+            EmployeeService.sharedService.employeeLogin(email: email, password: password, completion: { (result) in
+                if result.value == true {
+                    let vc = UIStoryboard.init(name: "Employee", bundle: nil).instantiateInitialViewController()
+                    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                    appDelegate.window?.rootViewController = vc
+                } else {
+                    let alertController = UIAlertController(title: "Login Failed", message: "Check email or password", preferredStyle: .alert)
+                    let action = UIAlertAction(title: "OK", style: .default) { (action:UIAlertAction) in
+                    }
+                    alertController.addAction(action)
+                    self.present(alertController, animated: true, completion: nil)
+                }
+            })
         }
     }
 }

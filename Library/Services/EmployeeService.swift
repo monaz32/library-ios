@@ -29,7 +29,7 @@ class EmployeeService {
     }
     
     // get an employee based on employee id
-    func getEmployee(id: String, completion: @escaping (Result<Employee>) -> Void) {
+    func getEmployee(id: Int, completion: @escaping (Result<Employee>) -> Void) {
         APIClient.sharedClient.request(Router.getEmployee(id: id)) { (response) in
             switch response {
             case .success(let result):
@@ -51,7 +51,7 @@ class EmployeeService {
     
     
     // update an employee's information
-    func updateEmployee(id: String, address: String, phoneNumber: String, completion: @escaping (Result<Bool>) -> Void) {
+    func updateEmployee(id: Int, address: String, phoneNumber: String, completion: @escaping (Result<Bool>) -> Void) {
         APIClient.sharedClient.request(Router.updateEmployee(id: id, address: address, phoneNumber: phoneNumber)) { (response) in
             APIClient.sharedClient.checkSuccessHandler(response: response, completion: completion)
         }

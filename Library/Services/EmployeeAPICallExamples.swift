@@ -31,24 +31,10 @@ class EmployeeAPICallExamples {
         }
     }
     
-    // get an employee based on eid
-    func getEmployee() {
-        EmployeeService.sharedService.getEmployee(id: "590912") { (result) in
-            switch result {
-            case .success:
-                print("getEmployee success")
-                
-                let employee = result.value!
-                print(employee.address!)
-            case .failure:
-                print("getEmployee failure")
-            }
-        }
-    }
     
     // update an employee
     func updateEmployee() {
-        EmployeeService.sharedService.updateEmployee(id: "591925", address: "83742 Main St", phoneNumber: "6045555432") { (result) in
+        EmployeeService.sharedService.updateEmployee(id: 591925, address: "83742 Main St", phoneNumber: "6045555432") { (result) in
             switch result {
             case .success:
                 print("updateEmployee success")
