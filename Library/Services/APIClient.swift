@@ -243,7 +243,7 @@ enum Router: URLRequestConvertible {
 
         // Employee
         case .addEmployee(let email, let sin, let name, let address, let phoneNumber, let branchNumber, let adminStatus, let password):
-            urlRequest = try JSONEncoding.default.encode(urlRequest, with: ["email": email, "sin": sin, "name": name, "address": address, "phoneNum": phoneNumber, "branch": branchNumber, "admin": adminStatus,
+            urlRequest = try JSONEncoding.default.encode(urlRequest, with: ["email": email, "sin": sin, "name": name, "address": address, "phoneNum": phoneNumber, "branch": branchNumber, "admin": adminStatus ? 1 : 0,
                 "password": password])
         case .getEmployee(let id):
             urlRequest.url = URL(string: "\(Router.baseURLString)\(path)/\(id)")
