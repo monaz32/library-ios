@@ -21,10 +21,11 @@ class EmployeeAPICallExamples {
     
     // add an employee
     func addEmployee() {
-        EmployeeService.sharedService.addEmployee(email: "jane.smith@library.com", sin: "201803272", name: "SMITH, JANE", address: "83742 Main St", phoneNumber: "6045555432", branchNumber: 2, adminStatus: false, password: "cs304") { (result) in
+        EmployeeService.sharedService.addEmployee(email: "jane.bop@library.com", sin: "201803293", name: "BOP, JANE", address: "83742 Second St", phoneNumber: "6045555", branchNumber: 4, adminStatus: false, password: "cs304") { (result) in
             switch result {
             case .success:
                 print("addEmployee success")
+                print(result.value!)
             case .failure:
                 print("addEmployee failure")
             }
