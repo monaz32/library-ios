@@ -11,12 +11,8 @@ import UIKit
 class EmployeeAccountViewController: UIViewController {
     static let identifier = "EmployeeAccountViewController"
     
-    @IBOutlet var nameTextField: UITextField!
-    @IBOutlet var emailTextField: UITextField!
     @IBOutlet var phoneTextField: UITextField!
-    @IBOutlet var sinTextField: UITextField!
     @IBOutlet var addressTextField: UITextField!
-    @IBOutlet var branchNumTextField: UITextField!
     @IBOutlet var adminLabel: UILabel!
     
     var employee: Employee!
@@ -31,15 +27,39 @@ class EmployeeAccountViewController: UIViewController {
         EmployeeService.sharedService.getEmployee(id: Int(id)) { (result) in
             if result.isSuccess, let employee = result.value {
                 self.employee = employee
-                self.nameTextField.text = employee.name
-                self.emailTextField.text = employee.email
                 self.phoneTextField.text = employee.phoneNumber
-                self.sinTextField.text = employee.SIN
                 self.addressTextField.text = employee.address
-                self.branchNumTextField.text = "\(employee.branchNum!)"
-                self.adminLabel.text = employee.adminStatus! ? "Admin: Yes" : "Admin No"
             }
         }
         
+    }
+    
+    @IBAction func updateAction(_ sender: Any) {
+        guard let phone = phoneTextField.text, !phone.isEmpty, phone.trimmingCharacters(in: .whitespaces).count > 0 else {
+            print("Phone text field is empty")
+            return
+        }
+
+        guard let address = addressTextField.text, !address.isEmpty, address.trimmingCharacters(in: .whitespaces).count > 0 else {
+            print("Address text field is empty")
+            return
+        }
+        
+        let id = UserDefaults.standard.integer(forKey: "id")
+        
+        EmployeeService.sharedService.updateEmployee(id: id, address: address, phoneNumber: phone) { (result) in
+            var alertController: UIAlertController
+            
+            if result.isSuccess {
+                alertController = UIAlertController(title: "Update succesful", message: "", preferredStyle: .alert)
+            } else {
+                alertController = UIAlertController(title: "Update not succesful", message: "", preferredStyle: .alert)
+            }
+            let action = UIAlertAction(title: "OK", style: .default) { (action:UIAlertAction) in
+            }
+            
+            alertController.addAction(action)
+            self.present(alertController, animated: true, completion: nil)
+        }
     }
 }
