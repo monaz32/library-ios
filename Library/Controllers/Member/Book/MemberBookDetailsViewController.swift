@@ -51,7 +51,7 @@ class MemberBookDetailsViewController: UIViewController {
                     self.libraryBooks = libraryBooks
                     self.libraryBookTableView.reloadData()
                 } else {
-                    let alertController = UIAlertController(title: "Error 422", message: "Unprocessable Entity", preferredStyle: .alert)
+                    let alertController = UIAlertController(title: "Error 422", message: "Unprocessable Entity3", preferredStyle: .alert)
                     let action = UIAlertAction(title: "OK", style: .default) { (action:UIAlertAction) in
                     }
                     alertController.addAction(action)
@@ -74,7 +74,12 @@ class MemberBookDetailsViewController: UIViewController {
         
             RatingService.sharedService.getAVRRating(isbn: isbn, completion: { (result) in
                 if result.isSuccess, let averageRating = result.value {
-                    self.averageRatingLabel.text = "Average Rating: \(averageRating)"
+                    if (averageRating < 0) {
+                        // Book does not have an average rating.
+                        self.averageRatingLabel.text = "Average Rating: No Rating"
+                    } else {
+                        self.averageRatingLabel.text = "Average Rating: \(averageRating)"
+                    }
                 } else {
                     let alertController = UIAlertController(title: "Error 422", message: "Unprocessable Entity", preferredStyle: .alert)
                     let action = UIAlertAction(title: "OK", style: .default) { (action:UIAlertAction) in
