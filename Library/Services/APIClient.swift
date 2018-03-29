@@ -62,6 +62,7 @@ enum Router: URLRequestConvertible {
     case getLibraryBooks(isbn: String)
     case getLibraryBook(id: Int)
     case deleteLibraryBook(id: Int)
+    case getLibraryBookCount
     
     // Rating
     case getMAXRating
@@ -101,7 +102,7 @@ enum Router: URLRequestConvertible {
              .getMembers, .getMember,
              .getEvents, .getCurrentEvents, .getPastEvents, .getEventFromID, .getEventsWithLocation, .getEventsWithLocationFromBranchName,
              .getCurrentRentalsOfMember, .getAllRentalsOfMember,
-             .getLibraryBook,
+             .getLibraryBook, .getLibraryBookCount,
              .getMAXRating, .getMINRating, .getAVRRating,
              .getReviews,
              .getBranches, .getBranchWithID, .getRoomsAtBranch, .getRoomWithIDAtBranch,
@@ -176,6 +177,8 @@ enum Router: URLRequestConvertible {
             return "/librarybook"
         case .getLibraryBooks:
             return "/librarybook/filter"
+        case .getLibraryBookCount:
+            return "/librarybook/count"
             
         // Rating
         case .getMAXRating:
