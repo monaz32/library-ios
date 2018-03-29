@@ -116,7 +116,7 @@ class RegisterViewController: UIViewController {
             
             EmployeeService.sharedService.addEmployee(email: email, sin: sin, name: name, address: address, phoneNumber: phone, branchNumber: branchNumInt, adminStatus: isAdmin, password: password, completion: { (result) in
                 if result.isSuccess {
-                    if let userType = self.userType {
+                    if let _ = self.userType {
                         vc = UIStoryboard.init(name: "Employee", bundle: nil).instantiateInitialViewController()
                         let appDelegate = UIApplication.shared.delegate as! AppDelegate
                         appDelegate.window?.rootViewController = vc
