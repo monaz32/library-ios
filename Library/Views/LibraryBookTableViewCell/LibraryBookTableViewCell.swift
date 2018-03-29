@@ -30,7 +30,7 @@ class LibraryBookTableViewCell: UITableViewCell {
             if status == true {
                 statusLabel.text = "Status: Available"
             } else {
-                statusLabel.text = "Status: Check Out"
+                statusLabel.text = "Status: Checked Out"
             }
         }
     }
