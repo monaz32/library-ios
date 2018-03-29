@@ -21,6 +21,7 @@ class MemberBooksTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+
     }
     
     func config(book: Book) {

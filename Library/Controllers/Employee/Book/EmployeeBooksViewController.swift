@@ -85,6 +85,23 @@ extension EmployeeBooksViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return books.count
     }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if let isbn = books[indexPath.row].isbn {
+            BookService.sharedService.deleteBook(isbn: isbn, completion: { (result) in
+                if result.isSuccess {
+                    self.books.remove(at: indexPath.row)
+                    self.bookTableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.automatic)
+                } else {
+                    let alertController = UIAlertController(title: "Book Deletion Failed", message: "", preferredStyle: .alert)
+                    let action = UIAlertAction(title: "OK", style: .default) { (action:UIAlertAction) in
+                    }
+                    alertController.addAction(action)
+                    self.present(alertController, animated: true, completion: nil)
+                }
+            })
+        }
+    }
 }
 
 // MARK: - EmployeeBooksViewControllerDelegate
