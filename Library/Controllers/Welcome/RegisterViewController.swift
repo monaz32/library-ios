@@ -14,11 +14,15 @@ class RegisterViewController: UIViewController {
     @IBOutlet var nameTextField: UITextField!
     @IBOutlet var emailTextField: UITextField!
     @IBOutlet var phoneTextField: UITextField!
-    @IBOutlet var addressTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
     
     @IBOutlet var sinLabel: UILabel!
     @IBOutlet var sinTextField: UITextField!
+    @IBOutlet var addressLabel: UILabel!
+    @IBOutlet var addressTextField: UITextField!
+    @IBOutlet var branchNumberLabel: UILabel!
+    @IBOutlet var branchNumberTextField: UITextField!
+    
     @IBOutlet var adminLabel: UILabel!
     @IBOutlet var adminYesButton: UIButton!
     @IBOutlet var adminNoButton: UIButton!
@@ -47,7 +51,19 @@ class RegisterViewController: UIViewController {
             adminLabel.isHidden = true
             adminYesButton.isHidden = true
             adminNoButton.isHidden = true
+            addressLabel.isHidden = true
+            addressTextField.isHidden = true
+            branchNumberLabel.isHidden = true
+            branchNumberTextField.isHidden = true
         }
+    }
+    
+    @IBAction func yesButton(_ sender: Any) {
+        isAdmin = true
+    }
+    
+    @IBAction func notButton(_ sender: Any) {
+        isAdmin = false
     }
     
     @IBAction func registerAction(_ sender: Any) {
@@ -93,7 +109,29 @@ class RegisterViewController: UIViewController {
                 return
             }
             
-            vc = UIStoryboard.init(name: "Employee", bundle: nil).instantiateInitialViewController()
+            guard let address = addressTextField.text, !address.isEmpty, address.trimmingCharacters(in: .whitespaces).count > 0 else {
+                print("Address text field is empty")
+                return
+            }
+            
+            guard let branchNum = branchNumberTextField.text, !branchNum.isEmpty, branchNum.trimmingCharacters(in: .whitespaces).count > 0, let branchNumInt = Int(branchNum), branchNumInt >= 0, branchNumInt <= 5  else {
+                print("Branch num text field is invalid")
+                return
+            }
+            
+            EmployeeService.sharedService.addEmployee(email: email, sin: sin, name: name, address: address, phoneNumber: phone, branchNumber: branchNumInt, adminStatus: isAdmin, password: password, completion: { (result) in
+                if result.isSuccess {
+                    vc = UIStoryboard.init(name: "Employee", bundle: nil).instantiateInitialViewController()
+                    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                    appDelegate.window?.rootViewController = vc
+                } else {
+                    let alertController = UIAlertController(title: "Registration Failed", message: "Check Fields", preferredStyle: .alert)
+                    let action = UIAlertAction(title: "OK", style: .default) { (action:UIAlertAction) in
+                    }
+                    alertController.addAction(action)
+                    self.present(alertController, animated: true, completion: nil)
+                }
+            })
         }
     }
 }
