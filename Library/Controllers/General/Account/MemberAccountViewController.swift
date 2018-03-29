@@ -88,8 +88,12 @@ class MemberAccountViewController: UIViewController {
             return
         }
         
-        guard let phone = phoneNumberTextField.text, !phone.isEmpty, phone.trimmingCharacters(in: .whitespaces).count > 0 else {
-            print("Phone text field is empty")
+        guard let phone = phoneNumberTextField.text, !phone.isEmpty, phone.trimmingCharacters(in: .whitespaces).count > 0, let _ = Int(phone) else {
+            let alertController = UIAlertController(title: "Error", message: "Invalid Phone text field", preferredStyle: .alert)
+            let action = UIAlertAction(title: "OK", style: .default) { (action:UIAlertAction) in
+            }
+            alertController.addAction(action)
+            self.present(alertController, animated: true, completion: nil)
             return
         }
         
