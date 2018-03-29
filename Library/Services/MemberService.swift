@@ -35,7 +35,7 @@ class MemberService {
                 if let json = result as? [[String: Any]] {
                     let members = Mapper<Member>().mapArray(JSONArray: json)
                     completion(Result.success(members))
-                }
+                } 
             case .failure(let error):
                 completion(Result.failure(error))
             }
@@ -57,9 +57,11 @@ class MemberService {
         APIClient.sharedClient.request(Router.getMember(id: id)) { (response) in
             switch response {
             case .success(let result):
-                if let json = result as? [[String: Any]] {
+                if let json = result as? [[String: Any]], json.count > 0 {
                     let member = Mapper<Member>().mapArray(JSONArray: json)[0]
                     completion(Result.success(member))
+                } else {
+                    completion(Result.failure(ServiceError.ArrayEmpty("Array Empty")))
                 }
             case .failure(let error):
                 completion(Result.failure(error))
@@ -67,7 +69,7 @@ class MemberService {
         }
     }
     
-    func updateMember(id: Int, phoneNum: String, fines: Decimal, password: String, completion: @escaping (Result<Bool>) -> Void) {
+    func updateMember(id: Int, phoneNum: String, fines: Double, password: String, completion: @escaping (Result<Bool>) -> Void) {
         APIClient.sharedClient.request(Router.updateMember(id: id, phoneNum: phoneNum, fines: fines, password: password)) { (response) in
             switch response {
             case .success:

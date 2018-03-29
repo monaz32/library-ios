@@ -10,6 +10,7 @@ import Alamofire
 
 enum ServiceError: Error {
     case CastFailure(String)
+    case ArrayEmpty(String)
 }
 
 enum Router: URLRequestConvertible {
@@ -36,7 +37,7 @@ enum Router: URLRequestConvertible {
     case getMembers
     case addMember(phoneNum: String, email: String, name: String, password: String)
     case getMember(id: Int)
-    case updateMember(id: Int, phoneNum: String, fines: Decimal, password: String)
+    case updateMember(id: Int, phoneNum: String, fines: Double, password: String)
     case memberLogin(email: String, password: String) 
     case calcFines
     

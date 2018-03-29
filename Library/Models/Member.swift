@@ -14,7 +14,7 @@ class Member: Mappable {
     var email: String?
     var name: String?
     var phoneNumber: String?
-    var fines: Decimal?
+    var fines: Double?
     
     required init?(map: Map) {
         

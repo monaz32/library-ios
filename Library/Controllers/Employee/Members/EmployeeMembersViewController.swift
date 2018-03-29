@@ -43,7 +43,7 @@ class EmployeeMembersViewController: UIViewController {
     }
     
     @IBAction func searchAction(_ sender: Any) {
-        guard let text = textField.text, !text.isEmpty, text.trimmingCharacters(in: .whitespaces).count > 0 else {
+        guard let text = textField.text, !text.isEmpty, text.trimmingCharacters(in: .whitespaces).count > 0, let id = Int(text) else {
             MemberService.sharedService.getMembers { (result) in
                 if result.isSuccess, let members = result.value {
                     self.members = members
@@ -52,6 +52,20 @@ class EmployeeMembersViewController: UIViewController {
             }
             return
         }
+        
+        
+        MemberService.sharedService.getMember(id: id) { (result) in
+            if result.isSuccess, let member = result.value {
+                self.members = [member]
+                self.tableView.reloadData()
+            } else {
+                let alertController = UIAlertController(title: "ID does not exist", message: "", preferredStyle: .alert)
+                let action = UIAlertAction(title: "OK", style: .default) { (action:UIAlertAction) in
+                }
+                alertController.addAction(action)
+                self.present(alertController, animated: true, completion: nil)
+            }
+        }
     }
 }
 
@@ -59,10 +73,10 @@ class EmployeeMembersViewController: UIViewController {
 
 extension EmployeeMembersViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //        let vc = UIStoryboard(name: "MemberBooks", bundle: nil).instantiateViewController(withIdentifier: MemberBookDetailsViewController.identifier) as! MemberBookDetailsViewController
-        //        let book = books[indexPath.row]
-        //        vc.config(book: book)
-        //        navigationController?.pushViewController(vc, animated: true)
+        let vc = UIStoryboard(name: "Account", bundle: nil).instantiateViewController(withIdentifier: MemberAccountViewController.identifier) as! MemberAccountViewController
+        let member = members[indexPath.row]
+        vc.config(member: member, userType: .employee)
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
 

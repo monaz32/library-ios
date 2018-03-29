@@ -17,18 +17,32 @@ class MemberAccountViewController: UIViewController {
     @IBOutlet var emailTextField: UITextField!
     @IBOutlet var phoneNumberTextField: UITextField!
     @IBOutlet var finesLabel: UILabel!
+    @IBOutlet var finesTextField: UITextField!
     
     var member: Member!
     var currentRentals = [Rental]()
     var pastRentals = [Rental]()
     
+    var userType: UserType?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
+        
+        if let userType = userType, userType == .employee {
+            finesTextField.isHidden = false
+        } else {
+            finesTextField.isHidden = true
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
         setup()
+    }
+    
+    func config(member: Member, userType: UserType) {
+        self.member = member
+        self.userType = userType
     }
     
     private func setupTableView() {
@@ -46,7 +60,13 @@ class MemberAccountViewController: UIViewController {
     }
     
     func setup() {
-        let id = UserDefaults.standard.integer(forKey: "id")
+        var id: Int
+        if let userType = userType, userType == .employee {
+            id = member.ID!
+        } else {
+            id = UserDefaults.standard.integer(forKey: "id")
+        }
+        
         MemberService.sharedService.getMember(id: id) { (result) in
             if result.isSuccess, let member = result.value {
                 self.member = member
@@ -54,11 +74,11 @@ class MemberAccountViewController: UIViewController {
                 self.emailTextField.text = member.email
                 self.phoneNumberTextField.text = member.phoneNumber
                 
-                if member.fines == nil {
-                    member.fines = 0
+                if let userType = self.userType, userType == .employee {
+                    self.finesTextField.text = "\(member.fines!)"
+                } else {
+                    self.finesLabel.text = "Total Fines: \(member.fines!)"
                 }
-                
-                self.finesLabel.text = "Total Fines: \(member.fines!)"
             }
         }
         
@@ -97,9 +117,27 @@ class MemberAccountViewController: UIViewController {
             return
         }
         
-        let id = UserDefaults.standard.integer(forKey: "id")
+        var id: Int
+        if let userType = userType, userType == .employee {
+            id = member.ID!
+        } else {
+            id = UserDefaults.standard.integer(forKey: "id")
+        }
         
-        MemberService.sharedService.updateMember(id: id, phoneNum: phone, fines: member.fines!, password: "") { (result) in
+        var fines: Double
+        if let userType = userType, userType == .employee {
+            guard let finesText = finesTextField.text, !finesText.isEmpty, finesText.trimmingCharacters(in: .whitespaces).count > 0, let finesDouble = Double(finesText), finesDouble >= 0 else {
+                print("Fines text field is empty")
+                return
+            }
+            fines = finesDouble
+        } else {
+            fines = member.fines!
+        }
+        
+        print(fines)
+        
+        MemberService.sharedService.updateMember(id: id, phoneNum: phone, fines: fines, password: "") { (result) in
             var alertController: UIAlertController
     
             if result.isSuccess {
