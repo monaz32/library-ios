@@ -29,7 +29,7 @@ class EmployeeAddBookViewController: UIViewController {
             return
         }
         
-        guard let branchNum = branchNumTextField.text, !branchNum.isEmpty, branchNum.trimmingCharacters(in: .whitespaces).count > 0 else {
+        guard let branchNum = branchNumTextField.text, !branchNum.isEmpty, branchNum.trimmingCharacters(in: .whitespaces).count > 0, let branchNumInt = Int(branchNum), branchNumInt >= 0 && branchNumInt <= 5 else {
             print("Branch Number text field is empty")
             return
         }
@@ -54,7 +54,7 @@ class EmployeeAddBookViewController: UIViewController {
             return
         }
         
-        BookService.sharedService.addBook(isbn: isbn, title: title, author: author, publisher: publisher, genre: genre) { (result) in
+        BookService.sharedService.addBook(isbn: isbn, branchNum: branchNumInt, title: title, author: author, publisher: publisher, genre: genre) { (result) in
             if result.isSuccess {
                 self.navigationController?.popViewController(animated: true)
             } else {

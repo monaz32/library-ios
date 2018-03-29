@@ -27,8 +27,8 @@ class BookService {
         }
     }
     
-    func addBook(isbn: String, title: String, author: String, publisher: String, genre: String, completion: @escaping (Result<Bool>) -> Void) {
-        APIClient.sharedClient.request(Router.addBook(isbn: isbn, title: title, author: author, publisher: publisher, genre: genre)) { (response) in
+    func addBook(isbn: String, branchNum: Int, title: String, author: String, publisher: String, genre: String, completion: @escaping (Result<Bool>) -> Void) {
+        APIClient.sharedClient.request(Router.addBook(isbn: isbn, branchNum: branchNum, title: title, author: author, publisher: publisher, genre: genre)) { (response) in
             switch response {
             case .success:
                 completion(Result.success(true))

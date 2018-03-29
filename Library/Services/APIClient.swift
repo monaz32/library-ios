@@ -19,7 +19,7 @@ enum Router: URLRequestConvertible {
     
     //Book
     case getBooks(title: String, author: String, publisher: String, genre:String) //
-    case addBook(isbn: String, title: String, author: String, publisher: String, genre: String)
+    case addBook(isbn: String, branchNum: Int, title: String, author: String, publisher: String, genre: String)
     case getBook(isbn: String)
     case updateBook(isbn: String, title: String, author: String, publisher: String, genre: String)
     case deleteBook(isbn: String)
@@ -219,8 +219,8 @@ enum Router: URLRequestConvertible {
         // Book
         case .getBooks(let title, let author, let publisher, let genre):
             urlRequest = try JSONEncoding.default.encode(urlRequest, with: ["title": title, "author": author, "publisher": publisher, "genre": genre])
-        case .addBook(let isbn, let title, let author, let publisher, let genre):
-            urlRequest = try JSONEncoding.default.encode(urlRequest, with: ["isbn": isbn, "title": title, "author": author, "publisher": publisher, "genre": genre])
+        case .addBook(let isbn, let branchNum, let title, let author, let publisher, let genre):
+            urlRequest = try JSONEncoding.default.encode(urlRequest, with: ["isbn": isbn, "branchNum": branchNum, "title": title, "author": author, "publisher": publisher, "genre": genre])
         case .getBook(let isbn):
             urlRequest.url = URL(string: "\(Router.baseURLString)\(path)/\(isbn)")
         case .updateBook(let isbn, let title, let author, let publisher, let genre):

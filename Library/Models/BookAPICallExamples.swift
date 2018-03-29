@@ -22,7 +22,7 @@ class BookAPICallExamples {
     
     // add a book
     func addBook() {
-        BookService.sharedService.addBook(isbn: "14", title: "testbook", author: "mz", publisher: "ubc", genre: "signal_processing", completion: { (result) in
+        BookService.sharedService.addBook(isbn: "14", branchNum: 3, title: "testbook", author: "mz", publisher: "ubc", genre: "signal_processing", completion: { (result) in
             switch result {
             case .success:
                 print("addBook success")
