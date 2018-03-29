@@ -24,8 +24,8 @@ class LibraryBookTableViewCell: UITableViewCell {
     func config(libraryBook: LibraryBook) {
         self.libraryBook = libraryBook
         if let id = libraryBook.ID, let branchNum = libraryBook.branchNum, let status = libraryBook.status {
-            bookIDLabel.text = "\(id)"
-            branchNumLabel.text = "\(branchNum)"
+            bookIDLabel.text = "Book ID: \(id)"
+            branchNumLabel.text = "At Branch: \(branchNum)"
             
             if status == true {
                 statusLabel.text = "Status: Available"
