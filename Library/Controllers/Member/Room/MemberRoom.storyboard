@@ -24,6 +24,9 @@
                                     <constraint firstAttribute="height" constant="44" id="xx9-4E-dXt"/>
                                 </constraints>
                                 <state key="normal" title="Book Room"/>
+                                <connections>
+                                    <action selector="bookRoomAction:" destination="ha3-2e-Gbg" eventType="touchUpInside" id="g1s-Hw-JFU"/>
+                                </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="AqM-cT-PoX">
                                 <rect key="frame" x="0.0" y="172" width="375" height="495"/>
@@ -43,15 +46,18 @@
                         <viewLayoutGuide key="safeArea" id="X6O-cf-5AZ"/>
                     </view>
                     <navigationItem key="navigationItem" id="7um-fK-NCQ"/>
+                    <connections>
+                        <outlet property="tableView" destination="AqM-cT-PoX" id="GCf-n7-15M"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Sf-Eg-srR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="336.80000000000001" y="78.710644677661179"/>
         </scene>
-        <!--View Controller-->
+        <!--Member Add Room View Controller-->
         <scene sceneID="GYh-J1-ffa">
             <objects>
-                <viewController id="tVl-zt-iHm" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MemberAddRoomViewController" id="tVl-zt-iHm" customClass="MemberAddRoomViewController" customModule="Library" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="29n-et-fHS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -122,6 +128,9 @@
                                     <constraint firstAttribute="height" constant="44" id="ccI-0d-6wv"/>
                                 </constraints>
                                 <state key="normal" title="Book Room"/>
+                                <connections>
+                                    <action selector="bookRoom:" destination="tVl-zt-iHm" eventType="touchUpInside" id="rSG-Q5-0Bo"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -157,6 +166,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Rco-3J-5y4"/>
                     </view>
+                    <connections>
+                        <outlet property="fromDateTextField" destination="kE1-W3-phL" id="O7h-aV-I5E"/>
+                        <outlet property="fromTimeTextField" destination="JcT-Og-O0U" id="rij-fi-2bO"/>
+                        <outlet property="roomNameTextField" destination="XzZ-D0-MPc" id="iAg-Cc-Vuh"/>
+                        <outlet property="toDateTextField" destination="Tup-yb-3fO" id="8F4-7r-t2z"/>
+                        <outlet property="toTimeTextField" destination="OSa-IQ-M1i" id="2br-oa-BKW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kEP-Ai-seS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

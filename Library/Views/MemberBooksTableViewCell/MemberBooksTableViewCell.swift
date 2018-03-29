@@ -13,6 +13,7 @@ class MemberBooksTableViewCell: UITableViewCell {
 
     var book: Book!
     var rental: Rental!
+    var schedule: Schedule!
     
     @IBOutlet var titleAuthorLabel: UILabel!
     
@@ -33,5 +34,12 @@ class MemberBooksTableViewCell: UITableViewCell {
             titleAuthorLabel.text = "\(bookID)"
         }
     }
-
+    
+    func config(schedule: Schedule) {
+        self.schedule = schedule
+        
+        if let roomName = schedule.roomName, let fromDate = schedule.fromDate, let fromTime = schedule.fromTime, let toDate = schedule.toDate, let toTime = schedule.toTime {
+            titleAuthorLabel.text = "\(roomName)/From: \(fromDate) \(fromTime)/To: \(toDate) \(toTime)"
+        }
+    }
 }

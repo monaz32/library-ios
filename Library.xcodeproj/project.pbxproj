@@ -53,6 +53,7 @@
 		B96888ED206C239500DC03C5 /* LibraryBookTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96888EC206C239500DC03C5 /* LibraryBookTableViewCell.swift */; };
 		B96888EF206C239F00DC03C5 /* ReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96888EE206C239F00DC03C5 /* ReviewTableViewCell.swift */; };
 		B96888F1206C23AF00DC03C5 /* ReviewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B96888F0206C23AF00DC03C5 /* ReviewTableViewCell.xib */; };
+		B96888FD206C660C00DC03C5 /* MemberAddRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96888FC206C660C00DC03C5 /* MemberAddRoomViewController.swift */; };
 		B96DF05C2053450A00AE101C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B96DF0542053450A00AE101C /* Assets.xcassets */; };
 		B96DF05D2053450A00AE101C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B96DF0552053450A00AE101C /* LaunchScreen.storyboard */; };
 		B96DF05F2053450A00AE101C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96DF0592053450A00AE101C /* AppDelegate.swift */; };
@@ -126,6 +127,7 @@
 		B96888EC206C239500DC03C5 /* LibraryBookTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryBookTableViewCell.swift; sourceTree = "<group>"; };
 		B96888EE206C239F00DC03C5 /* ReviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewTableViewCell.swift; sourceTree = "<group>"; };
 		B96888F0206C23AF00DC03C5 /* ReviewTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReviewTableViewCell.xib; sourceTree = "<group>"; };
+		B96888FC206C660C00DC03C5 /* MemberAddRoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberAddRoomViewController.swift; sourceTree = "<group>"; };
 		B96DF0382053445900AE101C /* Library.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Library.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B96DF0542053450A00AE101C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B96DF0562053450A00AE101C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -208,6 +210,7 @@
 			children = (
 				B96888D4206B0B5B00DC03C5 /* MemberRoom.storyboard */,
 				B96888D5206B0B5B00DC03C5 /* MemberRoomViewController.swift */,
+				B96888FC206C660C00DC03C5 /* MemberAddRoomViewController.swift */,
 			);
 			path = Room;
 			sourceTree = "<group>";
@@ -576,6 +579,7 @@
 				04341A3E206BA28500A41A5A /* ReviewService.swift in Sources */,
 				B94FBF65206999130039FC73 /* EmployeeBooksViewController.swift in Sources */,
 				04341A36206B81A300A41A5A /* RentalService.swift in Sources */,
+				B96888FD206C660C00DC03C5 /* MemberAddRoomViewController.swift in Sources */,
 				B9E73FF8206869E300BB5FF7 /* EmployeeTabBarController.swift in Sources */,
 				B94FBF692069B6B20039FC73 /* EmployeeBookFilterViewController.swift in Sources */,
 				04341A30206B719500A41A5A /* EventService.swift in Sources */,
