@@ -13,8 +13,6 @@ class MemberAccountViewController: UIViewController {
     
     @IBOutlet var bookTableView: UITableView!
     @IBOutlet var pastHistoryTableView: UITableView!
-    @IBOutlet var nameTextField: UITextField!
-    @IBOutlet var emailTextField: UITextField!
     @IBOutlet var phoneNumberTextField: UITextField!
     @IBOutlet var finesLabel: UILabel!
     @IBOutlet var finesTextField: UITextField!
@@ -70,8 +68,6 @@ class MemberAccountViewController: UIViewController {
         MemberService.sharedService.getMember(id: id) { (result) in
             if result.isSuccess, let member = result.value {
                 self.member = member
-                self.nameTextField.text = member.name
-                self.emailTextField.text = member.email
                 self.phoneNumberTextField.text = member.phoneNumber
                 
                 if let userType = self.userType, userType == .employee {
@@ -98,16 +94,6 @@ class MemberAccountViewController: UIViewController {
     }
     
     @IBAction func updateAction(_ sender: Any) {
-        guard let name = nameTextField.text, !name.isEmpty, name.trimmingCharacters(in: .whitespaces).count > 0 else {
-            print("Name text field is empty")
-            return
-        }
-        
-        guard let email = emailTextField.text, !email.isEmpty, email.trimmingCharacters(in: .whitespaces).count > 0 else {
-            print("Email text field is empty")
-            return
-        }
-        
         guard let phone = phoneNumberTextField.text, !phone.isEmpty, phone.trimmingCharacters(in: .whitespaces).count > 0, let _ = Int(phone) else {
             let alertController = UIAlertController(title: "Error", message: "Invalid Phone text field", preferredStyle: .alert)
             let action = UIAlertAction(title: "OK", style: .default) { (action:UIAlertAction) in
