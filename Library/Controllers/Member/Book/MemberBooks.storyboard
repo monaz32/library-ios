@@ -170,6 +170,7 @@
                     </view>
                     <size key="freeformSize" width="375" height="1000"/>
                     <connections>
+                        <outlet property="addReviewButton" destination="1vt-D6-fwc" id="UKx-HO-F6J"/>
                         <outlet property="averageRatingLabel" destination="5zv-ow-edC" id="sNz-k2-Nk4"/>
                         <outlet property="genreLabel" destination="Fkx-zV-iac" id="lSJ-8R-dpd"/>
                         <outlet property="isbnLabel" destination="TMG-yf-1sB" id="bBD-h6-1eH"/>

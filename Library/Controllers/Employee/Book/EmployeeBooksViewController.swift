@@ -65,10 +65,10 @@ class EmployeeBooksViewController: UIViewController {
 
 extension EmployeeBooksViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let vc = UIStoryboard(name: "MemberBooks", bundle: nil).instantiateViewController(withIdentifier: MemberBookDetailsViewController.identifier) as! MemberBookDetailsViewController
-//        let book = books[indexPath.row]
-//        vc.config(book: book)
-//        navigationController?.pushViewController(vc, animated: true)
+        let vc = UIStoryboard(name: "MemberBooks", bundle: nil).instantiateViewController(withIdentifier: MemberBookDetailsViewController.identifier) as! MemberBookDetailsViewController
+        let book = books[indexPath.row]
+        vc.config(book: book, userType: .employee)
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
 

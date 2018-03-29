@@ -23,10 +23,17 @@ class MemberBookDetailsViewController: UIViewController {
     @IBOutlet var averageRatingLabel: UILabel!
     @IBOutlet var reviewTableView: UITableView!
     @IBOutlet var libraryBookTableView: UITableView!
+    @IBOutlet var addReviewButton: UIButton!
+    
+    var userType: UserType?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
+        
+        if let userType = userType, userType == .employee {
+            addReviewButton.isHidden = true
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -63,6 +70,11 @@ class MemberBookDetailsViewController: UIViewController {
     
     func config(book: Book) {
         self.book = book
+    }
+    
+    func config(book: Book, userType: UserType) {
+        self.book = book
+        self.userType = userType
     }
     
     private func setup() {
