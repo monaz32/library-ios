@@ -40,6 +40,8 @@ class RegisterViewController: UIViewController {
     }
     
     func setupUI() {
+        adminNoButton.tintColor = UIColor.green
+        adminYesButton.tintColor = UIColor.blue
         if let userType = userType, userType == .member {
             sinLabel.isHidden = true
             sinTextField.isHidden = true
@@ -55,30 +57,50 @@ class RegisterViewController: UIViewController {
     
     @IBAction func yesButton(_ sender: Any) {
         isAdmin = true
+        adminYesButton.tintColor = UIColor.green
+        adminNoButton.tintColor = UIColor.blue
     }
     
     @IBAction func notButton(_ sender: Any) {
         isAdmin = false
+        adminYesButton.tintColor = UIColor.blue
+        adminNoButton.tintColor = UIColor.green
     }
     
     @IBAction func registerAction(_ sender: Any) {
         guard let name = nameTextField.text, !name.isEmpty, name.trimmingCharacters(in: .whitespaces).count > 0 else {
-            print("Name text field is empty")
+            let alertController = UIAlertController(title: "Error", message: "Name text field is empty", preferredStyle: .alert)
+            let action = UIAlertAction(title: "OK", style: .default) { (action:UIAlertAction) in
+            }
+            alertController.addAction(action)
+            self.present(alertController, animated: true, completion: nil)
             return
         }
         
         guard let email = emailTextField.text, !email.isEmpty, email.trimmingCharacters(in: .whitespaces).count > 0 else {
-            print("Email text field is empty")
+            let alertController = UIAlertController(title: "Error", message: "Email text field is empty", preferredStyle: .alert)
+            let action = UIAlertAction(title: "OK", style: .default) { (action:UIAlertAction) in
+            }
+            alertController.addAction(action)
+            self.present(alertController, animated: true, completion: nil)
             return
         }
         
-        guard let phone = phoneTextField.text, !phone.isEmpty, phone.trimmingCharacters(in: .whitespaces).count > 0 else {
-            print("Phone text field is empty")
+        guard let phone = phoneTextField.text, !phone.isEmpty, phone.trimmingCharacters(in: .whitespaces).count > 0, let _ = Int(phone) else {
+            let alertController = UIAlertController(title: "Error", message: "Invalid Phone number", preferredStyle: .alert)
+            let action = UIAlertAction(title: "OK", style: .default) { (action:UIAlertAction) in
+            }
+            alertController.addAction(action)
+            self.present(alertController, animated: true, completion: nil)
             return
         }
         
         guard let password = passwordTextField.text, !password.isEmpty, password.trimmingCharacters(in: .whitespaces).count > 0 else {
-            print("Password text field is empty")
+            let alertController = UIAlertController(title: "Error", message: "Password text field is empty", preferredStyle: .alert)
+            let action = UIAlertAction(title: "OK", style: .default) { (action:UIAlertAction) in
+            }
+            alertController.addAction(action)
+            self.present(alertController, animated: true, completion: nil)
             return
         }
         
@@ -95,18 +117,30 @@ class RegisterViewController: UIViewController {
                 }
             })
         } else {
-            guard let sin = sinTextField.text, !sin.isEmpty, sin.trimmingCharacters(in: .whitespaces).count > 0 else {
-                print("SIN text field is empty")
+            guard let sin = sinTextField.text, !sin.isEmpty, sin.trimmingCharacters(in: .whitespaces).count > 0, let _ = Int(sin) else {
+                let alertController = UIAlertController(title: "Error", message: "Invalid SIN", preferredStyle: .alert)
+                let action = UIAlertAction(title: "OK", style: .default) { (action:UIAlertAction) in
+                }
+                alertController.addAction(action)
+                self.present(alertController, animated: true, completion: nil)
                 return
             }
             
             guard let address = addressTextField.text, !address.isEmpty, address.trimmingCharacters(in: .whitespaces).count > 0 else {
-                print("Address text field is empty")
+                let alertController = UIAlertController(title: "Error", message: "Address text field is empty", preferredStyle: .alert)
+                let action = UIAlertAction(title: "OK", style: .default) { (action:UIAlertAction) in
+                }
+                alertController.addAction(action)
+                self.present(alertController, animated: true, completion: nil)
                 return
             }
             
-            guard let branchNum = branchNumberTextField.text, !branchNum.isEmpty, branchNum.trimmingCharacters(in: .whitespaces).count > 0, let branchNumInt = Int(branchNum), branchNumInt >= 0, branchNumInt <= 5  else {
-                print("Branch num text field is invalid")
+            guard let branchNum = branchNumberTextField.text, !branchNum.isEmpty, branchNum.trimmingCharacters(in: .whitespaces).count > 0, let branchNumInt = Int(branchNum) else {
+                let alertController = UIAlertController(title: "Error", message: "Invalid branch number", preferredStyle: .alert)
+                let action = UIAlertAction(title: "OK", style: .default) { (action:UIAlertAction) in
+                }
+                alertController.addAction(action)
+                self.present(alertController, animated: true, completion: nil)
                 return
             }
             

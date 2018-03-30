@@ -27,12 +27,20 @@ class MemberBookReviewViewController: UIViewController {
     
     @IBAction func postReview(_ sender: Any) {
         guard let summary = summaryTextView.text, !summary.isEmpty, summary.trimmingCharacters(in: .whitespaces).count > 0 else {
-            print("Summary text view is empty")
+            let alertController = UIAlertController(title: "Error", message: "Summary text view is empty", preferredStyle: .alert)
+            let action = UIAlertAction(title: "OK", style: .default) { (action:UIAlertAction) in
+            }
+            alertController.addAction(action)
+            self.present(alertController, animated: true, completion: nil)
             return
         }
         
         guard let rating = ratingTextField.text, !rating.isEmpty, rating.trimmingCharacters(in: .whitespaces).count > 0, let ratingInt = Int(rating), ratingInt >= 0 && ratingInt <= 5 else {
-            print("Rating is invalid")
+            let alertController = UIAlertController(title: "Error", message: "Rating is invalid", preferredStyle: .alert)
+            let action = UIAlertAction(title: "OK", style: .default) { (action:UIAlertAction) in
+            }
+            alertController.addAction(action)
+            self.present(alertController, animated: true, completion: nil)
             return
         }
         

@@ -117,15 +117,17 @@ class MemberAccountViewController: UIViewController {
         var fines: Double
         if let userType = userType, userType == .employee {
             guard let finesText = finesTextField.text, !finesText.isEmpty, finesText.trimmingCharacters(in: .whitespaces).count > 0, let finesDouble = Double(finesText), finesDouble >= 0 else {
-                print("Fines text field is empty")
+                let alertController = UIAlertController(title: "Error", message: "Invalid Fines field", preferredStyle: .alert)
+                let action = UIAlertAction(title: "OK", style: .default) { (action:UIAlertAction) in
+                }
+                alertController.addAction(action)
+                self.present(alertController, animated: true, completion: nil)
                 return
             }
             fines = finesDouble
         } else {
             fines = member.fines!
         }
-        
-        print(fines)
         
         MemberService.sharedService.updateMember(id: id, phoneNum: phone, fines: fines, password: "") { (result) in
             var alertController: UIAlertController

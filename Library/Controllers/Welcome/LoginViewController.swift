@@ -47,12 +47,20 @@ class LoginViewController: UIViewController {
     
     @IBAction func loginAction(_ sender: Any) {
         guard let email = emailTextfield.text, !email.isEmpty, email.trimmingCharacters(in: .whitespaces).count > 0 else {
-            print("Email text field is empty")
+            let alertController = UIAlertController(title: "Login Failed", message: "Email empty", preferredStyle: .alert)
+            let action = UIAlertAction(title: "OK", style: .default) { (action:UIAlertAction) in
+            }
+            alertController.addAction(action)
+            self.present(alertController, animated: true, completion: nil)
             return
         }
         
         guard let password = passwordTextField.text, !password.isEmpty, password.trimmingCharacters(in: .whitespaces).count > 0   else {
-            print("Password text field is empty")
+            let alertController = UIAlertController(title: "Login Failed", message: "Password empty", preferredStyle: .alert)
+            let action = UIAlertAction(title: "OK", style: .default) { (action:UIAlertAction) in
+            }
+            alertController.addAction(action)
+            self.present(alertController, animated: true, completion: nil)
             return
         }
         if userType == .member {
