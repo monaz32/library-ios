@@ -26,32 +26,56 @@ class CreateEventViewController: UIViewController {
     
     @IBAction func createAction(_ sender: Any) {
         guard let name = nameTextField.text, !name.isEmpty, name.trimmingCharacters(in: .whitespaces).count > 0 else {
-            print("Name text field is empty")
+            let alertController = UIAlertController(title: "Error", message: "Name text field is empty", preferredStyle: .alert)
+            let action = UIAlertAction(title: "OK", style: .default) { (action:UIAlertAction) in
+            }
+            alertController.addAction(action)
+            self.present(alertController, animated: true, completion: nil)
             return
         }
         
-        guard let branchNum = branchNumTextField.text, !branchNum.isEmpty, branchNum.trimmingCharacters(in: .whitespaces).count > 0, let branchNumInt = Int(branchNum), branchNumInt >= 0 && branchNumInt <= 5 else {
-            print("Branch Number text field is empty")
+        guard let branchNum = branchNumTextField.text, !branchNum.isEmpty, branchNum.trimmingCharacters(in: .whitespaces).count > 0, let branchNumInt = Int(branchNum) else {
+            let alertController = UIAlertController(title: "Error", message: "Invalid branch number", preferredStyle: .alert)
+            let action = UIAlertAction(title: "OK", style: .default) { (action:UIAlertAction) in
+            }
+            alertController.addAction(action)
+            self.present(alertController, animated: true, completion: nil)
             return
         }
         
         guard let fromDate = fromDateTextField.text, !fromDate.isEmpty, fromDate.trimmingCharacters(in: .whitespaces).count > 0 else {
-            print("From date text field is empty")
+            let alertController = UIAlertController(title: "Error", message: "From date text field is empty", preferredStyle: .alert)
+            let action = UIAlertAction(title: "OK", style: .default) { (action:UIAlertAction) in
+            }
+            alertController.addAction(action)
+            self.present(alertController, animated: true, completion: nil)
             return
         }
         
         guard let fromTime = fromTimeTextField.text, !fromTime.isEmpty, fromTime.trimmingCharacters(in: .whitespaces).count > 0 else {
-            print("From time text field is empty")
+            let alertController = UIAlertController(title: "Error", message: "From time text field is empty", preferredStyle: .alert)
+            let action = UIAlertAction(title: "OK", style: .default) { (action:UIAlertAction) in
+            }
+            alertController.addAction(action)
+            self.present(alertController, animated: true, completion: nil)
             return
         }
         
         guard let toDate = toDateTextField.text, !toDate.isEmpty, toDate.trimmingCharacters(in: .whitespaces).count > 0 else {
-            print("To Date text field is empty")
+            let alertController = UIAlertController(title: "Error", message: "To Date text field is empty", preferredStyle: .alert)
+            let action = UIAlertAction(title: "OK", style: .default) { (action:UIAlertAction) in
+            }
+            alertController.addAction(action)
+            self.present(alertController, animated: true, completion: nil)
             return
         }
         
         guard let toTime = toTimeTextField.text, !toTime.isEmpty, toTime.trimmingCharacters(in: .whitespaces).count > 0 else {
-            print("To Time text field is empty")
+            let alertController = UIAlertController(title: "Error", message: "To Time text field is empty", preferredStyle: .alert)
+            let action = UIAlertAction(title: "OK", style: .default) { (action:UIAlertAction) in
+            }
+            alertController.addAction(action)
+            self.present(alertController, animated: true, completion: nil)
             return
         }
         
