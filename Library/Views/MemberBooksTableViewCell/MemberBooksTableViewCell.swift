@@ -61,4 +61,8 @@ class MemberBooksTableViewCell: UITableViewCell {
             titleAuthorLabel.text = "\(id): \(name)"
         }
     }
+    
+    func config(branch: Int) {
+        titleAuthorLabel.text = "\(branch)"
+    }
 }

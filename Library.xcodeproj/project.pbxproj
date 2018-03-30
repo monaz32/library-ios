@@ -42,6 +42,12 @@
 		B94FBF73206AED2A0039FC73 /* MemberBooksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94FBF72206AED2A0039FC73 /* MemberBooksViewController.swift */; };
 		B94FBF75206AFFD30039FC73 /* MemberBookDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94FBF74206AFFD30039FC73 /* MemberBookDetailsViewController.swift */; };
 		B94FBF77206B058B0039FC73 /* MemberBookReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94FBF76206B058B0039FC73 /* MemberBookReviewViewController.swift */; };
+		B9581DCE206DB80A00F21A2D /* Info.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9581DCD206DB80A00F21A2D /* Info.storyboard */; };
+		B9581DD0206DB81500F21A2D /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9581DCF206DB81500F21A2D /* InfoViewController.swift */; };
+		B9581DD2206DB91200F21A2D /* BranchesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9581DD1206DB91200F21A2D /* BranchesViewController.swift */; };
+		B9581DD4206DB92400F21A2D /* HighestRatedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9581DD3206DB92400F21A2D /* HighestRatedViewController.swift */; };
+		B9581DD6206DB92D00F21A2D /* LowestRatedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9581DD5206DB92D00F21A2D /* LowestRatedViewController.swift */; };
+		B9581DD8206DB94200F21A2D /* BookCountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9581DD7206DB94200F21A2D /* BookCountViewController.swift */; };
 		B96888D6206B0B5B00DC03C5 /* MemberRoom.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B96888D4206B0B5B00DC03C5 /* MemberRoom.storyboard */; };
 		B96888D7206B0B5B00DC03C5 /* MemberRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96888D5206B0B5B00DC03C5 /* MemberRoomViewController.swift */; };
 		B96888D9206B0C2F00DC03C5 /* MemberService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96888D8206B0C2F00DC03C5 /* MemberService.swift */; };
@@ -116,6 +122,12 @@
 		B94FBF72206AED2A0039FC73 /* MemberBooksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberBooksViewController.swift; sourceTree = "<group>"; };
 		B94FBF74206AFFD30039FC73 /* MemberBookDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberBookDetailsViewController.swift; sourceTree = "<group>"; };
 		B94FBF76206B058B0039FC73 /* MemberBookReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberBookReviewViewController.swift; sourceTree = "<group>"; };
+		B9581DCD206DB80A00F21A2D /* Info.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Info.storyboard; sourceTree = "<group>"; };
+		B9581DCF206DB81500F21A2D /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
+		B9581DD1206DB91200F21A2D /* BranchesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BranchesViewController.swift; sourceTree = "<group>"; };
+		B9581DD3206DB92400F21A2D /* HighestRatedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighestRatedViewController.swift; sourceTree = "<group>"; };
+		B9581DD5206DB92D00F21A2D /* LowestRatedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LowestRatedViewController.swift; sourceTree = "<group>"; };
+		B9581DD7206DB94200F21A2D /* BookCountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCountViewController.swift; sourceTree = "<group>"; };
 		B96888D4206B0B5B00DC03C5 /* MemberRoom.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MemberRoom.storyboard; sourceTree = "<group>"; };
 		B96888D5206B0B5B00DC03C5 /* MemberRoomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemberRoomViewController.swift; sourceTree = "<group>"; };
 		B96888D8206B0C2F00DC03C5 /* MemberService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberService.swift; sourceTree = "<group>"; };
@@ -203,6 +215,19 @@
 				B96888DA206B361C00DC03C5 /* MemberBookFilterViewController.swift */,
 			);
 			path = Book;
+			sourceTree = "<group>";
+		};
+		B9581DCC206DB7F800F21A2D /* Info */ = {
+			isa = PBXGroup;
+			children = (
+				B9581DCD206DB80A00F21A2D /* Info.storyboard */,
+				B9581DCF206DB81500F21A2D /* InfoViewController.swift */,
+				B9581DD1206DB91200F21A2D /* BranchesViewController.swift */,
+				B9581DD3206DB92400F21A2D /* HighestRatedViewController.swift */,
+				B9581DD5206DB92D00F21A2D /* LowestRatedViewController.swift */,
+				B9581DD7206DB94200F21A2D /* BookCountViewController.swift */,
+			);
+			path = Info;
 			sourceTree = "<group>";
 		};
 		B96888D3206B0B5B00DC03C5 /* Room */ = {
@@ -400,6 +425,7 @@
 			children = (
 				B9E73FEF2068516500BB5FF7 /* Member.storyboard */,
 				B9E73FF5206869D200BB5FF7 /* MemberTabBarController.swift */,
+				B9581DCC206DB7F800F21A2D /* Info */,
 				B94FBF6F206AEC6C0039FC73 /* Book */,
 				B96888D3206B0B5B00DC03C5 /* Room */,
 			);
@@ -506,6 +532,7 @@
 				B96888EB206C238A00DC03C5 /* LibraryBookTableViewCell.xib in Resources */,
 				B94FBF71206AEC830039FC73 /* MemberBooks.storyboard in Resources */,
 				B9E73FEE2068515E00BB5FF7 /* Employee.storyboard in Resources */,
+				B9581DCE206DB80A00F21A2D /* Info.storyboard in Resources */,
 				B96888F1206C23AF00DC03C5 /* ReviewTableViewCell.xib in Resources */,
 				B9E740092068749F00BB5FF7 /* Events.storyboard in Resources */,
 				B94FBF6C206AD39B0039FC73 /* EmployeeMembers.storyboard in Resources */,
@@ -573,6 +600,7 @@
 				B96888E9206C237A00DC03C5 /* MemberBooksTableViewCell.swift in Sources */,
 				04341A2A206B067800A41A5A /* BookAPICallExamples.swift in Sources */,
 				B9E74002206871B100BB5FF7 /* MemberAccountViewController.swift in Sources */,
+				B9581DD2206DB91200F21A2D /* BranchesViewController.swift in Sources */,
 				B9E73FF2206852BA00BB5FF7 /* LoginViewController.swift in Sources */,
 				043F3EDF206C504900CD2099 /* ScheduleService.swift in Sources */,
 				B9E73FF4206852CF00BB5FF7 /* RegisterViewController.swift in Sources */,
@@ -582,11 +610,13 @@
 				B96888FD206C660C00DC03C5 /* MemberAddRoomViewController.swift in Sources */,
 				B9E73FF8206869E300BB5FF7 /* EmployeeTabBarController.swift in Sources */,
 				B94FBF692069B6B20039FC73 /* EmployeeBookFilterViewController.swift in Sources */,
+				B9581DD8206DB94200F21A2D /* BookCountViewController.swift in Sources */,
 				04341A30206B719500A41A5A /* EventService.swift in Sources */,
 				B94FBF672069B6970039FC73 /* EmployeeAddBookViewController.swift in Sources */,
 				B9E7400F2068A08B00BB5FF7 /* BookService.swift in Sources */,
 				B96888D7206B0B5B00DC03C5 /* MemberRoomViewController.swift in Sources */,
 				04AD17E72068562900108858 /* Member.swift in Sources */,
+				B9581DD4206DB92400F21A2D /* HighestRatedViewController.swift in Sources */,
 				B9E7400D20689B4800BB5FF7 /* APIClient.swift in Sources */,
 				B9E740072068749100BB5FF7 /* EventsViewController.swift in Sources */,
 				B94FBF75206AFFD30039FC73 /* MemberBookDetailsViewController.swift in Sources */,
@@ -598,6 +628,7 @@
 				04AD17E12068540B00108858 /* EmployeeWorkedFor.swift in Sources */,
 				04341A28206B02B400A41A5A /* GenreCount.swift in Sources */,
 				04AD17E32068546C00108858 /* LibraryBook.swift in Sources */,
+				B9581DD6206DB92D00F21A2D /* LowestRatedViewController.swift in Sources */,
 				B94FBF77206B058B0039FC73 /* MemberBookReviewViewController.swift in Sources */,
 				04AD17E92068570C00108858 /* Rental.swift in Sources */,
 				B94FBF6E206AD4450039FC73 /* EmployeeMembersViewController.swift in Sources */,
@@ -608,6 +639,7 @@
 				B96DF05F2053450A00AE101C /* AppDelegate.swift in Sources */,
 				B96888DB206B361C00DC03C5 /* MemberBookFilterViewController.swift in Sources */,
 				B96888ED206C239500DC03C5 /* LibraryBookTableViewCell.swift in Sources */,
+				B9581DD0206DB81500F21A2D /* InfoViewController.swift in Sources */,
 				B96DF0672053474C00AE101C /* WelcomeViewController.swift in Sources */,
 				B9E7400B2068787900BB5FF7 /* CreateEventViewController.swift in Sources */,
 				04AD17DF2068504200108858 /* Employee.swift in Sources */,
