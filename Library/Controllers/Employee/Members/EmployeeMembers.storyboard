@@ -64,10 +64,10 @@
             </objects>
             <point key="canvasLocation" x="692" y="95.802098950524751"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Members-->
         <scene sceneID="8KO-7R-z4G">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mlW-Ac-sgj" sceneMemberID="viewController">
+                <navigationController title="Members" automaticallyAdjustsScrollViewInsets="NO" id="mlW-Ac-sgj" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ftq-gJ-Cay">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>

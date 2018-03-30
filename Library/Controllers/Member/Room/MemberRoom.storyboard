@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Member Room View Controller-->
+        <!--Rooms-->
         <scene sceneID="55d-qQ-rJz">
             <objects>
-                <viewController storyboardIdentifier="MemberRoomViewController" id="ha3-2e-Gbg" customClass="MemberRoomViewController" customModule="Library" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MemberRoomViewController" title="Rooms" id="ha3-2e-Gbg" customClass="MemberRoomViewController" customModule="Library" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZyK-tk-K9x">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -178,10 +178,10 @@
             </objects>
             <point key="canvasLocation" x="1076" y="78.710644677661179"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Rooms-->
         <scene sceneID="VqH-FF-tIw">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ev3-6z-edb" sceneMemberID="viewController">
+                <navigationController title="Rooms" automaticallyAdjustsScrollViewInsets="NO" id="Ev3-6z-edb" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="QgM-dy-tkP">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>

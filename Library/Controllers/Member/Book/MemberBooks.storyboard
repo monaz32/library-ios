@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Member Books View Controller-->
+        <!--Books-->
         <scene sceneID="HlX-V8-U0w">
             <objects>
-                <viewController storyboardIdentifier="MemberBooksViewController" id="Rdb-8a-xme" customClass="MemberBooksViewController" customModule="Library" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MemberBooksViewController" title="Books" id="Rdb-8a-xme" customClass="MemberBooksViewController" customModule="Library" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xJT-TR-iBZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -256,10 +256,10 @@
             </objects>
             <point key="canvasLocation" x="2016.8" y="86.806596701649184"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Book-->
         <scene sceneID="qcy-cV-sZc">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jgC-ic-Snn" sceneMemberID="viewController">
+                <navigationController title="Book" automaticallyAdjustsScrollViewInsets="NO" id="jgC-ic-Snn" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="KaE-sy-LFQ">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>

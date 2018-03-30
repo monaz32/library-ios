@@ -155,10 +155,10 @@
             </objects>
             <point key="canvasLocation" x="45.600000000000001" y="106.14692653673164"/>
         </scene>
-        <!--MyAccount-->
+        <!--My Account-->
         <scene sceneID="ig2-I0-Q3H">
             <objects>
-                <viewController storyboardIdentifier="EmployeeAccountViewController" title="MyAccount" id="a8w-e9-4gK" customClass="EmployeeAccountViewController" customModule="Library" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EmployeeAccountViewController" title="My Account" id="a8w-e9-4gK" customClass="EmployeeAccountViewController" customModule="Library" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="drn-e1-Zwg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

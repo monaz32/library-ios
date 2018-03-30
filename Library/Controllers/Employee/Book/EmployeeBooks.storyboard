@@ -321,10 +321,10 @@
             </objects>
             <point key="canvasLocation" x="1807.2" y="120.98950524737631"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Books-->
         <scene sceneID="URu-xn-TZz">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="iaH-8f-xb3" sceneMemberID="viewController">
+                <navigationController title="Books" automaticallyAdjustsScrollViewInsets="NO" id="iaH-8f-xb3" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="QIp-3U-zHV">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
