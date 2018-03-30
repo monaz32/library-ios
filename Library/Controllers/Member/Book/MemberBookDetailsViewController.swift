@@ -131,7 +131,7 @@ class MemberBookDetailsViewController: UIViewController {
 
 extension MemberBookDetailsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let userType = userType, userType != .employee {
+        if userType == nil {
             let libraryBook = libraryBooks[indexPath.row]
             if libraryBook.status == true,  let bookID = libraryBook.ID {
                 let memberID = UserDefaults.standard.integer(forKey: "id")
