@@ -70,6 +70,7 @@ class BranchService {
         }
     }
     
+    // get details on a specific room
     func getRoomWithIDAtBranch(branchID: Int, roomNum: Int, completion: @escaping (Result<Room>) -> Void) {
         APIClient.sharedClient.request(Router.getRoomWithIDAtBranch(branchID: branchID, roomNum: roomNum)) { (response) in
             switch response {
@@ -79,6 +80,27 @@ class BranchService {
                     // There is only one room with the corresponding ids, so we return
                     // the first element of the array.
                     completion(Result.success(rooms[0]))
+                }
+                else {
+                    completion(Result.failure(ServiceError.CastFailure("Result casting failed.")))
+                }
+                
+            case .failure(let error):
+                completion(Result.failure(error))
+            }
+        }
+    }
+    
+    func getBranchWithAllBooks(completion: @escaping (Result<[Int]>) -> Void) {
+        APIClient.sharedClient.request(Router.getBranchWithAllBooks) { (response) in
+            switch response {
+            case .success(let result):
+                if let json = result as? [[String: Any]] {
+                    var branches: [Int] = []
+                    for obj in json {
+                        branches.append(obj["branchNum"] as! Int)
+                    }
+                    completion(Result.success(branches))
                 }
                 else {
                     completion(Result.failure(ServiceError.CastFailure("Result casting failed.")))

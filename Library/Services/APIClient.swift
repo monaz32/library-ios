@@ -78,6 +78,7 @@ enum Router: URLRequestConvertible {
     case getBranchWithID(id: Int)
     case getRoomsAtBranch(id: Int)
     case getRoomWithIDAtBranch(branchID: Int, roomNum: Int)
+    case getBranchWithAllBooks
     
     // Schedules
     case getSchedules
@@ -105,7 +106,7 @@ enum Router: URLRequestConvertible {
              .getLibraryBook, .getLibraryBookCount,
              .getMAXRating, .getMINRating, .getAVRRating,
              .getReviews,
-             .getBranches, .getBranchWithID, .getRoomsAtBranch, .getRoomWithIDAtBranch,
+             .getBranches, .getBranchWithID, .getRoomsAtBranch, .getRoomWithIDAtBranch, .getBranchWithAllBooks,
              .getSchedules, .getSchedulesWithAccountID, .getSchedulesWithRoomName:
             return .get
             
@@ -195,6 +196,8 @@ enum Router: URLRequestConvertible {
         // Branch
         case .getBranches, .getBranchWithID, .getRoomsAtBranch, .getRoomWithIDAtBranch:
             return "/branches"
+        case .getBranchWithAllBooks:
+            return "/branches/books/allbooks"
             
         // Schedule
         case .getSchedules, .addSchedule:
