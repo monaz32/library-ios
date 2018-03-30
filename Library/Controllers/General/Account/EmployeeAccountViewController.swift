@@ -49,7 +49,11 @@ class EmployeeAccountViewController: UIViewController {
         }
 
         guard let address = addressTextField.text, !address.isEmpty, address.trimmingCharacters(in: .whitespaces).count > 0 else {
-            print("Address text field is empty")
+            let alertController = UIAlertController(title: "Error", message: "Address text field is empty", preferredStyle: .alert)
+            let action = UIAlertAction(title: "OK", style: .default) { (action:UIAlertAction) in
+            }
+            alertController.addAction(action)
+            self.present(alertController, animated: true, completion: nil)
             return
         }
         

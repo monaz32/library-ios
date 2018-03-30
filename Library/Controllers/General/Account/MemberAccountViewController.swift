@@ -129,8 +129,6 @@ class MemberAccountViewController: UIViewController {
             fines = member.fines!
         }
         
-        print(fines)
-        
         MemberService.sharedService.updateMember(id: id, phoneNum: phone, fines: fines, password: "") { (result) in
             var alertController: UIAlertController
     
