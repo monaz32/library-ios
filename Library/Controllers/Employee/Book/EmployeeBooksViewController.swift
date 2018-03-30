@@ -15,9 +15,11 @@ protocol EmployeeBooksViewControllerDelegate {
 class EmployeeBooksViewController: UIViewController {
 
     @IBOutlet var bookTableView: UITableView!
+    @IBOutlet var totalBooksLabel: UILabel!
     
     var bookFilter = BookFilter(title: "", author: "", publisher: "", genre: "")
     var books = [Book]()
+    var bookCount = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,6 +47,12 @@ class EmployeeBooksViewController: UIViewController {
                 }
                 alertController.addAction(action)
                 self.present(alertController, animated: true, completion: nil)
+            }
+        }
+        
+        LibraryBookService.sharedService.getLibraryBookCount { (result) in
+            if result.isSuccess, let bookCount = result.value {
+                self.totalBooksLabel.text = "Total Books In Database: \(bookCount)"
             }
         }
     }
@@ -92,6 +100,11 @@ extension EmployeeBooksViewController: UITableViewDataSource {
                 if result.isSuccess {
                     self.books.remove(at: indexPath.row)
                     self.bookTableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.automatic)
+                    LibraryBookService.sharedService.getLibraryBookCount { (result) in
+                        if result.isSuccess, let bookCount = result.value {
+                            self.totalBooksLabel.text = "Total Books In Database: \(bookCount)"
+                        }
+                    }
                 } else {
                     let alertController = UIAlertController(title: "Book Deletion Failed", message: "", preferredStyle: .alert)
                     let action = UIAlertAction(title: "OK", style: .default) { (action:UIAlertAction) in
