@@ -43,13 +43,28 @@ class EmployeeMembersViewController: UIViewController {
     }
     
     @IBAction func searchAction(_ sender: Any) {
-        guard let text = textField.text, !text.isEmpty, text.trimmingCharacters(in: .whitespaces).count > 0, let id = Int(text) else {
+        guard let text = textField.text, !text.isEmpty, text.trimmingCharacters(in: .whitespaces).count > 0 else {
+            // If filter is empty, get all members.
             MemberService.sharedService.getMembers { (result) in
                 if result.isSuccess, let members = result.value {
                     self.members = members
                     self.tableView.reloadData()
+                } else {
+                    let alertController = UIAlertController(title: "Failed to load members", message: "", preferredStyle: .alert)
+                    let action = UIAlertAction(title: "OK", style: .default) { (action:UIAlertAction) in
+                    }
+                    alertController.addAction(action)
+                    self.present(alertController, animated: true, completion: nil)
                 }
             }
+            return
+        }
+        guard let id = Int(text) else {
+            let alertController = UIAlertController(title: "Error", message: "ID must be a number", preferredStyle: .alert)
+            let action = UIAlertAction(title: "OK", style: .default) { (action:UIAlertAction) in
+            }
+            alertController.addAction(action)
+            self.present(alertController, animated: true, completion: nil)
             return
         }
         

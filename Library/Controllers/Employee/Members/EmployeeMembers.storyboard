@@ -29,7 +29,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="wVX-hw-alf"/>
                                 </constraints>
-                                <state key="normal" title="Search"/>
+                                <state key="normal" title="Search by ID"/>
                                 <connections>
                                     <action selector="searchAction:" destination="U5s-5P-HKr" eventType="touchUpInside" id="9fR-PF-xUJ"/>
                                 </connections>
