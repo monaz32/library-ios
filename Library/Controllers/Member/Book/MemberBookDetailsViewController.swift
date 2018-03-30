@@ -130,46 +130,82 @@ class MemberBookDetailsViewController: UIViewController {
 // MARK: - Table view delegate
 
 extension MemberBookDetailsViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         if userType == nil {
-            let libraryBook = libraryBooks[indexPath.row]
-            if libraryBook.status == true,  let bookID = libraryBook.ID {
-                let memberID = UserDefaults.standard.integer(forKey: "id")
-                RentalService.sharedService.addRental(memberID: memberID, bookID: bookID, fromTime: "09:34", fromDate: "04/04/18", completion: { (result) in
-                    if result.isSuccess {
-                        LibraryBookService.sharedService.getLibraryBooks(isbn: self.book.isbn!, completion: { (result) in
-                            if result.isSuccess, let libraryBooks = result.value {
-                                let alertController = UIAlertController(title: "Success", message: "Checked out book", preferredStyle: .alert)
-                                let action = UIAlertAction(title: "OK", style: .default) { (action:UIAlertAction) in
+            return [UITableViewRowAction(style: .normal, title: "Check Out", handler: { (action, indexPath) in
+                let libraryBook = self.libraryBooks[indexPath.row]
+                if libraryBook.status == true,  let bookID = libraryBook.ID {
+                    let memberID = UserDefaults.standard.integer(forKey: "id")
+                    RentalService.sharedService.addRental(memberID: memberID, bookID: bookID, fromTime: "09:34", fromDate: "04/04/18", completion: { (result) in
+                        if result.isSuccess {
+                            LibraryBookService.sharedService.getLibraryBooks(isbn: self.book.isbn!, completion: { (result) in
+                                if result.isSuccess, let libraryBooks = result.value {
+                                    let alertController = UIAlertController(title: "Success", message: "Checked out book", preferredStyle: .alert)
+                                    let action = UIAlertAction(title: "OK", style: .default) { (action:UIAlertAction) in
+                                    }
+                                    alertController.addAction(action)
+                                    self.present(alertController, animated: true, completion: nil)
+                                    
+                                    self.libraryBooks = libraryBooks
+                                    self.libraryBookTableView.reloadData()
+                                } else {
+                                    let alertController = UIAlertController(title: "Error 422", message: "Unprocessable Entity", preferredStyle: .alert)
+                                    let action = UIAlertAction(title: "OK", style: .default) { (action:UIAlertAction) in
+                                    }
+                                    alertController.addAction(action)
+                                    self.present(alertController, animated: true, completion: nil)
                                 }
-                                alertController.addAction(action)
-                                self.present(alertController, animated: true, completion: nil)
-                            
-                                self.libraryBooks = libraryBooks
-                                self.libraryBookTableView.reloadData()
-                            } else {
-                                let alertController = UIAlertController(title: "Error 422", message: "Unprocessable Entity", preferredStyle: .alert)
-                                let action = UIAlertAction(title: "OK", style: .default) { (action:UIAlertAction) in
+                            })
+                        } else {
+                            let alertController = UIAlertController(title: "Error 422", message: "Unprocessable Entity", preferredStyle: .alert)
+                            let action = UIAlertAction(title: "OK", style: .default) { (action:UIAlertAction) in
                             }
-                                alertController.addAction(action)
-                                self.present(alertController, animated: true, completion: nil)
-                            }
-                        })
-                    } else {
-                        let alertController = UIAlertController(title: "Error 422", message: "Unprocessable Entity", preferredStyle: .alert)
-                        let action = UIAlertAction(title: "OK", style: .default) { (action:UIAlertAction) in
+                            alertController.addAction(action)
+                            self.present(alertController, animated: true, completion: nil)
                         }
-                        alertController.addAction(action)
-                        self.present(alertController, animated: true, completion: nil)
+                    })
+                } else {
+                    let alertController = UIAlertController(title: "Booked Already Checked Out", message: "", preferredStyle: .alert)
+                    let action = UIAlertAction(title: "OK", style: .default) { (action:UIAlertAction) in
                     }
-                })
-            } else {
-                let alertController = UIAlertController(title: "Booked Already Checked Out", message: "", preferredStyle: .alert)
-                let action = UIAlertAction(title: "OK", style: .default) { (action:UIAlertAction) in
+                    alertController.addAction(action)
+                    self.present(alertController, animated: true, completion: nil)
                 }
-                alertController.addAction(action)
-                self.present(alertController, animated: true, completion: nil)
-            }
+            })]
+        } else {
+            return [UITableViewRowAction(style: .normal, title: "Return", handler: { (action, indexPath) in
+                let libraryBook = self.libraryBooks[indexPath.row]
+                if let libraryBookID = libraryBook.ID {
+                    RentalService.sharedService.returnRental(bookID: libraryBookID, returnTime: "9:59", returnDate: "04/04/18", completion: { (result) in
+                        if result.isSuccess {
+                            LibraryBookService.sharedService.getLibraryBooks(isbn: self.book.isbn!, completion: { (result) in
+                                if result.isSuccess, let libraryBooks = result.value {
+                                    let alertController = UIAlertController(title: "Success", message: "Checked out book", preferredStyle: .alert)
+                                    let action = UIAlertAction(title: "OK", style: .default) { (action:UIAlertAction) in
+                                    }
+                                    alertController.addAction(action)
+                                    self.present(alertController, animated: true, completion: nil)
+                                    
+                                    self.libraryBooks = libraryBooks
+                                    self.libraryBookTableView.reloadData()
+                                } else {
+                                    let alertController = UIAlertController(title: "Error 422", message: "Unprocessable Entity", preferredStyle: .alert)
+                                    let action = UIAlertAction(title: "OK", style: .default) { (action:UIAlertAction) in
+                                    }
+                                    alertController.addAction(action)
+                                    self.present(alertController, animated: true, completion: nil)
+                                }
+                            })
+                        } else {
+                            let alertController = UIAlertController(title: "Error 422", message: "Unprocessable Entity", preferredStyle: .alert)
+                            let action = UIAlertAction(title: "OK", style: .default) { (action:UIAlertAction) in
+                            }
+                            alertController.addAction(action)
+                            self.present(alertController, animated: true, completion: nil)
+                        }
+                    })
+                }
+            })]
         }
     }
 }
