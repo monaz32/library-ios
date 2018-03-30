@@ -150,6 +150,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="9pQ-Go-7D9"/>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="yLi-CN-mGb" id="bhs-oH-Cop"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RgQ-dN-Tjw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -220,6 +223,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="kVZ-PB-tRz"/>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="nfb-Yy-Oah" id="bEG-5v-vJ0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jpw-Xn-GR9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

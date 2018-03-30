@@ -25,8 +25,6 @@ class BranchesViewController: UIViewController {
             if result.isSuccess, let branches = result.value {
                 self.branches = branches
                 self.tableView.reloadData()
-            } else {
-                print("")
             }
         }
     }
