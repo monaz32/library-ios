@@ -20,46 +20,58 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eWc-15-kWz">
                                 <rect key="frame" x="32" y="96" width="311" height="44"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="2fy-rk-Zdy"/>
                                 </constraints>
-                                <state key="normal" title="Branches With All Books"/>
+                                <state key="normal" title="Branches With All Books">
+                                    <color key="titleColor" red="0.2857812643" green="0.58490353819999996" blue="0.92118555310000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="branchesAction:" destination="C6R-o2-FNE" eventType="touchUpInside" id="q2l-VY-aFG"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f2a-fc-2Bb">
                                 <rect key="frame" x="32" y="172" width="311" height="44"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="MVq-Gr-on9"/>
                                 </constraints>
-                                <state key="normal" title="Highest Rated Books"/>
+                                <state key="normal" title="Highest Rated Books">
+                                    <color key="titleColor" red="0.2857812643" green="0.58490353819999996" blue="0.92118555310000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="highestRatedAction:" destination="C6R-o2-FNE" eventType="touchUpInside" id="vXR-Fg-bi3"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s6k-dr-jDG">
                                 <rect key="frame" x="32" y="248" width="311" height="44"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="Sa2-hQ-3fT"/>
                                 </constraints>
-                                <state key="normal" title="Lowest Rated Books"/>
+                                <state key="normal" title="Lowest Rated Books">
+                                    <color key="titleColor" red="0.2857812643" green="0.58490353819999996" blue="0.92118555310000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="lowestRatingAction:" destination="C6R-o2-FNE" eventType="touchUpInside" id="6z0-c3-CLh"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RPR-UV-15i">
                                 <rect key="frame" x="32" y="324" width="311" height="44"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="J1L-YT-WVW"/>
                                 </constraints>
-                                <state key="normal" title="Books Count by Genre"/>
+                                <state key="normal" title="Books Count by Genre">
+                                    <color key="titleColor" red="0.2857812643" green="0.58490353819999996" blue="0.92118555310000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="booksCountAction:" destination="C6R-o2-FNE" eventType="touchUpInside" id="uZB-6k-RdF"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.2857812643" green="0.58490353819999996" blue="0.92118555310000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Rg6-uu-0Io" firstAttribute="trailing" secondItem="f2a-fc-2Bb" secondAttribute="trailing" constant="32" id="0S5-OH-Bt9"/>
                             <constraint firstItem="s6k-dr-jDG" firstAttribute="top" secondItem="f2a-fc-2Bb" secondAttribute="bottom" constant="32" id="D6X-bU-YDj"/>
@@ -93,7 +105,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Branches With All Books" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uFf-sM-Xye">
                                 <rect key="frame" x="94" y="52" width="187" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jju-BA-dza">
@@ -101,7 +113,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.2857812643" green="0.58490353819999996" blue="0.92118555310000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="uFf-sM-Xye" firstAttribute="centerX" secondItem="cpk-9I-Tfg" secondAttribute="centerX" id="6KL-jp-Dtk"/>
                             <constraint firstItem="jju-BA-dza" firstAttribute="leading" secondItem="1mC-iW-zfX" secondAttribute="leading" id="7bR-bi-6Bd"/>
@@ -131,7 +143,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lowest Rated Books" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="577-lT-c6h">
                                 <rect key="frame" x="110" y="52" width="155" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yLi-CN-mGb">
@@ -139,7 +151,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.2857812643" green="0.58490353819999996" blue="0.92118555310000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="9pQ-Go-7D9" firstAttribute="trailing" secondItem="yLi-CN-mGb" secondAttribute="trailing" id="GEa-7P-kfJ"/>
                             <constraint firstItem="577-lT-c6h" firstAttribute="top" secondItem="9pQ-Go-7D9" secondAttribute="top" constant="32" id="Txh-EO-Ie4"/>
@@ -169,7 +181,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Book Count by Genre" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7IK-Ko-B8n">
                                 <rect key="frame" x="105.5" y="52" width="164" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="JfL-pT-JBg">
@@ -177,7 +189,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.2857812643" green="0.58490353819999996" blue="0.92118555310000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="JfL-pT-JBg" firstAttribute="leading" secondItem="qhd-rs-IM1" secondAttribute="leading" id="2bO-rX-EoP"/>
                             <constraint firstItem="qhd-rs-IM1" firstAttribute="bottom" secondItem="JfL-pT-JBg" secondAttribute="bottom" id="AhB-sw-kpK"/>
@@ -207,7 +219,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Highest Rated Books" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xdO-j6-geW">
                                 <rect key="frame" x="107.5" y="52" width="160" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nfb-Yy-Oah">
@@ -215,7 +227,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.2857812643" green="0.58490353819999996" blue="0.92118555310000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="xdO-j6-geW" firstAttribute="top" secondItem="kVZ-PB-tRz" secondAttribute="top" constant="32" id="BuR-51-Da8"/>
                             <constraint firstItem="nfb-Yy-Oah" firstAttribute="leading" secondItem="kVZ-PB-tRz" secondAttribute="leading" id="QL5-EC-AOK"/>
@@ -237,7 +249,6 @@
         <!--Info-->
         <scene sceneID="fhk-6X-rGE">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="PbX-7U-sKa" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController title="Info" automaticallyAdjustsScrollViewInsets="NO" id="uan-w9-ozu" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="U7l-UL-ITw">
@@ -249,6 +260,7 @@
                         <segue destination="C6R-o2-FNE" kind="relationship" relationship="rootViewController" id="HDz-h9-iJg"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PbX-7U-sKa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-481" y="113"/>
         </scene>
