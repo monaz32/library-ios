@@ -82,10 +82,10 @@
             </objects>
             <point key="canvasLocation" x="10" y="-59"/>
         </scene>
-        <!--Register View Controller-->
+        <!--Employee-->
         <scene sceneID="UX1-SP-HfL">
             <objects>
-                <viewController storyboardIdentifier="RegisterViewController" id="wLC-KW-mJi" customClass="RegisterViewController" customModule="Library" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RegisterViewController" title="Employee" id="wLC-KW-mJi" customClass="RegisterViewController" customModule="Library" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0Ak-Au-Vus">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

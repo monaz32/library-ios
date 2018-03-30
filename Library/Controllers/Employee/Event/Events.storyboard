@@ -196,10 +196,10 @@
             </objects>
             <point key="canvasLocation" x="788" y="852"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Events-->
         <scene sceneID="ClK-dg-XFo">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="iHo-yT-rQH" sceneMemberID="viewController">
+                <navigationController title="Events" automaticallyAdjustsScrollViewInsets="NO" id="iHo-yT-rQH" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="AXY-Nb-XLz">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
