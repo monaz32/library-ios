@@ -61,4 +61,16 @@ class MemberBooksTableViewCell: UITableViewCell {
             titleAuthorLabel.text = "\(id): \(name)"
         }
     }
+    
+    func config(branch: Int) {
+        titleAuthorLabel.text = "\(branch)"
+    }
+    
+    func config(rating: Rating) {
+        titleAuthorLabel.text = "\(rating.isbn!) / \(rating.title!) / \(rating.average!)"
+    }
+    
+    func config(genreCount: GenreCount) {
+        titleAuthorLabel.text = "\(genreCount.genre!): \(genreCount.count!)"
+    }
 }
