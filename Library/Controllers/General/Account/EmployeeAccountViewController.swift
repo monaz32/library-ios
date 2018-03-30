@@ -11,6 +11,8 @@ import UIKit
 class EmployeeAccountViewController: UIViewController {
     static let identifier = "EmployeeAccountViewController"
     
+    @IBOutlet var nameLabel: UILabel!
+    @IBOutlet var emailLabel: UILabel!
     @IBOutlet var phoneTextField: UITextField!
     @IBOutlet var addressTextField: UITextField!
     @IBOutlet var adminLabel: UILabel!
@@ -27,6 +29,8 @@ class EmployeeAccountViewController: UIViewController {
         EmployeeService.sharedService.getEmployee(id: Int(id)) { (result) in
             if result.isSuccess, let employee = result.value {
                 self.employee = employee
+                self.nameLabel.text = "Name: \(employee.name!)"
+                self.emailLabel.text = "Email: \(employee.email!)"
                 self.phoneTextField.text = employee.phoneNumber
                 self.addressTextField.text = employee.address
                 self.adminLabel.text = employee.adminStatus! ? "Admin: Yes" : "Admin: No"

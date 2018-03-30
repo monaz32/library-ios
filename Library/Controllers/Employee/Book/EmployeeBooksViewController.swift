@@ -15,9 +15,11 @@ protocol EmployeeBooksViewControllerDelegate {
 class EmployeeBooksViewController: UIViewController {
 
     @IBOutlet var bookTableView: UITableView!
+    @IBOutlet var totalBooksLabel: UILabel!
     
     var bookFilter = BookFilter(title: "", author: "", publisher: "", genre: "")
     var books = [Book]()
+    var bookCount = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,6 +47,12 @@ class EmployeeBooksViewController: UIViewController {
                 }
                 alertController.addAction(action)
                 self.present(alertController, animated: true, completion: nil)
+            }
+        }
+        
+        LibraryBookService.sharedService.getLibraryBookCount { (result) in
+            if result.isSuccess, let bookCount = result.value {
+                self.totalBooksLabel.text = "Total Books In Database: \(bookCount)"
             }
         }
     }
@@ -84,6 +92,28 @@ extension EmployeeBooksViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return books.count
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if let isbn = books[indexPath.row].isbn {
+            BookService.sharedService.deleteBook(isbn: isbn, completion: { (result) in
+                if result.isSuccess {
+                    self.books.remove(at: indexPath.row)
+                    self.bookTableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.automatic)
+                    LibraryBookService.sharedService.getLibraryBookCount { (result) in
+                        if result.isSuccess, let bookCount = result.value {
+                            self.totalBooksLabel.text = "Total Books In Database: \(bookCount)"
+                        }
+                    }
+                } else {
+                    let alertController = UIAlertController(title: "Book Deletion Failed", message: "", preferredStyle: .alert)
+                    let action = UIAlertAction(title: "OK", style: .default) { (action:UIAlertAction) in
+                    }
+                    alertController.addAction(action)
+                    self.present(alertController, animated: true, completion: nil)
+                }
+            })
+        }
     }
 }
 

@@ -36,19 +36,27 @@
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="DFs-MD-0D3">
-                                <rect key="frame" x="0.0" y="218" width="375" height="449"/>
+                                <rect key="frame" x="0.0" y="247" width="375" height="420"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Books:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vBh-uN-bcR">
+                                <rect key="frame" x="32" y="218" width="94" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="DFs-MD-0D3" firstAttribute="top" secondItem="VE6-fk-D4J" secondAttribute="bottom" constant="32" id="4yQ-kZ-a6i"/>
                             <constraint firstItem="joa-AL-VVJ" firstAttribute="top" secondItem="yPL-m1-jWT" secondAttribute="top" constant="32" id="HMc-9b-dMw"/>
                             <constraint firstItem="DFs-MD-0D3" firstAttribute="leading" secondItem="yPL-m1-jWT" secondAttribute="leading" id="IuM-Q0-PR2"/>
+                            <constraint firstItem="vBh-uN-bcR" firstAttribute="leading" secondItem="yPL-m1-jWT" secondAttribute="leading" constant="32" id="OVG-xn-myD"/>
                             <constraint firstItem="yPL-m1-jWT" firstAttribute="trailing" secondItem="VE6-fk-D4J" secondAttribute="trailing" constant="32" id="OWR-qG-hWD"/>
                             <constraint firstItem="yPL-m1-jWT" firstAttribute="trailing" secondItem="joa-AL-VVJ" secondAttribute="trailing" constant="32" id="SC5-ce-k2i"/>
                             <constraint firstItem="joa-AL-VVJ" firstAttribute="leading" secondItem="yPL-m1-jWT" secondAttribute="leading" constant="32" id="UeV-gx-WP4"/>
                             <constraint firstItem="VE6-fk-D4J" firstAttribute="top" secondItem="joa-AL-VVJ" secondAttribute="bottom" constant="16" id="czK-Xh-eCp"/>
+                            <constraint firstItem="vBh-uN-bcR" firstAttribute="top" secondItem="VE6-fk-D4J" secondAttribute="bottom" constant="32" id="dG6-Hf-edM"/>
+                            <constraint firstItem="DFs-MD-0D3" firstAttribute="top" secondItem="vBh-uN-bcR" secondAttribute="bottom" constant="8" id="lgY-nE-IPI"/>
                             <constraint firstItem="yPL-m1-jWT" firstAttribute="bottom" secondItem="DFs-MD-0D3" secondAttribute="bottom" id="mTI-9w-dEa"/>
                             <constraint firstItem="yPL-m1-jWT" firstAttribute="trailing" secondItem="DFs-MD-0D3" secondAttribute="trailing" id="rlJ-OM-RYJ"/>
                             <constraint firstItem="VE6-fk-D4J" firstAttribute="leading" secondItem="yPL-m1-jWT" secondAttribute="leading" constant="32" id="sJh-Cv-YZM"/>
@@ -58,6 +66,7 @@
                     <navigationItem key="navigationItem" id="szt-HG-irJ"/>
                     <connections>
                         <outlet property="bookTableView" destination="DFs-MD-0D3" id="DcV-cg-h83"/>
+                        <outlet property="totalBooksLabel" destination="vBh-uN-bcR" id="UH4-cE-dNn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VSI-6M-W6M" userLabel="First Responder" sceneMemberID="firstResponder"/>

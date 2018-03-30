@@ -16,6 +16,8 @@ class MemberAccountViewController: UIViewController {
     @IBOutlet var phoneNumberTextField: UITextField!
     @IBOutlet var finesLabel: UILabel!
     @IBOutlet var finesTextField: UITextField!
+    @IBOutlet var nameLabel: UILabel!
+    @IBOutlet var emailLabel: UILabel!
     
     var member: Member!
     var currentRentals = [Rental]()
@@ -68,6 +70,8 @@ class MemberAccountViewController: UIViewController {
         MemberService.sharedService.getMember(id: id) { (result) in
             if result.isSuccess, let member = result.value {
                 self.member = member
+                self.nameLabel.text = "Name: \(member.name!)"
+                self.emailLabel.text = "Email: \(member.email!)"
                 self.phoneNumberTextField.text = member.phoneNumber
                 
                 if let userType = self.userType, userType == .employee {
